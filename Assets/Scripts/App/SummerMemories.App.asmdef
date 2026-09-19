@@ -1,0 +1,19 @@
+{
+    "name": "SummerMemories.App",
+    "rootNamespace": "SummerMemories.App",
+    "references": [
+        "SummerMemories.Core",
+        "SummerMemories.ADV",
+        "SummerMemories.Battle",
+        "SummerMemories.Loop"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

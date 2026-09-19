@@ -1,0 +1,66 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "Assets/Resources/Art/Bg/bg_dock.png": {
+      "bytes": 2888316,
+      "sha256": "091bd7f677d53bcd5038d5800ca98e599cd5ca95b0b99c3b2ea5f0b1690a8d48"
+    },
+    "Assets/Resources/Art/Bg/bg_night.png": {
+      "bytes": 3036522,
+      "sha256": "303738cebb3857cd9dd65e06f7eba2ae04d984bcac9dec9c81dba5fab44f26e0"
+    },
+    "Assets/Resources/Art/Bg/bg_town.png": {
+      "bytes": 3301529,
+      "sha256": "56efef1550846b71d85181c617745c44176991dbe79dc431a90e7048b7a3d11d"
+    },
+    "Assets/Resources/Art/Bg/title_bg.png": {
+      "bytes": 3275416,
+      "sha256": "9e7b7d57f6197f28ee9e8e6ae78693251b338d05c66985cce8038ed7e9dbd63d"
+    },
+    "Assets/Resources/Art/Icons/app_icon.png": {
+      "bytes": 1957558,
+      "sha256": "a8f2a421993fa3dcff0103c9eae36ed272d3cce93233d21738bfb1012d00286d"
+    },
+    "Assets/Resources/Art/Portraits/jingwei.png": {
+      "bytes": 1774008,
+      "sha256": "81cb13410915f2f7e59d1e249bed108fcb5f55c1d5173c0c5e17d7d61685cfb2"
+    },
+    "Assets/Resources/Art/Portraits/longnv.png": {
+      "bytes": 1981471,
+      "sha256": "7218a69415d446272c9e10e01c48716d3613466dbe6f73612f54307c02e1b5a3"
+    },
+    "Assets/Resources/Art/Portraits/puti.png": {
+      "bytes": 2137897,
+      "sha256": "5f10ce1147b576e79354bcba7901b6113ff9122a47b6297a642318668deca1fb"
+    },
+    "Assets/Resources/Art/Portraits/shitou.png": {
+      "bytes": 1720947,
+      "sha256": "a8f377c24181ff3f2c6001ada99c0ae31f519102cb2e8f18e2834e03c583b4e2"
+    },
+    "Assets/Resources/Art/Portraits/wangliang.png": {
+      "bytes": 1567511,
+      "sha256": "ad5b00055e788f6df81210778acc2072b403e3af8ac7bddad3f6c59e72190bab"
+    },
+    "Assets/Resources/Battles/battle_01.json": {
+      "bytes": 1220,
+      "sha256": "90073628805677340e4ed8b9c873ffdfd62374a855ed5d59a12d6336028d9fca"
+    },
+    "Assets/Resources/Localization/strings_zh.json": {
+      "bytes": 407,
+      "sha256": "66af75797fae9768b129e2bdb4b5444e3b4445b448fdd1672f05ab93b5ba5a7d"
+    },
+    "Assets/Resources/Story/loop_teaching.json": {
+      "bytes": 1967,
+      "sha256": "173f33c0b7a867dc64498b6886d80dff4971f0135742f53eb1bec480e15565df"
+    },
+    "Assets/Resources/Story/prologue.json": {
+      "bytes": 3777,
+      "sha256": "8654379edc292a9b34f50647afa0f764cb91ca9cc21c549e5bf47e4cd0b46ab9"
+    },
+    "Assets/Resources/Tips/tips_zh.json": {
+      "bytes": 3733,
+      "sha256": "d510004dc763100ba82190a53c697f797d982402dd0b544ce9cbebcdbd8d1d9d"
+    }
+  },
+  "root": "Assets/Resources"
+}

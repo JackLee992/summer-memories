@@ -1,0 +1,22 @@
+{
+  "id": "loop_teaching",
+  "title": "回潮 · 异闻初录",
+  "commands": [
+    { "type": "bg", "art": "bg_dock", "color": "#3d7ea6", "note": "七月初一 · 码头（同样的清晨）" },
+    { "type": "narration", "text": "汽笛声和昨天一模一样。龙女还没跑来接我——时间真的回来了。" },
+    { "type": "portrait", "portrait": "jingwei", "side": "right" },
+    { "type": "line", "speaker": "精卫", "text": "这就是‘回潮’。生死簿上没你名字，归墟的水再深也淹不死你这条心——死一次，便退回上岸这天。" },
+    { "type": "tip", "tip": "tip_shengsibu" },
+    { "type": "line", "speaker": "精卫", "text": "你在循环里记下的异闻不会消失。点开《山海异闻》，随时能看——知道得越多，下一次就越能活下来。" },
+    { "type": "line", "speaker": "精卫", "text": "海眼底下压着龙宫旧墟，巡海夜叉已经摸上岸了。它们怕两样东西：七爷削的桃橛，钉进影里能定住一回合；还有我衔来的石子，离得远也砸得着。" },
+    { "type": "tip", "tip": "tip_taojue" },
+    { "type": "line", "speaker": "精卫", "text": "方才在归墟底，你睁眼时瞳子里有金光——那是‘火眼金睛’。每回合能用一次，提前照见夜叉的杀意与去向，什么假象都瞒不过你。" },
+    { "type": "tip", "tip": "tip_huoyan" },
+    { "type": "line", "speaker": "精卫", "text": "还有这个——南海观音留在归墟底的三根救命毫毛，我替你拾来了。" },
+    { "type": "narration", "text": "她把三根毫毛放进我手心：危急时拔下一根，能让一场战斗倒退回你落子之前。一共三根，省着用。" },
+    { "type": "tip", "tip": "tip_fanhun" },
+    { "type": "line", "speaker": "精卫", "text": "海堤那边，巡海夜叉已经围上来了。握紧桃橛，跟我来。" },
+    { "type": "portrait", "portrait": "" },
+    { "type": "end" }
+  ]
+}

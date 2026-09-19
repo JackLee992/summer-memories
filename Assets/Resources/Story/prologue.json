@@ -1,0 +1,36 @@
+{
+  "id": "prologue",
+  "title": "第一章 · 归墟来潮",
+  "commands": [
+    { "type": "bg", "art": "bg_dock", "color": "#2a6f8f", "note": "农历七月初一 · 东海 员峤岛码头" },
+    { "type": "narration", "text": "客船靠岸。我叫石头，是奶奶在海堤上捡回来的弃婴，她说我落地时的哭声响得像砸在堤面上的石头。时隔一年回到员峤岛望汐村，腕上系着两条褪色的红绳长命缕：一条我的，一条是她的。去年今日，一起长大的阿娃在这片海里溺亡，连尸身都没找全。" },
+    { "type": "portrait", "portrait": "longnv", "side": "left" },
+    { "type": "line", "speaker": "龙女", "text": "石头！这边这边——船没晚点就好！" },
+    { "type": "line", "speaker": "龙女", "text": "阿娃姐姐的周年祭和海灯祭赶在一块儿了，村里忙得脚不沾地，你可算回来了。" },
+    { "type": "choice", "text": "（怎么回应？）", "options": [
+      { "text": "“小龙，一年没见，晒得更黑了。”", "setFlag": "greet=tease", "jumpIndex": 6 },
+      { "text": "沉默地点点头。", "setFlag": "greet=silent", "jumpIndex": 6 }
+    ]},
+    { "type": "bg", "art": "bg_town", "color": "#c96f4a", "note": "黄昏 · 望汐村 坡道" },
+    { "type": "narration", "text": "村子里挂满了海灯。七月十五海灯祭，村民要把写着溺者名字的灯放进海里，送他们顺着潮水流向海眼。" },
+    { "type": "portrait", "portrait": "puti", "side": "right" },
+    { "type": "line", "speaker": "七爷", "text": "……石头，今年你不该回来。" },
+    { "type": "tip", "tip": "tip_puti" },
+    { "type": "line", "speaker": "七爷", "text": "海眼开了。今早捞上来的鱼没有影子——记住，拿这面铜镜照，或低头看海水：真人与‘罔两’，水里的模样不一样。" },
+    { "type": "tip", "tip": "tip_wangliang" },
+    { "type": "portrait", "portrait": "" },
+    { "type": "bg", "art": "bg_night", "color": "#0a0e1c", "note": "入夜 · 通往潮鸣洞的海堤" },
+    { "type": "narration", "text": "夜里我独自去海边祭阿娃。堤上站着一个人——是白天还在卧病的周阿婆。她冲我笑，笑容却像是从别人脸上描下来的。" },
+    { "type": "line", "speaker": "周阿婆？", "text": "石头啊，你看，水里……有几个我呀？" },
+    { "type": "narration", "text": "我低头。月光下，堤上站着一个人，水里却浮着三团黑影。沙粒破空之声响起——是蜮，含沙射影。我的影子先一步凉了。" },
+    { "type": "tip", "tip": "tip_yu" },
+    { "type": "narration", "text": "海水灌进口鼻。我沉下去，沉下去，四周连光也没有——那是百川归处、无底的归墟。" },
+    { "type": "bg", "color": "#02030a", "note": "归墟之底" },
+    { "type": "portrait", "portrait": "jingwei", "side": "right" },
+    { "type": "line", "speaker": "？？？", "text": "睁眼，石头。你已经死过一次了。" },
+    { "type": "line", "speaker": "精卫", "text": "我叫精卫。千年前，有个猴子把自己的名字从生死簿上一笔勾销，阎王从此拘他不住，人称齐天大圣。——可你知道吗，方才我翻遍归墟水册，三百六十页，没有‘石头’两个字。你死不了，只能被潮水送回岸上。那口气为什么落在你身上，我也想知道。" },
+    { "type": "tip", "tip": "tip_jingwei" },
+    { "type": "line", "speaker": "精卫", "text": "从现在起，你每死一次，潮水就把你送回登岛这天。别人都会忘——只有你，和我，记得。把看到的一切记进《山海异闻》，溯流而上吧。" },
+    { "type": "loopreset", "anchor": "jul01_dock", "tip": "tip_guixu" }
+  ]
+}

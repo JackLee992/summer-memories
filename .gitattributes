@@ -1,0 +1,17 @@
+# Unity LFS / line ending hints for a code-first project
+*.cs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.wav binary
+*.ogg binary
+*.mp3 binary
+*.prefab binary
+*.unity binary
+*.asset binary
+*.fontsettings binary

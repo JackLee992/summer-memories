@@ -1,0 +1,18 @@
+{
+  "id": "battle_01",
+  "title": "海堤遭遇战",
+  "width": 6,
+  "height": 6,
+  "rewindCharges": 3,
+  "nails": 2,
+  "introLine": "海堤上，巡海夜叉围了上来。桃橛可定身，精卫能远程投石；火眼金睛可每回合提前照见它们的意图，救命毫毛能退回上一步。",
+  "victoryLine": "海堤上的夜叉暂时退去，但海眼深处，还有更大的影子在翻身。",
+  "defeatLoopTip": "tip_death_returns",
+  "units": [
+    { "id": "shitou", "displayName": "石头", "team": 0, "hp": 4, "atk": 1, "moveRange": 3, "attackRange": 1, "skill": 1, "gx": 0, "gy": 4 },
+    { "id": "jingwei", "displayName": "精卫", "team": 0, "hp": 3, "atk": 1, "moveRange": 3, "attackRange": 2, "skill": 2, "gx": 1, "gy": 5 },
+    { "id": "yecha_a", "displayName": "巡海夜叉·甲", "team": 1, "hp": 2, "atk": 1, "moveRange": 2, "attackRange": 1, "skill": 0, "gx": 5, "gy": 1 },
+    { "id": "yecha_b", "displayName": "巡海夜叉·乙", "team": 1, "hp": 2, "atk": 1, "moveRange": 2, "attackRange": 1, "skill": 0, "gx": 4, "gy": 3 },
+    { "id": "yecha_c", "displayName": "巡海夜叉·丙", "team": 1, "hp": 3, "atk": 1, "moveRange": 2, "attackRange": 1, "skill": 0, "gx": 5, "gy": 5 }
+  ]
+}

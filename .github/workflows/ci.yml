@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      build_android:
+        description: "同时构建 Android APK（需要在仓库 Secrets 配置 Unity 许可）"
+        type: boolean
+        default: false
+
+jobs:
+  data-validation:
+    name: JSON 与素材清单校验
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 校验所有 JSON
+        run: |
+          set -e
+          mapfile -t files < <(find Assets/Resources -name '*.json')
+          for f in "${files[@]}"; do
+            python3 -m json.tool "$f" >/dev/null
+            echo "OK $f"
+          done
+
+      - name: 校验 ADV/Battle/Tips 的 id 引用
+        run: |
+          python3 - <<'PY'
+          import json, glob, sys
+          ok = True
+          tips = {e['id'] for e in json.load(open('Assets/Resources/Tips/tips_zh.json'))['entries']}
+          for path in glob.glob('Assets/Resources/Story/*.json'):
+              for i, c in enumerate(json.load(open(path))['commands']):
+                  if c.get('type') == 'tip' and c.get('tip') not in tips:
+                      print(f'BROKEN tip ref {path}#{i}: {c.get("tip")}'); ok = False
+                  if c.get('type') == 'loopreset' and c.get('tip') and c['tip'] not in tips:
+                      print(f'BROKEN loopreset tip {path}#{i}: {c["tip"]}'); ok = False
+          for path in glob.glob('Assets/Resources/Battles/*.json'):
+              cfg = json.load(open(path))
+              if cfg.get('defeatLoopTip') and cfg['defeatLoopTip'] not in tips:
+                  print(f'BROKEN defeatLoopTip {path}: {cfg["defeatLoopTip"]}'); ok = False
+          sys.exit(0 if ok else 1)
+          PY
+
+      - name: 素材 SHA-256 清单
+        run: |
+          python3 tools/content_manifest.py --write
+          git diff --exit-code -- tools/content-manifest.json || {
+            echo "::error::素材清单过期，请本地运行 python3 tools/content_manifest.py --write 并提交"; exit 1; }
+
+  # 说明：Unity batchmode 构建需要 Unity 许可。
+  # Personal 许可无法在 CI 稳定非交互激活；请在自建 runner（macOS，已安装
+  # Unity 6000.0.83f1 + Android 模块并完成登录）上手动触发，或配置
+  # UNITY_EMAIL / UNITY_PASSWORD / UNITY_SERIAL（Pro/浮动许可）Secrets 后启用下方步骤。
+  android-build-manual:
+    name: Android APK（手动，需自建 runner）
+    needs: data-validation
+    if: github.event_name == 'workflow_dispatch' && inputs.build_android
+    runs-on: [self-hosted, macos]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Batchmode 构建
+        run: |
+          "/Applications/Unity/Hub/Editor/6000.0.83f1/Unity.app/Contents/MacOS/Unity" \
+            -batchmode -quit -projectPath "$PWD" \
+            -executeMethod SummerMemories.Editor.BuildScript.BuildAndroid -logFile -
+      - uses: actions/upload-artifact@v4
+        with:
+          name: summer-memories-android
+          path: Builds/*.apk
