@@ -54,7 +54,12 @@
 
 | 资产 | 来源 | 许可 | 商用 | 主机 |
 |---|---|---|---|---|
-| （暂无第三方资产） | — | — | — | — |
+| Yarn Spinner for Unity（计划 v0.2 引入，沙盒 NPC 对话/支线） | https://yarnspinner.dev/ （MIT，引入时核实具体包版本与仓库 URL 并回填） | MIT | 是（保留版权声明与 MIT 文本） | 是（MIT 不限制平台） |
+| Unity 内置 2D Tilemap / 2D Animation / Cinemachine | Unity 引擎 | 随 Unity 许可 | 是 | 随 Unity 主机授权 |
+
+> 开源复用策略与许可证白/灰/黑名单见 `docs/decisions/0002-sandbox-hub-and-open-source.md`。
+> 引入任何新依赖前在此表登记，并在发行包附带 THIRD-PARTY-NOTICES。
+> 禁止引入 GPL/LGPL/AGPL、CC-BY-NC、付费课程完整工程代码或许可证不明的工程/素材。
 
 ## 6. 商业化前合规清单
 
