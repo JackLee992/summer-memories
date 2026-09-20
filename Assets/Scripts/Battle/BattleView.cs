@@ -224,6 +224,7 @@ namespace SummerMemories.Battle
                     {
                         var mark = UIFactory.CreatePanel("AttackMark", go.transform,
                             new Color(0.85f, 0.25f, 0.25f, 0.55f));
+                        mark.GetComponent<Image>().raycastTarget = false; // 不得挡住格子按钮
                         var t = UIFactory.CreateText("T", mark.transform,
                             intentAttack.Contains((x, y)) ? "袭" : "", 30, Palette.White,
                             TextAnchor.MiddleCenter);

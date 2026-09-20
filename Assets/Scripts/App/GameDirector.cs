@@ -130,6 +130,11 @@ namespace SummerMemories.App
             SaveSystem.Save(_slot);
 
             var ta = Resources.Load<TextAsset>("Battles/battle_01");
+            if (ta == null)
+            {
+                Core.Log.Error("缺少战斗配置 Resources/Battles/battle_01");
+                return;
+            }
             var cfg = JsonUtility.FromJson<BattleConfig>(ta.text);
             var go = new GameObject("Battle_01");
             go.transform.SetParent(_screenRoot, false);
