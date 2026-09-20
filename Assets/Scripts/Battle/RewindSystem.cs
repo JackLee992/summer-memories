@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace SummerMemories.Battle
 {
-    /// <summary>战斗内"时之沙"快照（内层回溯），每场战斗限定次数。</summary>
+    /// <summary>战斗内"救命毫毛"快照（内层回溯），每场战斗限定次数。</summary>
     public class BattleSnapshot
     {
         public int TurnNumber;

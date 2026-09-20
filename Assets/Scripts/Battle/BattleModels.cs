@@ -33,7 +33,7 @@ namespace SummerMemories.Battle
         public int nails = 2;
         public string introLine = "";
         public string victoryLine = "";
-        public string defeatLoopTip = "tip_shadow_exists";
+        public string defeatLoopTip = "tip_death_returns";
         public List<UnitConfig> units = new List<UnitConfig>();
     }
 
@@ -50,7 +50,7 @@ namespace SummerMemories.Battle
         public UnitSkill Skill;
         public int X, Y;
         public bool Acted;       // 本回合已行动
-        public bool Stunned;     // 影子被钉子定身，下回合无法行动
+        public bool Stunned;     // 被桃橛定身，下回合无法行动
         public bool Alive = true;
 
         public BattleUnit() { }

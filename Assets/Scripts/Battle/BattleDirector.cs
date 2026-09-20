@@ -111,7 +111,7 @@ namespace SummerMemories.Battle
 
         public bool TryRewind()
         {
-            if (!Rewind.CanRewind) { AddLog("时之沙已经用尽"); OnChanged?.Invoke(); return false; }
+            if (!Rewind.CanRewind) { AddLog("救命毫毛已经用尽"); OnChanged?.Invoke(); return false; }
             var snap = Rewind.Rewind();
             RestoreSnapshot(snap);
             return true;
@@ -192,13 +192,18 @@ namespace SummerMemories.Battle
             if (Phase != BattlePhase.Player) return;
             Intents = ComputeIntents();
             Phase = BattlePhase.IntentPreview;
-            AddLog("—— 影子的意图浮现 ——");
+            AddLog("—— 夜叉的杀意浮现 ——");
             OnChanged?.Invoke();
         }
 
         public List<EnemyIntent> ComputeIntents()
         {
             var intents = new List<EnemyIntent>();
+            // 顺序规划，已规划的落点视为占用，避免两个敌人预告到同一格
+            var planned = new Dictionary<(int, int), string>();
+            foreach (var u in Units.Where(u => u.Alive))
+                planned[(u.X, u.Y)] = u.Id;
+
             foreach (var enemy in Units.Where(u => u.Alive && u.Team == Team.Shadow))
             {
                 var intent = new EnemyIntent
@@ -213,8 +218,11 @@ namespace SummerMemories.Battle
                 }
                 var target = NearestAlly(enemy);
                 if (target == null) { intents.Add(intent); continue; }
-                var (tx, ty) = StepToward(enemy, target, enemy.MoveRange);
+                var (tx, ty) = StepToward(enemy, target, enemy.MoveRange, planned);
                 intent.ToX = tx; intent.ToY = ty;
+                // 更新虚拟占位：离开旧格、占据新格
+                planned.Remove((enemy.X, enemy.Y));
+                planned[(tx, ty)] = enemy.Id;
                 if (Grid.Manhattan(tx, ty, target.X, target.Y) <= enemy.AttackRange)
                 {
                     intent.Attacks = true;
@@ -230,7 +238,7 @@ namespace SummerMemories.Battle
         {
             if (Phase != BattlePhase.IntentPreview) return;
             Phase = BattlePhase.EnemyActing;
-            AddLog("—— 影子行动 ——");
+            AddLog("—— 夜叉行动 ——");
             foreach (var intent in Intents)
             {
                 var enemy = Units.FirstOrDefault(u => u.Id == intent.UnitId);
@@ -281,8 +289,9 @@ namespace SummerMemories.Battle
             return best;
         }
 
-        /// <summary>沿最短路径向目标移动最多 step 步，返回最终坐标。</summary>
-        private (int, int) StepToward(BattleUnit enemy, BattleUnit target, int steps)
+        /// <summary>沿最短路径向目标移动最多 step 步，返回最终坐标。planned 为含已规划落点的虚拟占位。</summary>
+        private (int, int) StepToward(BattleUnit enemy, BattleUnit target, int steps,
+            Dictionary<(int, int), string> planned)
         {
             var x = enemy.X; var y = enemy.Y;
             var dirs = new[] { (1, 0), (-1, 0), (0, 1), (0, -1) };
@@ -295,8 +304,9 @@ namespace SummerMemories.Battle
                 {
                     var nx = x + dx; var ny = y + dy;
                     if (!Grid.InBounds(Config, nx, ny)) continue;
-                    var occ = Grid.UnitAt(Units, nx, ny);
-                    if (occ != null && occ.Id != enemy.Id) continue;
+                    var occUnit = Grid.UnitAt(Units, nx, ny);
+                    if (occUnit != null && occUnit.Id != enemy.Id) continue;
+                    if (planned.TryGetValue((nx, ny), out var occId) && occId != enemy.Id) continue;
                     var d = Grid.Manhattan(nx, ny, target.X, target.Y);
                     if (d < bestD) { bestD = d; best = (nx, ny); }
                 }

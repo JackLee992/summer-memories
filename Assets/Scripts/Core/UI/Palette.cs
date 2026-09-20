@@ -16,7 +16,7 @@ namespace SummerMemories.Core.UI
         public static readonly Color Paper = Hex("#f2e9d8");
         public static readonly Color Ink = Hex("#23201d");
         public static readonly Color White = Color.white;
-        public static readonly Color Shadow = Hex("#3a2f3f");     // 影子（敌人）紫黑
+        public static readonly Color Shadow = Hex("#3a2f3f");     // 敌人（夜叉/罔两）紫黑
         public static readonly Color ShadowAccent = Hex("#8a6db0");
         public static readonly Color Ally = Hex("#5aa7a7");
         public static readonly Color Danger = Hex("#c44b4b");

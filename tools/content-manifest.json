@@ -46,12 +46,12 @@
       "sha256": "90073628805677340e4ed8b9c873ffdfd62374a855ed5d59a12d6336028d9fca"
     },
     "Assets/Resources/Localization/strings_zh.json": {
-      "bytes": 407,
-      "sha256": "66af75797fae9768b129e2bdb4b5444e3b4445b448fdd1672f05ab93b5ba5a7d"
+      "bytes": 611,
+      "sha256": "37a1feb1654c047d2c9c8d92b522860ff1c0d4d28917562f9a383e50ee5c21e7"
     },
     "Assets/Resources/Story/loop_teaching.json": {
-      "bytes": 1967,
-      "sha256": "173f33c0b7a867dc64498b6886d80dff4971f0135742f53eb1bec480e15565df"
+      "bytes": 2138,
+      "sha256": "e2adbbc2e8c1c54d5c34accca7e720621fa30bc4779d03273967c333cce10665"
     },
     "Assets/Resources/Story/prologue.json": {
       "bytes": 3777,

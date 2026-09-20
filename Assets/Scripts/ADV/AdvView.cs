@@ -44,6 +44,7 @@ namespace SummerMemories.ADV
             _onTip = onTip;
             BuildUi();
             _director = new AdvDirector();
+            _director.OnStage += _ => Refresh();
             _director.OnTip += tip => _onTip?.Invoke(tip);
             _director.OnLoopReset += (anchor, tip) => _onLoopReset?.Invoke(anchor, tip);
             _director.OnFinished += HandleFinished;
@@ -134,6 +135,12 @@ namespace SummerMemories.ADV
 
             // 日志面板（默认隐藏）
             BuildLogPanel(root);
+
+            // 顶部按钮与日志面板必须在全屏点击层之上，才可点击
+            var logBtn = root.Find("LogBtn");
+            var skipBtn = root.Find("SkipBtn");
+            logBtn?.SetAsLastSibling();
+            skipBtn?.SetAsLastSibling();
         }
 
         private void CreatePortraitSlot(string n, Transform root, bool left,
@@ -169,6 +176,7 @@ namespace SummerMemories.ADV
             if (show)
             {
                 _logText.text = string.Join("\n\n", _director.History);
+                _logPanel.transform.SetAsLastSibling();
             }
         }
 
@@ -201,8 +209,11 @@ namespace SummerMemories.ADV
                 && _director.Current.options != null)
             {
                 _choicePanel.SetActive(true);
-                var le = _choicePanel.AddComponent<LayoutElement>();
-                le.minHeight = 80;
+                if (_choicePanel.GetComponent<LayoutElement>() == null)
+                {
+                    var le = _choicePanel.AddComponent<LayoutElement>();
+                    le.minHeight = 80;
+                }
                 for (var i = 0; i < _director.Current.options.Count; i++)
                 {
                     var idx = i;

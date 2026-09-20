@@ -26,10 +26,10 @@ namespace SummerMemories.App
                 Palette.Paper, TextAnchor.MiddleCenter, false);
             SetOffsets((RectTransform)loop.transform, new Vector2(0, 250), new Vector2(0, 320));
 
-            // TIPS 列表
+            // TIPS 列表（只列标题，正文留给后续图鉴界面）
             var panel = UIFactory.CreatePanel("TipsPanel", root, Palette.Panel,
                 new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
-                new Vector2(-520, -120), new Vector2(520, 180));
+                new Vector2(-520, -180), new Vector2(520, 200));
             var head = UIFactory.CreateText("Head", panel.transform, "◆ 跨回潮继承的《山海异闻》", 32,
                 Palette.Sea, TextAnchor.UpperLeft);
             SetOffsets((RectTransform)head.transform, new Vector2(30, -24), new Vector2(-30, -80));
@@ -38,11 +38,11 @@ namespace SummerMemories.App
             foreach (var id in tips.UnlockedIds)
             {
                 var e = tips.GetEntry(id);
-                lines.Add(e != null ? $"· {e.title} —— {e.text}" : $"· {id}");
+                lines.Add(e != null ? $"· {e.title}" : $"· {id}");
             }
             if (lines.Count == 0) lines.Add("（尚无情报）");
             var body = UIFactory.CreateText("Body", panel.transform,
-                string.Join("\n", lines), 28, Palette.Paper, TextAnchor.UpperLeft);
+                string.Join("\n", lines), 30, Palette.Paper, TextAnchor.UpperLeft);
             SetOffsets((RectTransform)body.transform, new Vector2(30, -100), new Vector2(-30, -30));
 
             if (battleCleared)

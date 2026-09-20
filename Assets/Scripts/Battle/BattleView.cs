@@ -10,7 +10,7 @@ namespace SummerMemories.Battle
 {
     /// <summary>
     /// 战棋视图（代码构建 uGUI）：网格、单位、移动/攻击高亮、敌人意图预告、
-    /// 时之沙回溯、钉击瞄准、战斗日志与胜负结算。
+    /// 救命毫毛回溯、桃橛瞄准、战斗日志与胜负结算。
     /// </summary>
     public class BattleView : MonoBehaviour
     {
@@ -266,6 +266,7 @@ namespace SummerMemories.Battle
                 var img = go.GetComponent<Image>();
                 img.sprite = UIFactory.WhiteSprite;
                 img.color = color;
+                img.raycastTarget = false; // 点击须穿透到格子按钮
                 var rt = (RectTransform)go.transform;
                 rt.sizeDelta = new Vector2(CellSize - 18, CellSize - 18);
                 rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
@@ -274,15 +275,17 @@ namespace SummerMemories.Battle
                 rt.anchoredPosition = new Vector2(px, py);
 
                 var label = UIFactory.CreateText("Label", go.transform,
-                    $"{u.DisplayName}\n{u.Hp}/{u.MaxHp}" + (u.Acted ? " 済" : "") + (u.Stunned ? " 钉" : ""),
+                    $"{u.DisplayName}\n{u.Hp}/{u.MaxHp}" + (u.Acted ? " 已" : "") + (u.Stunned ? " 定" : ""),
                     24, Palette.White, TextAnchor.MiddleCenter, false);
                 Stretch((RectTransform)label.transform);
 
                 if (_battle.Selected == u)
                 {
-                    var frame = UIFactory.CreatePanel("SelFrame", go.transform, new Color(1, 1, 1, 0));
-                    frame.AddComponent<Outline>().effectColor = Palette.Gold;
-                    frame.GetComponent<Outline>().effectDistance = new Vector2(4, -4);
+                    var frame = UIFactory.CreatePanel("SelFrame", go.transform, new Color(1f, 0.84f, 0.25f, 0.28f));
+                    frame.GetComponent<Image>().raycastTarget = false;
+                    var outline = frame.AddComponent<Outline>();
+                    outline.effectColor = Palette.Gold;
+                    outline.effectDistance = new Vector2(4, -4);
                 }
             }
         }
@@ -306,7 +309,7 @@ namespace SummerMemories.Battle
         private void ShowEnd(bool victory)
         {
             _endPanel.SetActive(true);
-            _endTitle.text = victory ? "战斗胜利" : "死亡回归";
+            _endTitle.text = victory ? "战斗胜利" : "回潮";
             _endTitle.color = victory ? Palette.Gold : Palette.Danger;
         }
 

@@ -1,15 +1,15 @@
 {
-  "lang": "zh",
-  "strings": {
-    "app.title": "夏日回忆",
-    "app.subtitle": "归墟来潮",
-    "title.start": "轻触屏幕 · 溯流而上",
-    "title.tips": "山海异闻",
-    "common.confirm": "确认",
-    "common.cancel": "取消",
-    "loop.anchor": "归墟锚点",
-    "loop.count": "第 {0} 潮",
-    "battle.victory": "潮退了",
-    "battle.defeat": "潮来了——回潮！"
-  }
+  "language": "zh",
+  "entries": [
+    { "key": "app.title", "value": "夏日回忆" },
+    { "key": "app.subtitle", "value": "归墟来潮" },
+    { "key": "title.start", "value": "轻触屏幕 · 溯流而上" },
+    { "key": "title.tips", "value": "山海异闻" },
+    { "key": "common.confirm", "value": "确认" },
+    { "key": "common.cancel", "value": "取消" },
+    { "key": "loop.anchor", "value": "归墟锚点" },
+    { "key": "loop.count", "value": "第 {0} 潮" },
+    { "key": "battle.victory", "value": "潮退了" },
+    { "key": "battle.defeat", "value": "潮来了——回潮！" }
+  ]
 }

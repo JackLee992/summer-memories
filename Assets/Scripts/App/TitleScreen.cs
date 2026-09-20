@@ -44,7 +44,7 @@ namespace SummerMemories.App
             cont.interactable = hasSave;
 
             var note = UIFactory.CreateText("Note", root,
-                "原创角色与素材 · 取材《山海经》与中国神话", 24,
+                "原创角色与素材 · 取材《山海经》《西游记》与东海民俗", 24,
                 new Color(1, 1, 1, 0.7f), TextAnchor.LowerCenter, false);
             SetOffsets((RectTransform)note.transform, new Vector2(0, 30), new Vector2(0, 80));
             return canvas.gameObject;

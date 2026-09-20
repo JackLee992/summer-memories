@@ -16,7 +16,7 @@ namespace SummerMemories.Core.Save
 
         // —— 周目（外层回溯）——
         public int loopCount = 0;
-        public string anchorId = "jul22_arrival";
+        public string anchorId = "jul01_dock";
         public string currentChapterId = "prologue";
 
         // —— 跨周目继承的 TIPS 情报 ——
@@ -29,7 +29,7 @@ namespace SummerMemories.Core.Save
         public string advScriptId = "";
         public int advCommandIndex = 0;
 
-        // —— 战斗教学：时之沙剩余次数 ——
+        // —— 战斗教学：救命毫毛剩余次数 ——
         public int battleRewindLeft = 3;
         public bool battle01Cleared = false;
 
