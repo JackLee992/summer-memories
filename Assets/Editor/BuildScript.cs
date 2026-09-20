@@ -82,14 +82,20 @@ namespace SummerMemories.Editor
                 Path.Combine(androidPlayer, "SDK"),
                 System.Environment.GetEnvironmentVariable("ANDROID_SDK_ROOT"),
                 System.Environment.GetEnvironmentVariable("ANDROID_HOME"));
-            // Hub 布局下 NDK 内容直接展开在 NDK/ 下（含 ndk-build）；新版可能多一层版本号目录
+            // Hub 布局下 NDK 内容直接展开在 NDK/ 下（含 ndk-build）；
+            // 若多一层版本号目录（如 NDK/27.2.12479018），自动下钻。
             var ndk = FirstExisting(
                 Path.Combine(androidPlayer, "NDK"),
                 System.Environment.GetEnvironmentVariable("ANDROID_NDK_ROOT"));
             if (ndk != null && !File.Exists(Path.Combine(ndk, "ndk-build")))
             {
-                var nested = Directory.GetDirectories(ndk, "23.*");
-                if (nested.Length > 0) ndk = nested[0];
+                var nested = Directory.GetDirectories(ndk);
+                foreach (var d in nested)
+                {
+                    if (File.Exists(Path.Combine(d, "ndk-build"))
+                        && File.Exists(Path.Combine(d, "source.properties")))
+                    { ndk = d; break; }
+                }
             }
             // macOS 的 Hub OpenJDK 是 .jdk bundle 结构，Home 在 Contents/Home
             var jdk = FirstExisting(
@@ -123,8 +129,17 @@ namespace SummerMemories.Editor
             var prop = t.GetProperty(property);
             if (prop != null)
             {
-                prop.SetValue(null, path, null);
-                Log.Info($"Android 工具 {property} = {path}");
+                try
+                {
+                    prop.SetValue(null, path, null);
+                    Log.Info($"Android 工具 {property} = {path}");
+                }
+                catch (System.Exception e)
+                {
+                    // 典型：NDK/SDK 版本与该 Unity 版本要求不符。不中止构建，
+                    // 交给 Unity 自身的工具校验/自动下载处理（错误会进构建日志）。
+                    Log.Warn($"设置 {property}='{path}' 失败（{e.GetType().Name}: {e.Message}）；将交由 Unity 默认工具链处理。");
+                }
             }
         }
 

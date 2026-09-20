@@ -9,7 +9,7 @@
 # 用法：
 #   bash tools/build_android.sh            # 自动探测 Unity 版本
 #   UNITY_VERSION=6000.0.83f1 bash tools/build_android.sh
-set -uo pipefail
+set -o pipefail
 
 VERSION="${UNITY_VERSION:-6000.0.83f1}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -39,11 +39,13 @@ if [ -z "$UNITY_BIN" ]; then
 fi
 
 # ---------- License 预检 ----------
+# Unity 6 起 Personal 许可可能只以 Hub 登录态/在线 entitlement 存在，不再落地传统 *.ulf。
+# 因此 *.ulf 缺失只告警、不阻断，由编辑器启动时自行向 LicensingClient 校验；
+# 若确无许可，Unity 会以非零退出并在日志中报 licensing 错误。
 UNITY_CFG="$HOME/Library/Application Support/Unity"
 if ! ls "$UNITY_CFG"/*.ulf >/dev/null 2>&1; then
-  echo "尚未检测到 Unity 许可（*.ulf）。请先打开 Unity Hub 登录免费 Unity 账号激活 Personal 许可（仅需一次）。" >&2
-  echo "激活后重新运行本脚本即可。" >&2
-  exit 3
+  echo "提示：未发现传统 *.ulf 许可文件。Unity 6 可使用 Hub 登录态的 Personal 许可，继续尝试；"
+  echo "      若日志报 No valid license / 0 entitlements，请在 Unity Hub 完成 Personal 许可激活。"
 fi
 
 # ---------- 代理（中国大陆访问 Gradle/Unity 服务用；无代理时自动跳过） ----------
