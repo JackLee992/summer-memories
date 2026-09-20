@@ -11,7 +11,10 @@ namespace SummerMemories.App
         public static void Show(Transform parent, string title, string body,
             string buttonText, Action onClose)
         {
-            var overlay = UIFactory.CreatePanel("TeachingDialog", parent,
+            // 必须自带 Canvas：调用方通常已 ClearScreens()，parent 下不再有任何 Canvas，
+            // 否则 Image/Text/Button 不会渲染也无法点击。
+            var canvas = UIFactory.CreateCanvas("TeachingDialog", parent, sorting: 20);
+            var overlay = UIFactory.CreatePanel("Overlay", canvas.transform,
                 new Color(0.02f, 0.03f, 0.06f, 0.92f));
             var box = UIFactory.CreatePanel("Box", overlay.transform, Palette.Panel,
                 new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
@@ -25,7 +28,7 @@ namespace SummerMemories.App
             UIFactory.CreateButtonCentered("Ok", box.transform, buttonText, 32,
                 Palette.Sea, Palette.White, () =>
                 {
-                    UnityEngine.Object.Destroy(overlay);
+                    UnityEngine.Object.Destroy(canvas.gameObject);
                     onClose?.Invoke();
                 }, 0, -230, 300, 80);
         }
