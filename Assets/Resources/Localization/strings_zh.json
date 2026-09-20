@@ -1,15 +1,649 @@
 {
   "language": "zh",
   "entries": [
-    { "key": "app.title", "value": "夏日回忆" },
-    { "key": "app.subtitle", "value": "归墟来潮" },
-    { "key": "title.start", "value": "轻触屏幕 · 溯流而上" },
-    { "key": "title.tips", "value": "山海异闻" },
-    { "key": "common.confirm", "value": "确认" },
-    { "key": "common.cancel", "value": "取消" },
-    { "key": "loop.anchor", "value": "归墟锚点" },
-    { "key": "loop.count", "value": "第 {0} 潮" },
-    { "key": "battle.victory", "value": "潮退了" },
-    { "key": "battle.defeat", "value": "潮来了——回潮！" }
+    {
+      "key": "app.title",
+      "value": "夏日回忆"
+    },
+    {
+      "key": "app.subtitle",
+      "value": "归墟来潮"
+    },
+    {
+      "key": "title.start",
+      "value": "轻触屏幕 · 溯流而上"
+    },
+    {
+      "key": "title.tips",
+      "value": "山海异闻"
+    },
+    {
+      "key": "common.confirm",
+      "value": "确认"
+    },
+    {
+      "key": "common.cancel",
+      "value": "取消"
+    },
+    {
+      "key": "loop.anchor",
+      "value": "归墟锚点"
+    },
+    {
+      "key": "loop.count",
+      "value": "第 {0} 潮"
+    },
+    {
+      "key": "battle.victory",
+      "value": "潮退了"
+    },
+    {
+      "key": "battle.defeat",
+      "value": "潮来了——回潮！"
+    },
+    {
+      "key": "st.demo.title",
+      "value": "夏日重现 · 小队原型"
+    },
+    {
+      "key": "st.character.shinpei",
+      "value": "网代慎平"
+    },
+    {
+      "key": "st.character.ushio",
+      "value": "小舟潮"
+    },
+    {
+      "key": "st.character.mio",
+      "value": "小舟澪"
+    },
+    {
+      "key": "st.ability.observe",
+      "value": "观察"
+    },
+    {
+      "key": "st.ability.command",
+      "value": "协作指令"
+    },
+    {
+      "key": "st.ability.hair",
+      "value": "头发能力"
+    },
+    {
+      "key": "st.ability.scan",
+      "value": "扫描"
+    },
+    {
+      "key": "st.ability.morph",
+      "value": "变形"
+    },
+    {
+      "key": "st.object.crate",
+      "value": "木箱"
+    },
+    {
+      "key": "st.object.stone",
+      "value": "石块"
+    },
+    {
+      "key": "st.character.hizuru",
+      "value": "南方日鹤"
+    },
+    {
+      "key": "st.character.ryunosuke",
+      "value": "南方龙之介"
+    },
+    {
+      "key": "st.ability.consciousness",
+      "value": "意识切换"
+    },
+    {
+      "key": "st.ability.foresee",
+      "value": "预判压制"
+    },
+    {
+      "key": "st.object.watch",
+      "value": "慎平的手表"
+    },
+    {
+      "key": "st.clue.shadow",
+      "value": "异常影迹"
+    },
+    {
+      "key": "st.clue.hair",
+      "value": "遗留发束"
+    },
+    {
+      "key": "st.clue.shell",
+      "value": "贝壳"
+    },
+    {
+      "key": "st.clue.shadow.description",
+      "value": "影迹已记录。记住出现的位置，前往左侧低矮通道找贝壳。"
+    },
+    {
+      "key": "st.clue.hair.description",
+      "value": "发束已记录。用潮的头发打断影子的蓄力，再让同伴集中攻击。"
+    },
+    {
+      "key": "st.clue.shell.description",
+      "value": "贝壳已拾取。原路退出矮道后按 G 恢复人形，前往红色路标集合。"
+    },
+    {
+      "key": "st.enemy.shadow",
+      "value": "影子"
+    },
+    {
+      "key": "st.enemy.guard",
+      "value": "影子 · 守路者"
+    },
+    {
+      "key": "st.feedback.hit",
+      "value": "受到攻击，扫描已中断。注意红色蓄力提示。"
+    },
+    {
+      "key": "st.feedback.clearance",
+      "value": "上方空间不足。先离开低矮通道，才能现身或切换角色。"
+    },
+    {
+      "key": "st.feedback.switchBusy",
+      "value": "角色正在动作中或已倒下，请稍后切换。"
+    },
+    {
+      "key": "st.feedback.abilityUnavailable",
+      "value": "技能尚未就绪：潮可用头发；日鹤需先按 V 切换龙之介。"
+    },
+    {
+      "key": "st.feedback.scanOwner",
+      "value": "需要切换潮，以人形靠近物件扫描。"
+    },
+    {
+      "key": "st.feedback.scanned",
+      "value": "已经记录过这种物品，可以直接变形。"
+    },
+    {
+      "key": "st.feedback.scanInterrupted",
+      "value": "扫描中断。停住脚步，保持视线，再按 F。"
+    },
+    {
+      "key": "st.feedback.scanDone",
+      "value": "扫描完成：Z 木箱 / X 石块 / C 手表。"
+    },
+    {
+      "key": "st.feedback.morph",
+      "value": "变形成功。物品形态不能攻击；静止可隐匿，移动会暴露。"
+    },
+    {
+      "key": "st.feedback.morphUnavailable",
+      "value": "暂时无法变形：需由潮先扫描该物品，并等待变形冷却结束。"
+    },
+    {
+      "key": "st.feedback.cluesRequired",
+      "value": "先记录前方的异常影迹，再到红色路标集合。"
+    },
+    {
+      "key": "st.feedback.encounter",
+      "value": "全队已集合并恢复体力，建立战前锚点。头发打断 + 集火可以制造机会。"
+    },
+    {
+      "key": "st.feedback.exitLocked",
+      "value": "前方仍有影子，先在红色路标处集合，再清理退路。"
+    },
+    {
+      "key": "st.feedback.revived",
+      "value": "同伴重新站起。可以继续战斗或按 R 回溯。"
+    },
+    {
+      "key": "st.feedback.clear",
+      "value": "退路已打开。前往尽头的青色路标，与澪会合（F）。"
+    },
+    {
+      "key": "st.feedback.ryunosuke",
+      "value": "龙之介主导身体。红色前摇提示危险方向，E 近身压制可打断敌人。"
+    },
+    {
+      "key": "st.feedback.hizuru",
+      "value": "日鹤主导身体。生命、位置与技能冷却共同保留。"
+    },
+    {
+      "key": "st.feedback.noSave",
+      "value": "未找到可继续的存档；损坏的文件已保留在隔离副本中。"
+    },
+    {
+      "key": "st.feedback.saveError",
+      "value": "存档读取或写入失败，旧文件已保留。当前仍可游玩；请查看日志。"
+    },
+    {
+      "key": "st.order.follow",
+      "value": "4  跟随 · 保持队形"
+    },
+    {
+      "key": "st.order.hold",
+      "value": "5  守位 · 同伴停留原地"
+    },
+    {
+      "key": "st.order.focus",
+      "value": "6  集火 · 同伴进攻附近目标"
+    },
+    {
+      "key": "st.prompt.revive",
+      "value": "F  扶起同伴"
+    },
+    {
+      "key": "st.prompt.inspect",
+      "value": "F  调查"
+    },
+    {
+      "key": "st.prompt.scan",
+      "value": "F 复制扫描 · 站定 1 秒"
+    },
+    {
+      "key": "st.prompt.needUshio",
+      "value": "2 切换潮 → F 复制"
+    },
+    {
+      "key": "st.prompt.encounter",
+      "value": "F  集合并进入影子遭遇战"
+    },
+    {
+      "key": "st.prompt.exit",
+      "value": "F  与澪会合"
+    },
+    {
+      "key": "st.hud.brand",
+      "value": "SUMMER / RETURN    ·    沿岸调查"
+    },
+    {
+      "key": "st.hud.objective",
+      "value": "当前行动"
+    },
+    {
+      "key": "st.hud.stamina",
+      "value": "体力"
+    },
+    {
+      "key": "st.hud.down",
+      "value": "倒下 · 靠近后 F 扶起"
+    },
+    {
+      "key": "st.hud.loop",
+      "value": "回溯 {0} 次 · 已知线索不会遗忘"
+    },
+    {
+      "key": "st.hud.scanning",
+      "value": "正在扫描 {0:0}% · 保持静止"
+    },
+    {
+      "key": "st.hud.rewinding",
+      "value": "时间正在退回锚点……"
+    },
+    {
+      "key": "st.hud.bound",
+      "value": "束缚 · 换人追击"
+    },
+    {
+      "key": "st.hud.dodge",
+      "value": "正在蓄力 · 闪避！"
+    },
+    {
+      "key": "st.hud.foresee",
+      "value": "预判窗口 · 从侧后方压制"
+    },
+    {
+      "key": "st.hud.distance",
+      "value": "目标距离  {0:0} m"
+    },
+    {
+      "key": "st.goal.shadow",
+      "value": "调查前方金色影迹。切潮靠近木箱、石块或慎平，按 F 扫描；B 查看复制目录。"
+    },
+    {
+      "key": "st.goal.shell",
+      "value": "扫描左侧石块 → X 变石块 → 进入更靠左的低矮通道 → F 拾取贝壳。"
+    },
+    {
+      "key": "st.goal.encounter",
+      "value": "前往红色路标进入小队战斗。也可让潮扫描石块，钻入左侧矮道找贝壳。"
+    },
+    {
+      "key": "st.goal.fight",
+      "value": "击破守路者。潮 E 束缚 → 换人追击；K 重击削减架势。留意突进与横扫范围。"
+    },
+    {
+      "key": "st.goal.exit",
+      "value": "沿主路走到尽头，与澪会合。保持靠近路标，按 F 完成切片。"
+    },
+    {
+      "key": "st.controls",
+      "value": "WASD 移动 · Shift 跑 · Space 跳 · Ctrl 闪避 · 右键镜头    J / 左键连击 · K 重击 · E 技能 · Q 锁定\n1/2/3 换人 · 4 跟随 5 守位 6 集火 · F 交互/扫描 · B 复制目录 · V 意识切换 · T 武器 · M 俯瞰 · R 回溯"
+    },
+    {
+      "key": "st.story.label",
+      "value": "剧情与玩法试作 · 改编衔接及对白为本 Demo 编写"
+    },
+    {
+      "key": "st.title.eyebrow",
+      "value": "SUMMER TIME RENDERING  /  PLAYABLE STUDY"
+    },
+    {
+      "key": "st.title.main",
+      "value": "夏日重现"
+    },
+    {
+      "key": "st.title.subtitle",
+      "value": "沿岸回响\n调查 · 协作 · 变形 · 回溯"
+    },
+    {
+      "key": "st.title.note",
+      "value": "即时战斗 / 三人小队 / 复制与变形 / 平行时间线\nF 拾取武器，Space 跳跃，左键攻击。"
+    },
+    {
+      "key": "st.button.new",
+      "value": "直接进入试玩"
+    },
+    {
+      "key": "st.button.continue",
+      "value": "继续锚点"
+    },
+    {
+      "key": "st.button.quit",
+      "value": "退出游戏"
+    },
+    {
+      "key": "st.button.next",
+      "value": "继续  ↵"
+    },
+    {
+      "key": "st.button.resume",
+      "value": "继续行动"
+    },
+    {
+      "key": "st.button.retry",
+      "value": "回溯重试  R"
+    },
+    {
+      "key": "st.button.title",
+      "value": "返回标题"
+    },
+    {
+      "key": "st.button.journal",
+      "value": "查看已知情报"
+    },
+    {
+      "key": "st.screen.pause",
+      "value": "暂歇片刻"
+    },
+    {
+      "key": "st.screen.defeat",
+      "value": "这一次，未能抵达"
+    },
+    {
+      "key": "st.screen.victory",
+      "value": "我们一起走到了这里"
+    },
+    {
+      "key": "st.body.pause",
+      "value": "继续从当前位置行动。存档保留最近锚点：调查起点或战斗前。\n离开再继续时，全队与物品会返回锚点；已知情报仍然保留。"
+    },
+    {
+      "key": "st.body.defeat",
+      "value": "慎平倒下，当前尝试结束。\n回溯会恢复全队、敌人和世界；已经记住的线索与回溯次数继续保留。"
+    },
+    {
+      "key": "st.body.victory",
+      "value": "影子被清除，小队与澪会合。\n这是一段机制切片：你已走通调查、扫描变形、协作战斗与撤离。可以回溯尝试其他配合。"
+    },
+    {
+      "key": "st.journal.empty",
+      "value": "尚未记录情报。靠近金色路标按 F 调查。"
+    },
+    {
+      "key": "st.overlook.title",
+      "value": "俯瞰 · 已经走过的时间"
+    },
+    {
+      "key": "st.overlook.subtitle",
+      "value": "选择时间分支 → 点选事件 → 查看发生位置与当时的队伍状态。滚轮浏览完整记录。"
+    },
+    {
+      "key": "st.overlook.branches",
+      "value": "平行时间线"
+    },
+    {
+      "key": "st.overlook.events",
+      "value": "时间与事件"
+    },
+    {
+      "key": "st.overlook.map",
+      "value": "已探索地图 · 北 ↑"
+    },
+    {
+      "key": "st.overlook.branch",
+      "value": "分支"
+    },
+    {
+      "key": "st.overlook.summary",
+      "value": "分支 {0} · {1} · 经历 {2}\n源自分支 {3} 的 {4}"
+    },
+    {
+      "key": "st.overlook.legend",
+      "value": "青色：已走过区域  /  金色：所选事件\n浅色：当时的队员位置"
+    },
+    {
+      "key": "st.overlook.empty",
+      "value": "这条时间线尚未记录事件。"
+    },
+    {
+      "key": "st.overlook.position",
+      "value": "事件坐标  X {0:0.0} / Z {1:0.0}"
+    },
+    {
+      "key": "st.overlook.cooldown",
+      "value": "技能冷却 {0:0.0}s"
+    },
+    {
+      "key": "st.timeline.active",
+      "value": "进行中"
+    },
+    {
+      "key": "st.timeline.defeat",
+      "value": "失败"
+    },
+    {
+      "key": "st.timeline.victory",
+      "value": "完成"
+    },
+    {
+      "key": "st.timeline.rewound",
+      "value": "主动回溯"
+    },
+    {
+      "key": "st.timeline.loaded",
+      "value": "返回锚点"
+    },
+    {
+      "key": "st.timeline.exploreAnchor",
+      "value": "沿岸调查起点"
+    },
+    {
+      "key": "st.timeline.battleAnchor",
+      "value": "影子遭遇前"
+    },
+    {
+      "key": "st.event.begin",
+      "value": "抵达锚点"
+    },
+    {
+      "key": "st.event.switch",
+      "value": "切换角色"
+    },
+    {
+      "key": "st.event.order",
+      "value": "协作指令"
+    },
+    {
+      "key": "st.event.consciousness",
+      "value": "意识切换"
+    },
+    {
+      "key": "st.event.revive",
+      "value": "救援"
+    },
+    {
+      "key": "st.event.clue",
+      "value": "发现线索"
+    },
+    {
+      "key": "st.event.scan",
+      "value": "扫描完成"
+    },
+    {
+      "key": "st.event.morph",
+      "value": "变形"
+    },
+    {
+      "key": "st.event.encounter",
+      "value": "遭遇影子"
+    },
+    {
+      "key": "st.event.down",
+      "value": "队员倒下"
+    },
+    {
+      "key": "st.event.defeat",
+      "value": "尝试失败"
+    },
+    {
+      "key": "st.event.victory",
+      "value": "会合成功"
+    },
+    {
+      "key": "st.event.rewind",
+      "value": "时间回溯"
+    },
+    {
+      "key": "st.event.continue",
+      "value": "继续锚点"
+    },
+    {
+      "key": "st.button.overlook",
+      "value": "俯瞰时间线  M"
+    },
+    {
+      "key": "st.weapon.pipe",
+      "value": "钢管"
+    },
+    {
+      "key": "st.weapon.hammer",
+      "value": "重锤"
+    },
+    {
+      "key": "st.weapon.fists",
+      "value": "徒手"
+    },
+    {
+      "key": "st.weapon.hair",
+      "value": "发束刃"
+    },
+    {
+      "key": "st.enemy.patrol",
+      "value": "巡游影子"
+    },
+    {
+      "key": "st.feedback.pipe",
+      "value": "慎平已装备钢管。J / 左键三段轻击，K 重击，T 切换钢管与徒手。"
+    },
+    {
+      "key": "st.goal.patrol",
+      "value": "拾起钢管后靠近巡游影子。观察地面横扫范围：起跳或闪出，再趁收招反击。"
+    },
+    {
+      "key": "st.button.story",
+      "value": "查看序章"
+    },
+    {
+      "key": "st.forms.title",
+      "value": "潮 · 已扫描的形态"
+    },
+    {
+      "key": "st.forms.body",
+      "value": "先用 F 扫描目标，再选择复制形态。变成手表后由慎平携带；按 2 安全现身。"
+    },
+    {
+      "key": "st.forms.locked",
+      "value": "尚未扫描"
+    },
+    {
+      "key": "st.forms.ready",
+      "value": "已记录 · 点击变形"
+    },
+    {
+      "key": "st.forms.need",
+      "value": "先切换潮（2）才能变形。"
+    },
+    {
+      "key": "st.hud.jump",
+      "value": "Space 跳跃"
+    },
+    {
+      "key": "st.hud.interact",
+      "value": "F 交互"
+    },
+    {
+      "key": "st.hud.copy",
+      "value": "F 复制"
+    },
+    {
+      "key": "st.hud.weapon",
+      "value": "当前武器"
+    },
+    {
+      "key": "st.hud.combo",
+      "value": "连击"
+    },
+    {
+      "key": "st.enemy.rusher",
+      "value": "突进影子"
+    },
+    {
+      "key": "st.enemy.sweeper",
+      "value": "横扫影子"
+    },
+    {
+      "key": "st.feedback.perfectDodge",
+      "value": "精准闪避 · 反击强化"
+    },
+    {
+      "key": "st.feedback.linked",
+      "value": "协同追击 ×2"
+    },
+    {
+      "key": "st.combat.sweep",
+      "value": "横扫 · 空格跳过 / Ctrl 撤出范围"
+    },
+    {
+      "key": "st.combat.rush",
+      "value": "突进 · Ctrl 侧闪"
+    },
+    {
+      "key": "st.combat.guard",
+      "value": "正面防御 · K 重击破势 / 潮 E 束缚"
+    },
+    {
+      "key": "st.combat.recovery",
+      "value": "收招破绽 · 趁现在反击"
+    },
+    {
+      "key": "st.combat.link",
+      "value": "已束缚 · 换人追击造成双倍伤害"
+    },
+    {
+      "key": "st.combat.posture",
+      "value": "架势"
+    },
+    {
+      "key": "st.combat.counter",
+      "value": "反击强化就绪"
+    }
   ]
 }

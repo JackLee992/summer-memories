@@ -1,0 +1,36 @@
+{
+  "id": "st_demo_intro",
+  "title": "返岛 · 调查起点",
+  "commands": [
+    {
+      "type": "bg",
+      "color": "#88AEB8",
+      "note": "日都岛 · 海边"
+    },
+    {
+      "type": "narration",
+      "text": "慎平为潮的葬礼回到岛上。有关她死亡的疑点，让这次返乡有了另一个必须找到的答案。"
+    },
+    {
+      "type": "line",
+      "speaker": "网代慎平",
+      "text": "先把见到的事情记下来。回头再想，容易把细节混在一起。"
+    },
+    {
+      "type": "line",
+      "speaker": "小舟澪",
+      "text": "你要去海边的话，我带你过去。"
+    },
+    {
+      "type": "tip",
+      "tip": "st_tip_shinpei"
+    },
+    {
+      "type": "tip",
+      "tip": "st_tip_mio"
+    },
+    {
+      "type": "end"
+    }
+  ]
+}

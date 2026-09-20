@@ -1,0 +1,16 @@
+{
+    "name": "SummerMemories.Action3D",
+    "rootNamespace": "SummerMemories.Action3D",
+    "references": [
+        "SummerMemories.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

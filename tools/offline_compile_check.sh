@@ -72,7 +72,10 @@ compile SummerMemories.ADV  $(find Assets/Scripts/ADV -name '*.cs')
 compile SummerMemories.Battle $(find Assets/Scripts/Battle -name '*.cs')
 compile SummerMemories.Loop  $(find Assets/Scripts/Loop -name '*.cs')
 REFS+=("-r:$OUT/SummerMemories.ADV.dll" "-r:$OUT/SummerMemories.Battle.dll" "-r:$OUT/SummerMemories.Loop.dll")
-compile SummerMemories.App   $(find Assets/Scripts/App -name '*.cs')
+# 3D 动作切片（运行时，仅依赖 Core 与引擎模块）
+compile SummerMemories.Action3D $(find Assets/Scripts/Action3D -name '*.cs')
+REFS+=("-r:$OUT/SummerMemories.Action3D.dll")
+compile SummerMemories.App -define:DEVELOPMENT_BUILD $(find Assets/Scripts/App -name '*.cs')
 # Editor 层：聚合 UnityEditor.dll（含全部 Editor 模块类型）
 REFS+=("-r:$U/Managed/UnityEditor.dll" "-r:$TPL/UnityEditor.UI.dll" "-r:$OUT/SummerMemories.App.dll")
 compile SummerMemories.Editor $(find Assets/Editor -name '*.cs')

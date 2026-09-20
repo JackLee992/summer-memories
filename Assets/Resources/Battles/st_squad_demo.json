@@ -1,0 +1,502 @@
+{
+  "id": "st_squad_demo",
+  "schemaVersion": 1,
+  "mode": "squad_action",
+  "status": "runtime_mechanics_prototype",
+  "titleKey": "st.demo.title",
+  "saveSlot": "st_demo",
+  "sourceWork": "Summer Time Rendering",
+  "party": [
+    {
+      "id": "st_shinpei",
+      "nameKey": "st.character.shinpei",
+      "abilities": [
+        "st_observe",
+        "st_command"
+      ],
+      "role": "investigation_and_command",
+      "hp": 18,
+      "attack": 1.5,
+      "speed": 4.8,
+      "spawn": [
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "id": "st_ushio",
+      "nameKey": "st.character.ushio",
+      "abilities": [
+        "st_hair",
+        "st_scan",
+        "st_morph"
+      ],
+      "role": "action_and_transformation",
+      "hp": 20,
+      "attack": 2.2,
+      "speed": 5.1,
+      "spawn": [
+        2,
+        0,
+        3
+      ]
+    },
+    {
+      "id": "st_hizuru",
+      "nameKey": "st.character.hizuru",
+      "abilities": [
+        "st_consciousness",
+        "st_foresee"
+      ],
+      "role": "shared_body_hizuru_ryunosuke",
+      "hp": 22,
+      "attack": 2,
+      "speed": 4.699999999999999,
+      "spawn": [
+        -2,
+        0,
+        3
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "st_mio",
+      "nameKey": "st.character.mio"
+    }
+  ],
+  "initialControlledId": "st_shinpei",
+  "switching": {
+    "allowed": "alive_and_not_uninterruptible",
+    "retainActorState": true,
+    "exitMorphBeforeAiControl": "world_forms_only; carried_watch_stays_attached"
+  },
+  "orders": [
+    "follow",
+    "hold",
+    "focus"
+  ],
+  "abilities": [
+    {
+      "id": "st_observe",
+      "ownerId": "st_shinpei",
+      "nameKey": "st.ability.observe",
+      "purpose": "inspect_clue"
+    },
+    {
+      "id": "st_command",
+      "ownerId": "st_shinpei",
+      "nameKey": "st.ability.command",
+      "purpose": "party_orders"
+    },
+    {
+      "id": "st_hair",
+      "ownerId": "st_ushio",
+      "nameKey": "st.ability.hair",
+      "purpose": "ranged_interrupt",
+      "cooldownSeconds": 4,
+      "note": "Gameplay prototype timing; not a claim about anime combat rules",
+      "rangeMeters": 6
+    },
+    {
+      "id": "st_scan",
+      "ownerId": "st_ushio",
+      "nameKey": "st.ability.scan",
+      "rangeMeters": 3,
+      "requiresLineOfSight": true,
+      "durationSeconds": 1,
+      "interruptOnDamage": true,
+      "scope": "tagged_items"
+    },
+    {
+      "id": "st_morph",
+      "ownerId": "st_ushio",
+      "nameKey": "st.ability.morph",
+      "requiresCompletedScan": true,
+      "durationSeconds": 8,
+      "cooldownSeconds": 6,
+      "cancelOnDamage": true,
+      "collisionFromTemplate": true,
+      "exitRequiresClearance": true,
+      "hpSharedWithOwner": true
+    },
+    {
+      "id": "st_consciousness",
+      "ownerId": "st_hizuru",
+      "nameKey": "st.ability.consciousness"
+    },
+    {
+      "id": "st_foresee",
+      "ownerId": "st_hizuru",
+      "nameKey": "st.ability.foresee",
+      "cooldownSeconds": 8,
+      "rangeMeters": 3.5
+    }
+  ],
+  "scanTemplates": [
+    {
+      "id": "st_object_crate",
+      "nameKey": "st.object.crate",
+      "sizeMeters": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "gameplay": "stationary_disguise",
+      "canAttack": false,
+      "spawn": [
+        3,
+        0,
+        10
+      ],
+      "moveSpeed": 1.5
+    },
+    {
+      "id": "st_object_stone",
+      "nameKey": "st.object.stone",
+      "sizeMeters": [
+        0.45,
+        0.35,
+        0.45
+      ],
+      "gameplay": "stationary_disguise",
+      "canAttack": false,
+      "spawn": [
+        -3,
+        0,
+        12
+      ],
+      "moveSpeed": 2
+    },
+    {
+      "id": "st_object_watch",
+      "nameKey": "st.object.watch",
+      "sizeMeters": [
+        0.08,
+        0.06,
+        0.08
+      ],
+      "spawn": [
+        0,
+        0,
+        4
+      ],
+      "attachToId": "st_shinpei",
+      "gameplay": "carried_disguise",
+      "moveSpeed": 0
+    }
+  ],
+  "interactions": [
+    {
+      "id": "st_pipe_pickup",
+      "tipId": "st_tip_weapon",
+      "nameKey": "st.weapon.pipe",
+      "descriptionKey": "st.feedback.pipe",
+      "spawn": [
+        1.5,
+        0,
+        6
+      ],
+      "reward": "pipe",
+      "requiredForEncounter": false
+    },
+    {
+      "id": "st_shadow_clue",
+      "tipId": "st_tip_shadow",
+      "requiredForEncounter": true,
+      "spawn": [
+        0,
+        0,
+        16
+      ],
+      "nameKey": "st.clue.shadow",
+      "descriptionKey": "st.clue.shadow.description"
+    },
+    {
+      "id": "st_hair_clue",
+      "tipId": "st_tip_hair",
+      "requiredForEncounter": false,
+      "spawn": [
+        5,
+        0,
+        25
+      ],
+      "nameKey": "st.clue.hair",
+      "descriptionKey": "st.clue.hair.description"
+    },
+    {
+      "id": "st_shell_clue",
+      "tipId": "st_tip_shell",
+      "requiredForEncounter": false,
+      "spawn": [
+        -6,
+        0,
+        22
+      ],
+      "nameKey": "st.clue.shell",
+      "descriptionKey": "st.clue.shell.description"
+    }
+  ],
+  "storyIds": [
+    "st_demo_intro",
+    "st_demo_squad",
+    "st_demo_return"
+  ],
+  "memory": {
+    "preserve": [
+      "verifiedClueIds",
+      "readTipIds",
+      "loopCount"
+    ],
+    "scanLibraryPolicy": "restore_at_checkpoint_until_story_rules_verified",
+    "reset": [
+      "partyTransforms",
+      "hp",
+      "actions",
+      "cooldowns",
+      "orders",
+      "morphState",
+      "enemyState",
+      "worldEvents",
+      "physicalPickups",
+      "carrier_attachment"
+    ]
+  },
+  "failure": {
+    "rewindCharacterId": "st_shinpei",
+    "companionDown": "nearby_F_rescue_or_R_retry",
+    "retryAlwaysAvailable": true
+  },
+  "audio": {
+    "ambience": "Audio/Prototype/st_ambient_v01",
+    "shadowReveal": "Audio/Prototype/st_shadow_reveal_v01",
+    "rewind": "Audio/Prototype/st_rewind_v01",
+    "hair": "Audio/Prototype/st_hair_bind_v01",
+    "shell": "Audio/Prototype/st_shell_pickup_v01"
+  },
+  "acceptance": [
+    "switch_both_characters",
+    "follow_hold_focus",
+    "inspect_shadow_hair_shell",
+    "scan_before_morph",
+    "unscanned_form_rejected",
+    "morph_changes_collision_and_detection",
+    "safe_unmorph_in_small_space",
+    "party_rewind",
+    "remember_then_change_outcome",
+    "hizuru_ryunosuke_shared_body",
+    "watch_follows_shinpei_and_safe_release"
+  ],
+  "adaptationNote": "Gameplay prototype; investigation opening and playable party segment are separate until episode chronology is verified. No original anime dialogue or media is included.",
+  "enemies": [
+    {
+      "id": "st_shadow_a",
+      "nameKey": "st.enemy.rusher",
+      "spawn": [
+        -3,
+        0,
+        39
+      ],
+      "hp": 15,
+      "damage": 2,
+      "speed": 2,
+      "windup": 0.95,
+      "attackStyle": "rush",
+      "posture": 5,
+      "aggroRange": 14,
+      "recovery": 1.35
+    },
+    {
+      "id": "st_shadow_b",
+      "nameKey": "st.enemy.sweeper",
+      "spawn": [
+        3,
+        0,
+        41
+      ],
+      "hp": 18,
+      "damage": 2,
+      "speed": 2.1,
+      "windup": 1.05,
+      "attackStyle": "sweep",
+      "posture": 6,
+      "aggroRange": 14,
+      "recovery": 1.35
+    },
+    {
+      "id": "st_shadow_guard",
+      "nameKey": "st.enemy.guard",
+      "spawn": [
+        0,
+        0,
+        46
+      ],
+      "hp": 48,
+      "damage": 4,
+      "speed": 1.6,
+      "windup": 1.2,
+      "attackStyle": "guard",
+      "posture": 11,
+      "aggroRange": 14,
+      "recovery": 1.65
+    }
+  ],
+  "world": {
+    "width": 24,
+    "length": 60,
+    "encounterGate": [
+      0,
+      0,
+      33
+    ],
+    "exit": [
+      0,
+      0,
+      54
+    ],
+    "npc": [
+      1,
+      0,
+      55
+    ],
+    "solids": [
+      {
+        "id": "BoundaryLeft",
+        "position": [
+          -12.2,
+          1,
+          30
+        ],
+        "size": [
+          0.4,
+          2,
+          72
+        ]
+      },
+      {
+        "id": "BoundaryRight",
+        "position": [
+          12.2,
+          1,
+          30
+        ],
+        "size": [
+          0.4,
+          2,
+          72
+        ]
+      },
+      {
+        "id": "BoundaryStart",
+        "position": [
+          0,
+          1,
+          -5
+        ],
+        "size": [
+          24,
+          2,
+          0.4
+        ]
+      },
+      {
+        "id": "BoundaryEnd",
+        "position": [
+          0,
+          1,
+          64
+        ],
+        "size": [
+          24,
+          2,
+          0.4
+        ]
+      },
+      {
+        "id": "LowPassRoof",
+        "position": [
+          -6,
+          0.99,
+          21
+        ],
+        "size": [
+          2.3,
+          0.55,
+          6
+        ]
+      },
+      {
+        "id": "LowPassLeft",
+        "position": [
+          -7.3,
+          0.8,
+          21
+        ],
+        "size": [
+          0.4,
+          1.6,
+          6
+        ]
+      },
+      {
+        "id": "LowPassRight",
+        "position": [
+          -4.7,
+          0.8,
+          21
+        ],
+        "size": [
+          0.4,
+          1.6,
+          6
+        ]
+      },
+      {
+        "id": "LowPassBack",
+        "position": [
+          -6,
+          0.8,
+          24
+        ],
+        "size": [
+          3,
+          1.6,
+          0.4
+        ]
+      },
+      {
+        "id": "JumpStep",
+        "position": [
+          0,
+          0.22,
+          8
+        ],
+        "size": [
+          3,
+          0.44,
+          0.5
+        ]
+      }
+    ]
+  },
+  "introEnemies": [
+    {
+      "id": "st_shadow_patrol",
+      "nameKey": "st.enemy.patrol",
+      "spawn": [
+        0,
+        0,
+        12
+      ],
+      "hp": 14,
+      "damage": 1,
+      "speed": 1.2,
+      "windup": 1.4,
+      "attackStyle": "sweep",
+      "posture": 5,
+      "aggroRange": 6.3,
+      "recovery": 1.8
+    }
+  ]
+}

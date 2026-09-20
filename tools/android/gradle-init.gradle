@@ -1,0 +1,30 @@
+// Gradle 全局初始化脚本模板（按需手动安装；tools/build_android.sh 不会自动部署）。
+// 为所有构建前置阿里云 Maven 镜像（国内直连），解决 Unity Android 构建从
+// Maven Central / Google 下载依赖时 TLS 握手被重置（Remote host terminated the handshake）的问题。
+// 仅前置镜像、不删除原始仓库；镜像命中即不访问被墙源。
+def mirrors = [
+    'https://maven.aliyun.com/repository/google',
+    'https://maven.aliyun.com/repository/central',
+    'https://maven.aliyun.com/repository/public',
+    'https://maven.aliyun.com/repository/gradle-plugin'
+]
+
+allprojects {
+    buildscript {
+        repositories {
+            mirrors.each { u -> maven { url u } }
+        }
+    }
+    repositories {
+        mirrors.each { u -> maven { url u } }
+    }
+}
+
+settingsEvaluated { settings ->
+    settings.pluginManagement {
+        repositories {
+            mirrors.each { u -> maven { url u } }
+            gradlePluginPortal()
+        }
+    }
+}

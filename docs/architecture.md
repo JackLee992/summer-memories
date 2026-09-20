@@ -1,5 +1,17 @@
 # 架构说明
 
+## 当前动作版增量方向（2026-09-20）
+
+当前已实现《夏日重现》小队 v03，具体范围见 [实施说明](st-squad-demo.md)。依赖方向 `Core ← ADV / Battle / Loop / Action3D ← App ← Editor`。
+
+- `Action3D/Squad`：角色/意识/武器/变形、队友命令、敌人、配置场景、快照与亲历时间线。角色控制器禁用后再传送，避免回溯后的物理内部位置仍留在原点。
+- `App/SquadDemoDirector`：唯一模式入口、ADV、存档、音频、暂停。HUD、形态目录、俯瞰、情报为 uGUI。
+- `SquadBodyV02`：导入 Blender FBX，按命名关节驱动程序动作，材质统一使用小队表面着色器；可独立替换动画层。
+- `OverlookArchive`：按分支持久化事件、地图路径、队员快照；未知未来不预填。
+- Core 的 SaveSlot 保持通用，动作快照/档案序列化到命名 flag，`st_demo` 与 `auto` 分离。
+
+旧单人白盒继续由 `--action3d` 访问，旧 ADV/战棋由 `--legacy` 访问，均由 App 在创建对象之前决定。旧 Action3D Bootstrap 不再事后销毁 App。新包通过 BuildPlayerOptions.extraScriptingDefines 选择 `SM_SQUAD`，不改全局定义。
+
 ## 1. 总览
 
 Unity 6 LTS / C#，全部 UI 由代码生成（uGUI），剧情与关卡数据驱动（JSON + `Resources.Load`）。
@@ -30,7 +42,7 @@ Unity 6 LTS / C#，全部 UI 由代码生成（uGUI），剧情与关卡数据�
 | SummerMemories.ADV | AdvModels（指令 schema）、AdvDirector（推进/打字机/选项/标志位/回调）、AdvView（背景/立绘/对话框） | Core |
 | SummerMemories.Battle | BattleModels、Grid（曼哈顿/BFS）、RewindSystem、BattleDirector（回合/AI/意图/桃橛/火眼金睛/胜负）、BattleView | Core |
 | SummerMemories.Loop | TipsSystem（《山海异闻》，跨回潮继承） | Core |
-| SummerMemories.App | GameBootstrap、GameDirector（状态流）、TitleScreen、LoopTimelineScreen、TeachingDialog | Core/ADV/Battle/Loop |
+| SummerMemories.App | GameBootstrap、GameDirector（状态流）、TitleScreen、LoopTimelineScreen、TeachingDialog | Core/ADV/Battle/Loop/Action3D |
 | SummerMemories.Editor | BuildScript | 以上全部，Editor only |
 
 ## 3. 启动与全局流程

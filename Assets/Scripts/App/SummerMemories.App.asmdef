@@ -5,7 +5,8 @@
         "SummerMemories.Core",
         "SummerMemories.ADV",
         "SummerMemories.Battle",
-        "SummerMemories.Loop"
+        "SummerMemories.Loop",
+        "SummerMemories.Action3D"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

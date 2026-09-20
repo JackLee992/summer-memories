@@ -1,0 +1,50 @@
+[
+  {
+    "id": "shinpei",
+    "provider": "Dreamina CLI",
+    "model": "4.6",
+    "resolution": "2k",
+    "ratio": "1:1",
+    "prompt": "高质量日式动画游戏角色头像，精细干净的赛璐璐绘画，富有表现力的眼睛，自然比例，肩部以上特写，人物居中且完整头发不出画框，青蓝海岛夏日背景虚化，暖阳轮廓光，纯净色块，专业游戏角色界面素材，无文字无水印无边框。角色是《夏日重现》网代慎平，年轻成年男性，凌乱短黑发，侧分刘海，异色瞳一只蓝色一只深色，白色衬衫和蓝色背带，冷静坚毅的表情。",
+    "status": "success",
+    "submitId": "db00bfe9-c2f8-4dcd-9cfd-2f1a35b92a0f",
+    "credits": 1,
+    "output": "Assets/Resources/Art/Portraits/st_shinpei_v02.png"
+  },
+  {
+    "id": "ushio",
+    "provider": "Dreamina CLI",
+    "model": "4.6",
+    "resolution": "2k",
+    "ratio": "1:1",
+    "prompt": "高质量日式动画游戏角色头像，精细干净的赛璐璐绘画，富有表现力的眼睛，自然比例，肩部以上特写，人物居中且完整头发不出画框，青蓝海岛夏日背景虚化，暖阳轮廓光，纯净色块，专业游戏角色界面素材，无文字无水印无边框。角色是《夏日重现》小舟潮，年轻成年女性，亮金色长发飘扬，蓝绿色眼睛，白色夏日连衣裙的领口可见，坚定而温暖的表情。",
+    "status": "success",
+    "submitId": "8e2fe36b-ed21-4829-91af-22c562e2dc4d",
+    "credits": 1,
+    "output": "Assets/Resources/Art/Portraits/st_ushio_v02.png"
+  },
+  {
+    "id": "hizuru",
+    "provider": "Dreamina CLI",
+    "model": "4.6",
+    "resolution": "2k",
+    "ratio": "1:1",
+    "prompt": "高质量日式动画游戏角色头像，精细干净的赛璐璐绘画，富有表现力的眼睛，自然比例，肩部以上特写，人物居中且完整头发不出画框，青蓝海岛夏日背景虚化，暖阳轮廓光，纯净色块，专业游戏角色界面素材，无文字无水印无边框。角色是《夏日重现》南方日鹤，成年女性，黑色长直发，黑框眼镜，深色外套和白色衬衫，沉着严肃、观察力敏锐的表情。",
+    "status": "success",
+    "submitId": "20886790-4bf9-4717-9fb5-caf27f0236e4",
+    "credits": 1,
+    "output": "Assets/Resources/Art/Portraits/st_hizuru_v02.png"
+  },
+  {
+    "id": "coast",
+    "provider": "Dreamina CLI",
+    "model": "4.6",
+    "resolution": "2k",
+    "ratio": "16:9",
+    "prompt": "专业日式动画冒险游戏主视觉环境图，无人物。盛夏日本海岛渔港，碧蓝透明海水，沿岸石阶，错落坡道，白墙木屋，深蓝瓦片屋顶，电线杆，远处绿色山丘和云朵，近处草叶和小舟，午后温暖阳光，空气通透，精细手绘电影背景质感，青蓝、奶油白、深靛蓝与金黄色配色，微妙悬疑氛围。水平宽画面，左侧略暗的树荫与海水为界面留白，右侧明亮的港口与房屋形成焦点，没有文字没有水印。",
+    "status": "success",
+    "submitId": "2d394103-0b8f-439e-9951-c430452c5887",
+    "credits": 1,
+    "output": "Assets/Resources/Art/Bg/st_coast_v02.png"
+  }
+]

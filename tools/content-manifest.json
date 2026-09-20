@@ -13,6 +13,10 @@
       "bytes": 3301529,
       "sha256": "56efef1550846b71d85181c617745c44176991dbe79dc431a90e7048b7a3d11d"
     },
+    "Assets/Resources/Art/Bg/st_coast_v02.png": {
+      "bytes": 3966257,
+      "sha256": "def0ebb741255513ee00d5e2b621edb8038167d7cf3ce1f40f225e773179295b"
+    },
     "Assets/Resources/Art/Bg/title_bg.png": {
       "bytes": 3275416,
       "sha256": "9e7b7d57f6197f28ee9e8e6ae78693251b338d05c66985cce8038ed7e9dbd63d"
@@ -20,6 +24,26 @@
     "Assets/Resources/Art/Icons/app_icon.png": {
       "bytes": 1957558,
       "sha256": "a8f2a421993fa3dcff0103c9eae36ed272d3cce93233d21738bfb1012d00286d"
+    },
+    "Assets/Resources/Art/Models/st_boat_v02.fbx": {
+      "bytes": 38556,
+      "sha256": "aefaf3b472a16620d6928b7dda34e034331c3d1d52d876f4fc1ec218c9d26da2"
+    },
+    "Assets/Resources/Art/Models/st_hizuru_v02.fbx": {
+      "bytes": 391180,
+      "sha256": "9d8b045053f14f609039ed3eb325f0fda04258596d1c2ca38325184667b149c3"
+    },
+    "Assets/Resources/Art/Models/st_house_v02.fbx": {
+      "bytes": 268444,
+      "sha256": "3ac400c6f24123135ac50a4fd3827e9d803780e4fe788080ab48401b1a4b1ba6"
+    },
+    "Assets/Resources/Art/Models/st_shinpei_v02.fbx": {
+      "bytes": 388204,
+      "sha256": "b5a16dafba82c318a9b3f0ee0627d51c048d97942a1665566f35de64a5fd7ae1"
+    },
+    "Assets/Resources/Art/Models/st_ushio_v02.fbx": {
+      "bytes": 393564,
+      "sha256": "721a9ba359b8561ce3db0865bb01bf72ca8362179b789086dc08c6a7f07a9a1b"
     },
     "Assets/Resources/Art/Portraits/jingwei.png": {
       "bytes": 1774008,
@@ -37,17 +61,85 @@
       "bytes": 1720947,
       "sha256": "a8f377c24181ff3f2c6001ada99c0ae31f519102cb2e8f18e2834e03c583b4e2"
     },
+    "Assets/Resources/Art/Portraits/st_hizuru_v02.png": {
+      "bytes": 314488,
+      "sha256": "267f84436dd35bd700491bfed3c27b94e2d2d2bade3f111401c6d8798977d6fe"
+    },
+    "Assets/Resources/Art/Portraits/st_shinpei_v02.png": {
+      "bytes": 346987,
+      "sha256": "3fc0a5f2ac6c8200ddd57f41f1e1860cba8a47b0f33f4f2a1a2a19384af174af"
+    },
+    "Assets/Resources/Art/Portraits/st_ushio_v02.png": {
+      "bytes": 370878,
+      "sha256": "da0e1603795a6cee250bec5439e0bf64327fe54cb42d5cbcbd3f973e520249dd"
+    },
     "Assets/Resources/Art/Portraits/wangliang.png": {
       "bytes": 1567511,
       "sha256": "ad5b00055e788f6df81210778acc2072b403e3af8ac7bddad3f6c59e72190bab"
+    },
+    "Assets/Resources/Audio/Prototype/st_ambient_v01.wav": {
+      "bytes": 5644844,
+      "sha256": "689ebde823b2075ffd1b59a7c145e4fddc6c930c0d1d3ccb0227c82c53ecbd51"
+    },
+    "Assets/Resources/Audio/Prototype/st_dodge_v02.wav": {
+      "bytes": 35324,
+      "sha256": "c91689e4320f924bc9e65f4bdc880a4522d0fb5a61dfa0ca10d16b69e6b766e2"
+    },
+    "Assets/Resources/Audio/Prototype/st_hair_bind_v01.wav": {
+      "bytes": 114704,
+      "sha256": "9f7e1fd1a0b5d109c481bc37a9d3b791f16df42b71ea02435db4c1c9afa8b46b"
+    },
+    "Assets/Resources/Audio/Prototype/st_hit_v02.wav": {
+      "bytes": 28268,
+      "sha256": "6f0894deebabbad044f73da147038adde9afc71a932930ea1745255713930ae4"
+    },
+    "Assets/Resources/Audio/Prototype/st_jump_v02.wav": {
+      "bytes": 38852,
+      "sha256": "662c8fe039dde7177963896e621cac0723286040152e076b86aa62a4a78d68d5"
+    },
+    "Assets/Resources/Audio/Prototype/st_rewind_v01.wav": {
+      "bytes": 388124,
+      "sha256": "c1d42310ef34f1d2b1086ab938191b7964e1e4f7ad9fff0c221f22e0964a6d2b"
+    },
+    "Assets/Resources/Audio/Prototype/st_shadow_reveal_v01.wav": {
+      "bytes": 202904,
+      "sha256": "fcfc319ded5d2f3280bff59fce15d51a2fe4a7b6769380e0177d8f93727e941f"
+    },
+    "Assets/Resources/Audio/Prototype/st_shell_pickup_v01.wav": {
+      "bytes": 247004,
+      "sha256": "2c785c10356bdaff180420a20eb1355ddb95c50ea09f5242c382b4ada1024511"
     },
     "Assets/Resources/Battles/battle_01.json": {
       "bytes": 1220,
       "sha256": "90073628805677340e4ed8b9c873ffdfd62374a855ed5d59a12d6336028d9fca"
     },
+    "Assets/Resources/Battles/st_squad_demo.json": {
+      "bytes": 9696,
+      "sha256": "0070ab9bee1ea7da5fc68ec8464ef62a1afdf539bc515340c6fe36b9dbc4e720"
+    },
     "Assets/Resources/Localization/strings_zh.json": {
-      "bytes": 611,
-      "sha256": "37a1feb1654c047d2c9c8d92b522860ff1c0d4d28917562f9a383e50ee5c21e7"
+      "bytes": 15953,
+      "sha256": "8d5c9da7d886d295273958cd71b85ff48aad6d6c91eed7e823869a8b1840168f"
+    },
+    "Assets/Resources/Shaders/SMUnlit.shader": {
+      "bytes": 1438,
+      "sha256": "1e710e108a777c3a3caf650366335a98f3558a0f7484868c608c059cebe85246"
+    },
+    "Assets/Resources/Shaders/SquadSky.shader": {
+      "bytes": 1463,
+      "sha256": "cfd9930dc76bf2306f45add21e3cad6fc6d7fb8de46d1c26f6d95526ff182801"
+    },
+    "Assets/Resources/Shaders/SquadSurface.shader": {
+      "bytes": 1101,
+      "sha256": "53548dbfda4ebb6dae9326f2dd9589f9b695b8913e9b0e51f0b899d4089125a1"
+    },
+    "Assets/Resources/Shaders/SquadTrail.shader": {
+      "bytes": 535,
+      "sha256": "6e48be122f3f61b5632466995534ab1f442fc8faf7782450d9a289e967c51294"
+    },
+    "Assets/Resources/Shaders/SquadWater.shader": {
+      "bytes": 946,
+      "sha256": "bed8220091086797e8690dc07815ee3e1b9afa5ce80e166f7a37a9edd2b00b38"
     },
     "Assets/Resources/Story/loop_teaching.json": {
       "bytes": 2138,
@@ -57,9 +149,21 @@
       "bytes": 3777,
       "sha256": "8654379edc292a9b34f50647afa0f764cb91ca9cc21c549e5bf47e4cd0b46ab9"
     },
+    "Assets/Resources/Story/st_demo_intro.json": {
+      "bytes": 798,
+      "sha256": "637e2ec0f5b1a356a9d8adb7ed5a75a834c7ffe8f567d41e81c9b3c3c61717c2"
+    },
+    "Assets/Resources/Story/st_demo_return.json": {
+      "bytes": 591,
+      "sha256": "6673a3b616e73d4c523bb79f89a2432f26fb901987272345e4934a199e385ab8"
+    },
+    "Assets/Resources/Story/st_demo_squad.json": {
+      "bytes": 1243,
+      "sha256": "5526a6c7e23b6454dd3077fb706bf8f3e1ddd4f7e9110a6697bea889fe0e87db"
+    },
     "Assets/Resources/Tips/tips_zh.json": {
-      "bytes": 3733,
-      "sha256": "d510004dc763100ba82190a53c697f797d982402dd0b544ce9cbebcdbd8d1d9d"
+      "bytes": 7595,
+      "sha256": "b34fe3a6fec780151b5aedb29a408c05a08a7166b7410db5a9b0d560f80a071a"
     }
   },
   "root": "Assets/Resources"

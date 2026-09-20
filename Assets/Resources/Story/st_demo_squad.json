@@ -1,0 +1,61 @@
+{
+  "id": "st_demo_squad",
+  "title": "沿岸调查 · 同行",
+  "commands": [
+    {
+      "type": "bg",
+      "color": "#233D4C",
+      "note": "沿岸小路"
+    },
+    {
+      "type": "narration",
+      "text": "玩法试作段：时间来到能够与潮同行的阶段。慎平、潮与日鹤沿岸调查，澪在前方等待。"
+    },
+    {
+      "type": "line",
+      "speaker": "南方日鹤",
+      "text": "先找能通过的地方。需要动手时，让龙之介来。"
+    },
+    {
+      "type": "line",
+      "speaker": "网代慎平",
+      "text": "先等一下。我去看路口，你盯住后面。"
+    },
+    {
+      "type": "line",
+      "speaker": "小舟潮",
+      "text": "看到不对劲的东西就叫我，别自己往前走。"
+    },
+    {
+      "type": "tip",
+      "tip": "st_tip_ushio"
+    },
+    {
+      "type": "tip",
+      "tip": "st_tip_party"
+    },
+    {
+      "type": "tip",
+      "tip": "st_tip_hizuru"
+    },
+    {
+      "type": "tip",
+      "tip": "st_tip_ryunosuke"
+    },
+    {
+      "type": "tip",
+      "tip": "st_tip_scan"
+    },
+    {
+      "type": "tip",
+      "tip": "st_tip_watch"
+    },
+    {
+      "type": "tip",
+      "tip": "st_tip_overlook"
+    },
+    {
+      "type": "end"
+    }
+  ]
+}

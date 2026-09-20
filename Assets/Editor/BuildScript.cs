@@ -57,6 +57,100 @@ namespace SummerMemories.Editor
             }
         }
 
+        [MenuItem("夏日回忆/Build/Mac 3D 动作切片 (.app)")]
+        public static void BuildMac3D()
+        {
+            Log.Info("开始构建 Mac 3D 动作切片 …");
+            var nbt = NamedBuildTarget.Standalone;
+            var oldDefines = PlayerSettings.GetScriptingDefineSymbols(nbt);
+            var defs = string.IsNullOrEmpty(oldDefines) ? "SM_ACTION3D" : oldDefines + ";SM_ACTION3D";
+            PlayerSettings.SetScriptingDefineSymbols(nbt, defs);
+            PlayerSettings.productName = ProductName;
+            PlayerSettings.SetApplicationIdentifier(nbt, BundleId);
+            SetMacArchitectureArm64();
+
+            var scenePath = CreateBootScene();
+            try
+            {
+                var outDir = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "Builds"));
+                Directory.CreateDirectory(outDir);
+                var appPath = Path.Combine(outDir, "SummerMemories3D.app");
+                if (Directory.Exists(appPath)) Directory.Delete(appPath, true);
+
+                var options = new BuildPlayerOptions
+                {
+                    scenes = new[] { scenePath },
+                    locationPathName = appPath,
+                    target = BuildTarget.StandaloneOSX,
+                    options = BuildOptions.Development | BuildOptions.AllowDebugging
+                };
+                var report = BuildPipeline.BuildPlayer(options);
+                var summary = report.summary;
+                Log.Info($"Mac 构建结果：{summary.result}，大小 {summary.totalSize / 1024 / 1024} MB，输出 {appPath}");
+                if (summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
+                    throw new System.Exception($"Mac 构建失败：{summary.result}");
+            }
+            finally
+            {
+                RemoveBootScene(scenePath);
+                PlayerSettings.SetScriptingDefineSymbols(nbt, oldDefines);
+            }
+        }
+
+        [MenuItem("夏日回忆/Build/Mac 小队动作原型 (.app)")]
+        public static void BuildMacSquad()
+        {
+            var scenePath = CreateBootScene();
+            var oldWidth = PlayerSettings.defaultScreenWidth;
+            var oldHeight = PlayerSettings.defaultScreenHeight;
+            var oldMode = PlayerSettings.fullScreenMode;
+            var oldRetina = PlayerSettings.macRetinaSupport;
+            try
+            {
+                SetMacArchitectureArm64();
+                PlayerSettings.macRetinaSupport = false;
+                PlayerSettings.defaultScreenWidth = 1280;
+                PlayerSettings.defaultScreenHeight = 720;
+                PlayerSettings.fullScreenMode = FullScreenMode.Windowed;
+                var path = Path.GetFullPath("Builds/SummerTimeSquad.app");
+                var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
+                {
+                    scenes = new[] { scenePath }, locationPathName = path,
+                    target = BuildTarget.StandaloneOSX,
+                    extraScriptingDefines = new[] { "SM_SQUAD" },
+                    options = BuildOptions.Development
+                });
+                if (report.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
+                    throw new System.Exception("Squad build failed: " + report.summary.result);
+                Log.Info("Squad build succeeded: " + path);
+            }
+            finally
+            {
+                RemoveBootScene(scenePath);
+                PlayerSettings.defaultScreenWidth = oldWidth;
+                PlayerSettings.defaultScreenHeight = oldHeight;
+                PlayerSettings.fullScreenMode = oldMode;
+                PlayerSettings.macRetinaSupport = oldRetina;
+            }
+        }
+
+        /// <summary>反射设置 Mac 为 Apple Silicon(arm64)，类型不存在时保持默认（universal 亦可运行）。</summary>
+        private static void SetMacArchitectureArm64()
+        {
+            try
+            {
+                var t = System.Type.GetType("UnityEditor.OSXStandalone.UserBuildSettings, UnityEditor.OSXStandalone.Extensions");
+                var enumType = System.Type.GetType("UnityEditor.OSXStandalone.MacArchitecture, UnityEditor.OSXStandalone.Extensions");
+                var prop = t?.GetProperty("architecture");
+                if (prop != null && enumType != null)
+                    prop.SetValue(null, System.Enum.Parse(enumType, "ArchitectureARM64"), null);
+            }
+            catch (System.Exception e)
+            {
+                Log.Warn($"设置 Mac arm64 失败，使用默认架构：{e.Message}");
+            }
+        }
+
         [MenuItem("夏日回忆/Build/在编辑器中生成 Boot 场景（用于按 Play 调试）")]
         public static void GenerateBootScene()
         {
@@ -148,7 +242,7 @@ namespace SummerMemories.Editor
             PlayerSettings.companyName = "SummerMemoriesProject";
             PlayerSettings.productName = ProductName;
 
-            // 横屏（ADV / 战棋）
+            // 横屏（ADV / 战棋 / 3D 动作）
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
             PlayerSettings.allowedAutorotateToLandscapeLeft = true;
             PlayerSettings.allowedAutorotateToLandscapeRight = true;

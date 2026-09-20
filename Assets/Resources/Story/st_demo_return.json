@@ -1,0 +1,27 @@
+{
+  "id": "st_demo_return",
+  "title": "再次行动",
+  "commands": [
+    {
+      "type": "bg",
+      "color": "#88AEB8",
+      "note": "熟悉的路口"
+    },
+    {
+      "type": "narration",
+      "text": "眼前的路恢复了先前的样子。刚才看见的位置、次序和那一瞬间的异常，仍然留在慎平的记忆里。"
+    },
+    {
+      "type": "line",
+      "speaker": "网代慎平",
+      "text": "这次先确认退路。等我示意，再一起过去。"
+    },
+    {
+      "type": "tip",
+      "tip": "st_tip_rewind"
+    },
+    {
+      "type": "end"
+    }
+  ]
+}
