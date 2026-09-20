@@ -141,8 +141,7 @@ namespace SummerMemories.ADV
                         Current = cmd;
                         Phase = AdvPhase.Playing;
                         _charsShown = skipLines ? (cmd.text != null ? cmd.text.Length : 0) : 0f;
-                        if (skipLines) _history.Add(FormatLine(cmd));
-                        else if (cmd.type == "line") _history.Add(FormatLine(cmd));
+                        _history.Add(FormatLine(cmd));
                         return;
                     case "choice":
                         Current = cmd;

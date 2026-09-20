@@ -57,6 +57,8 @@ python3 tools/content_manifest.py --write
 python3 tools/content_manifest.py --check
 # C# 编译检查（无需 Unity license / 不打开编辑器，用编辑器自带 Roslyn）
 tools/offline_compile_check.sh
+# 首战可通关性验证（束搜索找胜利路径并复盘完整战报，纯逻辑层，不启动 Unity）
+tools/battle_sim/run_sim.sh
 ```
 
 ## 6. iOS（第二阶段，概要）
