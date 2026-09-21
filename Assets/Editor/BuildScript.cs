@@ -98,26 +98,33 @@ namespace SummerMemories.Editor
         }
 
         [MenuItem("夏日回忆/Build/Mac 小队动作原型 (.app)")]
-        public static void BuildMacSquad()
+        public static void BuildMacSquad() => BuildMacSquadVariant(false);
+
+        [MenuItem("夏日回忆/Build/Mac 2.5D 策略试玩 (.app)")]
+        public static void BuildMac25D() => BuildMacSquadVariant(true);
+
+        private static void BuildMacSquadVariant(bool isometric)
         {
             var scenePath = CreateBootScene();
             var oldWidth = PlayerSettings.defaultScreenWidth;
             var oldHeight = PlayerSettings.defaultScreenHeight;
             var oldMode = PlayerSettings.fullScreenMode;
             var oldRetina = PlayerSettings.macRetinaSupport;
+            var oldIdentifier = PlayerSettings.GetApplicationIdentifier(NamedBuildTarget.Standalone);
             try
             {
+                if(isometric)PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Standalone,"com.summermemories.squad25d");
                 SetMacArchitectureArm64();
                 PlayerSettings.macRetinaSupport = false;
                 PlayerSettings.defaultScreenWidth = 1280;
                 PlayerSettings.defaultScreenHeight = 720;
                 PlayerSettings.fullScreenMode = FullScreenMode.Windowed;
-                var path = Path.GetFullPath("Builds/SummerTimeSquad.app");
+                var path = Path.GetFullPath(isometric?"Builds/SummerTime25D.app":"Builds/SummerTimeSquad.app");
                 var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
                 {
                     scenes = new[] { scenePath }, locationPathName = path,
                     target = BuildTarget.StandaloneOSX,
-                    extraScriptingDefines = new[] { "SM_SQUAD" },
+                    extraScriptingDefines = isometric?new[] { "SM_SQUAD", "SM_SQUAD25D" }:new[] { "SM_SQUAD" },
                     options = BuildOptions.Development
                 });
                 if (report.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
@@ -131,7 +138,22 @@ namespace SummerMemories.Editor
                 PlayerSettings.defaultScreenHeight = oldHeight;
                 PlayerSettings.fullScreenMode = oldMode;
                 PlayerSettings.macRetinaSupport = oldRetina;
+                PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Standalone,oldIdentifier);
             }
+        }
+
+        [MenuItem("夏日回忆/Build/Mac 横版小关卡 (.app)")]
+        public static void BuildMacSide2D()
+        {
+            var scene=CreateBootScene();var target=NamedBuildTarget.Standalone;
+            var identifier=PlayerSettings.GetApplicationIdentifier(target);var w=PlayerSettings.defaultScreenWidth;var h=PlayerSettings.defaultScreenHeight;var retina=PlayerSettings.macRetinaSupport;var mode=PlayerSettings.fullScreenMode;
+            try
+            {
+                SetMacArchitectureArm64();PlayerSettings.SetApplicationIdentifier(target,"com.summermemories.side2d");PlayerSettings.defaultScreenWidth=1280;PlayerSettings.defaultScreenHeight=720;PlayerSettings.macRetinaSupport=false;PlayerSettings.fullScreenMode=FullScreenMode.Windowed;
+                var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{scene},locationPathName=Path.GetFullPath("Builds/SummerTimeSide2D.app"),target=BuildTarget.StandaloneOSX,extraScriptingDefines=new[]{"SM_SIDE2D"},options=BuildOptions.Development});
+                if(report.summary.result!=UnityEditor.Build.Reporting.BuildResult.Succeeded)throw new System.Exception("Side build failed: "+report.summary.result);
+            }
+            finally{RemoveBootScene(scene);PlayerSettings.SetApplicationIdentifier(target,identifier);PlayerSettings.defaultScreenWidth=w;PlayerSettings.defaultScreenHeight=h;PlayerSettings.macRetinaSupport=retina;PlayerSettings.fullScreenMode=mode;}
         }
 
         /// <summary>反射设置 Mac 为 Apple Silicon(arm64)，类型不存在时保持默认（universal 亦可运行）。</summary>

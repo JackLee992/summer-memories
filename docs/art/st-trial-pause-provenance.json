@@ -1,0 +1,730 @@
+{
+  "archivedOn": "2026-09-20",
+  "scope": "Existing 2.5D and Side2D generation records; no generation was run for this archive.",
+  "notes": [
+    "Submission and result records can describe the same task; do not sum their credit_count fields. These records are not a complete billing ledger.",
+    "Side2D sheets contain selected and repeated independent poses, not validated continuous animation.",
+    "Empty submissions and network failures remain recorded. A successful remote task does not imply its downloaded output was used.",
+    "Full prompts are copied where local records contain them; retry files without prompts cannot establish exact retry wording.",
+    "2.5D Hizuru now uses the selected Side2D shoulder pose. Earlier hammer variants were superseded.",
+    "Signed media URLs, account details and full provider responses are omitted. Original outputs and QA remain local under ignored Builds/."
+  ],
+  "generationRecords": [
+    {
+      "sourceRecord": "Builds/art-25d/generation.json",
+      "id": "shinpei",
+      "provider": "Dreamina CLI",
+      "model": "4.6",
+      "prompt": "2.5D日式悬疑冒险游戏使用的单个人物全身精灵素材，精细赛璐璐手绘、干净深色轮廓、克制的柔和阴影，约六头身正常人体比例。视角为略微俯视的正面四分之三视角，身体朝画面右下方，脸可以辨认。自然准备行动的站姿，双脚分开，双手不遮脸。完整头发、脚和鞋都在画面内，人物占画面高度85%，脚底对齐。纯品红色#FF00FF平整背景，无场景、无地面阴影、无光晕、无文字、无边框、无其他人物；背景和衣物边界锐利便于抠图。《夏日重现》网代慎平：黑色凌乱短发、侧分刘海，白色短袖衬衫、深蓝背带和深蓝长裤、深色鞋，蓝色与深色异色瞳，冷静警觉的青年男性，双手自然空手。",
+      "submit": {
+        "submit_id": "40c02bb9-6537-4398-af18-db373a5e4cf5",
+        "gen_status": "querying",
+        "credit_count": 1
+      }
+    },
+    {
+      "sourceRecord": "Builds/art-25d/generation.json",
+      "id": "ushio",
+      "provider": "Dreamina CLI",
+      "model": "4.6",
+      "prompt": "2.5D日式悬疑冒险游戏使用的单个人物全身精灵素材，精细赛璐璐手绘、干净深色轮廓、克制的柔和阴影，约六头身正常人体比例。视角为略微俯视的正面四分之三视角，身体朝画面右下方，脸可以辨认。自然准备行动的站姿，双脚分开，双手不遮脸。完整头发、脚和鞋都在画面内，人物占画面高度85%，脚底对齐。纯品红色#FF00FF平整背景，无场景、无地面阴影、无光晕、无文字、无边框、无其他人物；背景和衣物边界锐利便于抠图。《夏日重现》小舟潮：明亮金色长发，蓝色眼睛，白色夏日无袖连衣裙和凉鞋，开朗坚定的青年女性，长发轻轻向左飘开，衣裙完整，双手自然空手。",
+      "submit": {
+        "submit_id": "94374823-8358-48d4-84b8-430df3c25c06",
+        "gen_status": "querying",
+        "credit_count": 1
+      }
+    },
+    {
+      "sourceRecord": "Builds/art-25d/generation.json",
+      "id": "hizuru",
+      "provider": "Dreamina CLI",
+      "model": "4.6",
+      "prompt": "2.5D日式悬疑冒险游戏使用的单个人物全身精灵素材，精细赛璐璐手绘、干净深色轮廓、克制的柔和阴影，约六头身正常人体比例。视角为略微俯视的正面四分之三视角，身体朝画面右下方，脸可以辨认。自然准备行动的站姿，双脚分开，双手不遮脸。完整头发、脚和鞋都在画面内，人物占画面高度85%，脚底对齐。纯品红色#FF00FF平整背景，无场景、无地面阴影、无光晕、无文字、无边框、无其他人物；背景和衣物边界锐利便于抠图。《夏日重现》南方日鹤：长直黑发、黑框眼镜、深灰黑色西装外套、白衬衫、深色长裤和鞋，沉着锐利的成年女性，一只手自然垂下握着短柄工匠铁锤，铁锤不遮挡身体。",
+      "submit": {
+        "submit_id": "b0cd9cce-6868-4b7b-8927-fedcd12b3d18",
+        "gen_status": "querying",
+        "credit_count": 1
+      }
+    },
+    {
+      "sourceRecord": "Builds/art-25d/generation.json",
+      "id": "mio",
+      "provider": "Dreamina CLI",
+      "model": "4.6",
+      "prompt": "2.5D日式悬疑冒险游戏使用的单个人物全身精灵素材，精细赛璐璐手绘、干净深色轮廓、克制的柔和阴影，约六头身正常人体比例。视角为略微俯视的正面四分之三视角，身体朝画面右下方，脸可以辨认。自然准备行动的站姿，双脚分开，双手不遮脸。完整头发、脚和鞋都在画面内，人物占画面高度85%，脚底对齐。纯品红色#FF00FF平整背景，无场景、无地面阴影、无光晕、无文字、无边框、无其他人物；背景和衣物边界锐利便于抠图。《夏日重现》小舟澪：棕黑色短发、健康小麦色皮肤、明亮坚定的眼睛，浅色短袖夏装、深蓝短裤和运动鞋，身形匀称有运动感的少女，双手自然空手。",
+      "submit": {
+        "submit_id": "2f62434c-a762-4f9b-9e81-f2917fa6d5e0",
+        "gen_status": "querying",
+        "credit_count": 1
+      }
+    },
+    {
+      "sourceRecord": "Builds/art-25d/hizuru-hammer-edit.json",
+      "provider": "Dreamina CLI",
+      "model": "4.6",
+      "prompt": "修改这张2.5D游戏全身人物素材：保持同一个南方日鹤，脸、眼镜、黑色长发、西装、体型、站姿、俯视角度、画风、纯色背景完全一致。只把右手握着的小工匠铁锤改为沉重的长柄双面大铁锤，锤头是宽大的长方形深灰钢块，宽度约等于人物肩宽的70%，锤柄长度约等于人物半身高；手必须正确握住柄，锤头向画面右下方延伸，整个锤子不能被裁切，不遮挡脸部。维持完整全身，从头到脚全部保留。",
+      "source": "Builds/art-25d/hizuru/b0cd9cce-6868-4b7b-8927-fedcd12b3d18_image_1.png",
+      "submit": {
+        "submit_id": "eecc272b-868d-450b-bde8-1d08a5557822",
+        "gen_status": "querying",
+        "credit_count": 1
+      }
+    },
+    {
+      "sourceRecord": "Builds/art-25d/hizuru-shoulder-edit.json",
+      "provider": "Dreamina CLI",
+      "model": "4.6",
+      "prompt": "修改这张2.5D游戏全身人物素材，角色是夏日重现的南方日鹤。保持同一个人物的脸、眼镜、黑色长发、黑西装白衬衫长裤、身材、略微俯视的四分之三视角、精细赛璐璐画风一致。关键修改：把小锤换成沉重的长柄双面大铁锤，并改为经典的扛锤姿态，一只手抬起牢牢握住锤柄，把长柄大锤扛在肩上，巨大的长方体钢制双面锤头落在肩后侧上方，另一只手自然放松，重心稳健，肩线略倾，沉着而危险，有力量的张力。锤头宽度约人物肩宽的75%，长柄长度约人物身高的60%，不是玩具或短柄工具。手指和锤柄握持关系正确，锤柄置于肩部，不穿过头和脖子，不遮住脸。人物完整全身，头顶、完整锤头、双脚都有充分留白，全部在画面内。背景为均匀纯品红色，无地面、无投影、无文字、无边框、无第二个人。",
+      "source": "Builds/art-25d/hizuru/b0cd9cce-6868-4b7b-8927-fedcd12b3d18_image_1.png",
+      "submit": {
+        "submit_id": "cea378ca-8c1d-476c-b1a4-f67b0c1d04a4",
+        "gen_status": "querying",
+        "credit_count": 1
+      }
+    },
+    {
+      "sourceRecord": "Builds/art-25d/hizuru-shoulder-failed.json",
+      "provider": "Dreamina CLI",
+      "model": "4.6",
+      "prompt": "修改这张2.5D游戏全身人物素材，角色是夏日重现的南方日鹤。保持同一个人物的脸、眼镜、黑色长发、黑西装白衬衫长裤、身材、略微俯视的四分之三视角、精细赛璐璐画风一致。关键修改：把小锤换成沉重的长柄双面大铁锤，并改为经典的扛锤姿态，一只手抬起牢牢握住锤柄，把长柄大锤扛在肩上，巨大的长方体钢制双面锤头落在肩后侧上方，另一只手自然放松，重心稳健，肩线略倾，沉着而危险，有力量的张力。锤头宽度约人物肩宽的75%，长柄长度约人物身高的60%，不是玩具或短柄工具。手指和锤柄握持关系正确，锤柄置于肩部，不穿过头和脖子，不遮住脸。人物完整全身，头顶、完整锤头、双脚都有充分留白，全部在画面内。背景为均匀纯品红色，无地面、无投影、无文字、无边框、无第二个人。",
+      "source": "Builds/art-25d/hizuru/b0cd9cce-6868-4b7b-8927-fedcd12b3d18_image_1.png",
+      "submit": {
+        "submit_id": "9b7a9b72-3ef1-4df9-ac98-fd5232d53196",
+        "gen_status": "fail",
+        "fail_reason": "resource store: resource store failed: ret=10002 msg=login fail"
+      }
+    },
+    {
+      "sourceRecord": "Builds/art-25d/hizuru-proportion-edit.json",
+      "provider": "Dreamina CLI",
+      "model": "4.6",
+      "prompt": "对这张人物图进行局部比例修正。保持南方日鹤的脸、眼镜、黑发、西装、动作、双手、锤柄、构图、画风和俯视角度全部不变，保留扛锤姿态。只把肩后那个过分巨大的钢锤头缩小：锤头的可见宽度和高度都缩至当前的45%，体积明显减小。改成现实工地长柄大铁锤的合理尺寸，锤头宽度约等于人物半个肩宽，厚度约半张脸高。缩小后的锤头仍正确装在原锤柄顶部，金属双面平头，重量感沉稳，但绝不是巨型幻想武器。不能缩小人物，不改变锤柄长度，不增加第二把锤子。完整头脚和锤子都在画面内，背景纯红色，去掉地面阴影。",
+      "source": "Builds/art-25d/hizuru-shoulder/cea378ca-8c1d-476c-b1a4-f67b0c1d04a4_image_1.png",
+      "submit": {
+        "submit_id": "c3d3febf-b658-4d72-9cc3-f635908bc80d",
+        "gen_status": "querying",
+        "credit_count": 1
+      }
+    },
+    {
+      "sourceRecord": "Builds/art-25d/hizuru-longhandle-submit.json",
+      "prompt": "保持人物和扛肩动作不变，把锤头缩小到原宽高的45%，木柄加长到人物身高的75%，向左下方延伸到大腿高度，完整武器在画面内，合理现实武器比例，纯红背景，无地面阴影。",
+      "submit_id": "76053d3b-5dbe-4500-aa55-5d5c03a5fae4",
+      "gen_status": "fail",
+      "fail_reason": "upload resource \"Builds/art-25d/hizuru-shoulder/cea378ca-8c1d-476c-b1a4-f67b0c1d04a4_image_1.png\": upload image: apply phase, ApplyImageUpload: do request, Get \"http://imagex.bytedanceapi.com/?Action=ApplyImageUpload&NeedFallback=true&ServiceId=tb4s082cfz&UploadNum=1&Version=2018-08-01\": context deadline exceeded"
+    },
+    {
+      "sourceRecord": "Builds/art-25d/hizuru-result.json",
+      "submit_id": "b0cd9cce-6868-4b7b-8927-fedcd12b3d18",
+      "gen_status": "success",
+      "credit_count": 1
+    },
+    {
+      "sourceRecord": "Builds/art-25d/mio-result.json",
+      "submit_id": "2f62434c-a762-4f9b-9e81-f2917fa6d5e0",
+      "gen_status": "success",
+      "credit_count": 1
+    },
+    {
+      "sourceRecord": "Builds/art-25d/shinpei-result.json",
+      "submit_id": "40c02bb9-6537-4398-af18-db373a5e4cf5",
+      "gen_status": "success",
+      "credit_count": 1
+    },
+    {
+      "sourceRecord": "Builds/art-25d/ushio-result.json",
+      "submit_id": "94374823-8358-48d4-84b8-430df3c25c06",
+      "gen_status": "success",
+      "credit_count": 1
+    },
+    {
+      "sourceRecord": "Builds/art-side2d/generation.json",
+      "id": "shinpei",
+      "model": "4.6",
+      "prompt": "制作横版2D动作游戏的角色动作精灵表，参考图只用于人物造型辨识。不是俯视，不是等距，所有人物都是真正侧视，朝向画面右边。画面严格分为4列3行的12个等大正方形格子，没有格线、文字、编号或背景场景。每格仅同一个角色一次，完整头脚，站立身高一致，脚底在格子相同基线，人物居中，各格四周充分留白，武器不出格，相邻姿态不能重叠。精细日式动画赛璐璐，清晰轮廓，正常六头身人物，关节自然，手脚清晰，纯品红平背景，无地面投影。按从左到右从上到下：第1格待机；第2至5格连贯的奔跑循环四个关键帧，腿部摆动清楚，前后脚交换；第6格起跳收腿；第7格下落伸腿；第8格前冲闪避；第9格攻击蓄力；第10格武器全力向右挥出命中；第11格攻击收招；第12格受击后仰。注意同一人物12个动作，绝非12个不同人物。黑发青年慎平，白色短袖衬衫、深蓝背带长裤、黑鞋，右手持一米长钢管，战斗姿态紧凑，钢管攻击。",
+      "source": "Builds/art-25d/shinpei/40c02bb9-6537-4398-af18-db373a5e4cf5_image_1.png",
+      "submit": {
+        "submit_id": "aac121f1-51c3-4b79-adb4-0594342eab09",
+        "gen_status": "querying",
+        "credit_count": 2
+      }
+    },
+    {
+      "sourceRecord": "Builds/art-side2d/generation.json",
+      "id": "ushio",
+      "model": "4.6",
+      "prompt": "制作横版2D动作游戏的角色动作精灵表，参考图只用于人物造型辨识。不是俯视，不是等距，所有人物都是真正侧视，朝向画面右边。画面严格分为4列3行的12个等大正方形格子，没有格线、文字、编号或背景场景。每格仅同一个角色一次，完整头脚，站立身高一致，脚底在格子相同基线，人物居中，各格四周充分留白，武器不出格，相邻姿态不能重叠。精细日式动画赛璐璐，清晰轮廓，正常六头身人物，关节自然，手脚清晰，纯品红平背景，无地面投影。按从左到右从上到下：第1格待机；第2至5格连贯的奔跑循环四个关键帧，腿部摆动清楚，前后脚交换；第6格起跳收腿；第7格下落伸腿；第8格前冲闪避；第9格攻击蓄力；第10格武器全力向右挥出命中；第11格攻击收招；第12格受击后仰。注意同一人物12个动作，绝非12个不同人物。金色长发少女小舟潮，白色无袖连衣裙、凉鞋，蓝眼睛，攻击时金色长发化为向右挥出的发束，动作敏捷坚定。",
+      "source": "Builds/art-25d/ushio/94374823-8358-48d4-84b8-430df3c25c06_image_1.png",
+      "submit": {
+        "submit_id": "518e0a9b-7aca-41d6-b8eb-76ee658bfe2a",
+        "gen_status": "querying",
+        "credit_count": 2
+      }
+    },
+    {
+      "sourceRecord": "Builds/art-side2d/generation.json",
+      "id": "hizuru",
+      "model": "4.6",
+      "prompt": "制作横版2D动作游戏的角色动作精灵表，参考图只用于人物造型辨识。不是俯视，不是等距，所有人物都是真正侧视，朝向画面右边。画面严格分为4列3行的12个等大正方形格子，没有格线、文字、编号或背景场景。每格仅同一个角色一次，完整头脚，站立身高一致，脚底在格子相同基线，人物居中，各格四周充分留白，武器不出格，相邻姿态不能重叠。精细日式动画赛璐璐，清晰轮廓，正常六头身人物，关节自然，手脚清晰，纯品红平背景，无地面投影。按从左到右从上到下：第1格待机；第2至5格连贯的奔跑循环四个关键帧，腿部摆动清楚，前后脚交换；第6格起跳收腿；第7格下落伸腿；第8格前冲闪避；第9格攻击蓄力；第10格武器全力向右挥出命中；第11格攻击收招；第12格受击后仰。注意同一人物12个动作，绝非12个不同人物。长黑发眼镜女性南方日鹤，黑西装白衬衫长裤黑鞋，武器为长柄双面铁锤。木柄约人物身高75%，锤头宽约半个肩宽，厚半张脸高，比例合理绝非巨型幻想武器。待机时长柄锤扛在肩上，跑动时持柄，攻击时双手挥出长柄重锤，体现重量和武器距离。",
+      "source": "Builds/art-25d/hizuru/b0cd9cce-6868-4b7b-8927-fedcd12b3d18_image_1.png",
+      "submit": {},
+      "previousSubmit": {}
+    },
+    {
+      "sourceRecord": "Builds/art-side2d/generation.json",
+      "id": "coast",
+      "model": "4.6",
+      "prompt": "横版2D日式悬疑动作游戏的海港小镇场景背景，清晨蓝绿色海面，远方群山，横向连续的日本海边街区，电线杆、瓦顶木屋、停泊渔船、码头、仓库，细腻手绘动画电影背景，克制的青绿蓝与暖灰配色，柔和光影，空间有前中远三层。严格正侧面横版游戏构图，无俯视，无等距，无向远方汇聚的道路。地平线在画面下方三分之一，画面底部20%为水平连续的平坦码头石地平台，供人物左右行走。建筑在中景，前景不遮挡玩家通道，画面左右边缘自然可延展。无人物，无文字，无UI，无边框，精美完整环境美术。",
+      "submit": {},
+      "previousSubmit": {}
+    },
+    {
+      "sourceRecord": "Builds/art-side2d/hizuru-text-retry.json",
+      "submit_id": "4e0c0f07-b0ec-464d-b138-503f4be28837",
+      "gen_status": "querying",
+      "credit_count": 2
+    },
+    {
+      "sourceRecord": "Builds/art-side2d/coast-retry.json",
+      "submit_id": "85d07c60-37ce-4615-913d-adab5c07d678",
+      "gen_status": "querying",
+      "credit_count": 1
+    },
+    {
+      "sourceRecord": "Builds/art-side2d/coast-result.json",
+      "submit_id": "85d07c60-37ce-4615-913d-adab5c07d678",
+      "gen_status": "success",
+      "credit_count": 1
+    },
+    {
+      "sourceRecord": "Builds/art-side2d/hizuru-result.json",
+      "submit_id": "4e0c0f07-b0ec-464d-b138-503f4be28837",
+      "gen_status": "success",
+      "credit_count": 2
+    },
+    {
+      "sourceRecord": "Builds/art-side2d/shinpei-result.json",
+      "submit_id": "aac121f1-51c3-4b79-adb4-0594342eab09",
+      "gen_status": "success",
+      "credit_count": 2,
+      "prompt": "制作横版2D动作游戏的角色动作精灵表，参考图只用于人物造型辨识。不是俯视，不是等距，所有人物都是真正侧视，朝向画面右边。画面严格分为4列3行的12个等大正方形格子，没有格线、文字、编号或背景场景。每格仅同一个角色一次，完整头脚，站立身高一致，脚底在格子相同基线，人物居中，各格四周充分留白，武器不出格，相邻姿态不能重叠。精细日式动画赛璐璐，清晰轮廓，正常六头身人物，关节自然，手脚清晰，纯品红平背景，无地面投影。按从左到右从上到下：第1格待机；第2至5格连贯的奔跑循环四个关键帧，腿部摆动清楚，前后脚交换；第6格起跳收腿；第7格下落伸腿；第8格前冲闪避；第9格攻击蓄力；第10格武器全力向右挥出命中；第11格攻击收招；第12格受击后仰。注意同一人物12个动作，绝非12个不同人物。黑发青年慎平，白色短袖衬衫、深蓝背带长裤、黑鞋，右手持一米长钢管，战斗姿态紧凑，钢管攻击。"
+    },
+    {
+      "sourceRecord": "Builds/art-side2d/ushio-result.json",
+      "submit_id": "518e0a9b-7aca-41d6-b8eb-76ee658bfe2a",
+      "gen_status": "success",
+      "credit_count": 2,
+      "prompt": "制作横版2D动作游戏的角色动作精灵表，参考图只用于人物造型辨识。不是俯视，不是等距，所有人物都是真正侧视，朝向画面右边。画面严格分为4列3行的12个等大正方形格子，没有格线、文字、编号或背景场景。每格仅同一个角色一次，完整头脚，站立身高一致，脚底在格子相同基线，人物居中，各格四周充分留白，武器不出格，相邻姿态不能重叠。精细日式动画赛璐璐，清晰轮廓，正常六头身人物，关节自然，手脚清晰，纯品红平背景，无地面投影。按从左到右从上到下：第1格待机；第2至5格连贯的奔跑循环四个关键帧，腿部摆动清楚，前后脚交换；第6格起跳收腿；第7格下落伸腿；第8格前冲闪避；第9格攻击蓄力；第10格武器全力向右挥出命中；第11格攻击收招；第12格受击后仰。注意同一人物12个动作，绝非12个不同人物。金色长发少女小舟潮，白色无袖连衣裙、凉鞋，蓝眼睛，攻击时金色长发化为向右挥出的发束，动作敏捷坚定。"
+    }
+  ],
+  "side2dPacking": [
+    {
+      "id": "shinpei",
+      "sourceSha256": "0071d92aa866125808b1065630efc94e7db4529dd2a116ffdcd62c662be5908e",
+      "sourceSize": [
+        4693,
+        3520
+      ],
+      "output": "Assets/Resources/Art/Side2D/st_shinpei.png",
+      "model": "birefnet-general-lite",
+      "poses": [
+        [
+          [
+            80,
+            365,
+            230,
+            676
+          ],
+          [
+            151,
+            663
+          ]
+        ],
+        [
+          [
+            305,
+            18,
+            502,
+            330
+          ],
+          [
+            420,
+            315
+          ]
+        ],
+        [
+          [
+            285,
+            374,
+            505,
+            676
+          ],
+          [
+            406,
+            662
+          ]
+        ],
+        [
+          [
+            919,
+            18,
+            1135,
+            330
+          ],
+          [
+            1041,
+            315
+          ]
+        ],
+        [
+          [
+            505,
+            377,
+            780,
+            679
+          ],
+          [
+            635,
+            662
+          ]
+        ],
+        [
+          [
+            305,
+            18,
+            502,
+            330
+          ],
+          [
+            420,
+            315
+          ]
+        ],
+        [
+          [
+            285,
+            374,
+            505,
+            676
+          ],
+          [
+            406,
+            662
+          ]
+        ],
+        [
+          [
+            787,
+            378,
+            1111,
+            679
+          ],
+          [
+            918,
+            660
+          ]
+        ],
+        [
+          [
+            300,
+            17,
+            503,
+            330
+          ],
+          [
+            420,
+            315
+          ]
+        ],
+        [
+          [
+            787,
+            378,
+            1111,
+            679
+          ],
+          [
+            918,
+            660
+          ]
+        ],
+        [
+          [
+            1124,
+            380,
+            1391,
+            680
+          ],
+          [
+            1240,
+            660
+          ]
+        ],
+        [
+          [
+            1160,
+            716,
+            1390,
+            1037
+          ],
+          [
+            1250,
+            1018
+          ]
+        ]
+      ],
+      "reviewCoordinates": [
+        1400,
+        1050
+      ],
+      "pixelsPerReviewPixel": 1.36,
+      "frameSize": [
+        512,
+        512
+      ],
+      "feetPixel": [
+        256,
+        482
+      ]
+    },
+    {
+      "id": "ushio",
+      "sourceSha256": "ca11351240438e620d1e07bd8bc7a1875acfc04806b11474f8977d71390eea54",
+      "sourceSize": [
+        4693,
+        3520
+      ],
+      "output": "Assets/Resources/Art/Side2D/st_ushio.png",
+      "model": "birefnet-general-lite",
+      "poses": [
+        [
+          [
+            20,
+            6,
+            292,
+            345
+          ],
+          [
+            160,
+            333
+          ]
+        ],
+        [
+          [
+            313,
+            8,
+            504,
+            343
+          ],
+          [
+            420,
+            332
+          ]
+        ],
+        [
+          [
+            355,
+            383,
+            651,
+            695
+          ],
+          [
+            484,
+            685
+          ]
+        ],
+        [
+          [
+            919,
+            8,
+            1079,
+            343
+          ],
+          [
+            1002,
+            332
+          ]
+        ],
+        [
+          [
+            731,
+            383,
+            1018,
+            695
+          ],
+          [
+            851,
+            685
+          ]
+        ],
+        [
+          [
+            355,
+            383,
+            651,
+            695
+          ],
+          [
+            484,
+            685
+          ]
+        ],
+        [
+          [
+            313,
+            8,
+            504,
+            343
+          ],
+          [
+            420,
+            332
+          ]
+        ],
+        [
+          [
+            1090,
+            378,
+            1389,
+            695
+          ],
+          [
+            1233,
+            685
+          ]
+        ],
+        [
+          [
+            1090,
+            378,
+            1389,
+            695
+          ],
+          [
+            1233,
+            685
+          ]
+        ],
+        [
+          [
+            1090,
+            713,
+            1398,
+            1039
+          ],
+          [
+            1225,
+            1021
+          ]
+        ],
+        [
+          [
+            1090,
+            713,
+            1398,
+            1039
+          ],
+          [
+            1225,
+            1021
+          ]
+        ],
+        [
+          [
+            20,
+            6,
+            292,
+            345
+          ],
+          [
+            160,
+            333
+          ]
+        ]
+      ],
+      "reviewCoordinates": [
+        1400,
+        1050
+      ],
+      "pixelsPerReviewPixel": 1.36,
+      "frameSize": [
+        512,
+        512
+      ],
+      "feetPixel": [
+        256,
+        482
+      ]
+    },
+    {
+      "id": "hizuru",
+      "sourceSha256": "c0aeb776d90e437cb04d72c8b770b59298c8852aa28cc063c615e254c1b78f71",
+      "sourceSize": [
+        4693,
+        3520
+      ],
+      "output": "Assets/Resources/Art/Side2D/st_hizuru.png",
+      "model": "birefnet-general-lite",
+      "poses": [
+        [
+          [
+            721,
+            712,
+            1032,
+            1034
+          ],
+          [
+            866,
+            1020
+          ]
+        ],
+        [
+          [
+            505,
+            17,
+            696,
+            342
+          ],
+          [
+            598,
+            328
+          ]
+        ],
+        [
+          [
+            902,
+            25,
+            1052,
+            339
+          ],
+          [
+            983,
+            328
+          ]
+        ],
+        [
+          [
+            707,
+            23,
+            895,
+            341
+          ],
+          [
+            794,
+            328
+          ]
+        ],
+        [
+          [
+            516,
+            373,
+            696,
+            678
+          ],
+          [
+            601,
+            669
+          ]
+        ],
+        [
+          [
+            516,
+            373,
+            696,
+            678
+          ],
+          [
+            601,
+            669
+          ]
+        ],
+        [
+          [
+            352,
+            24,
+            477,
+            340
+          ],
+          [
+            421,
+            328
+          ]
+        ],
+        [
+          [
+            724,
+            383,
+            1050,
+            681
+          ],
+          [
+            882,
+            671
+          ]
+        ],
+        [
+          [
+            721,
+            712,
+            1032,
+            1034
+          ],
+          [
+            866,
+            1020
+          ]
+        ],
+        [
+          [
+            1080,
+            368,
+            1398,
+            681
+          ],
+          [
+            1220,
+            670
+          ]
+        ],
+        [
+          [
+            721,
+            712,
+            1032,
+            1034
+          ],
+          [
+            866,
+            1020
+          ]
+        ],
+        [
+          [
+            518,
+            709,
+            678,
+            1034
+          ],
+          [
+            601,
+            1020
+          ]
+        ]
+      ],
+      "reviewCoordinates": [
+        1400,
+        1050
+      ],
+      "pixelsPerReviewPixel": 1.36,
+      "frameSize": [
+        512,
+        512
+      ],
+      "feetPixel": [
+        256,
+        482
+      ]
+    }
+  ],
+  "packingScript": "tools/art/prepare_side_sprites.py"
+}

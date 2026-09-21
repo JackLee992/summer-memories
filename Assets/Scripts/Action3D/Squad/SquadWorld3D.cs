@@ -4,7 +4,7 @@ using UnityEngine.Rendering;
 
 namespace SummerMemories.Action3D.Squad
 {
-    public class SquadWorld3D : MonoBehaviour
+    public partial class SquadWorld3D : MonoBehaviour
     {
         public readonly Dictionary<string,GameObject> Markers = new Dictionary<string,GameObject>();
         private SquadBody _npcBody;
@@ -13,6 +13,7 @@ namespace SummerMemories.Action3D.Squad
         private GameObject Box(string id,Vector3 pos,Vector3 size,Material mat,bool solid=false) => SquadVisual.Shape(id,transform,PrimitiveType.Cube,pos,size,mat,solid);
         public void Build(SquadConfig config)
         {
+            if(config.presentation.isometric){Build25D(config);return;}
             var sun=new GameObject("SummerSun").AddComponent<Light>();sun.transform.SetParent(transform,false);sun.type=LightType.Directional;sun.intensity=.85f;sun.color=new Color(1,.93f,.78f);sun.transform.rotation=Quaternion.Euler(48,-35,0);sun.shadows=LightShadows.Soft;sun.shadowStrength=.72f;sun.shadowBias=.025f;
             RenderSettings.ambientMode=AmbientMode.Trilight;RenderSettings.ambientSkyColor=new Color(.28f,.38f,.46f);RenderSettings.ambientEquatorColor=new Color(.18f,.23f,.28f);RenderSettings.ambientGroundColor=new Color(.12f,.11f,.095f);QualitySettings.shadows=ShadowQuality.All;QualitySettings.shadowDistance=90;QualitySettings.shadowResolution=ShadowResolution.High;QualitySettings.antiAliasing=4;
             var sand=Mat(.75f,.73f,.61f);var stone=Mat(.40f,.48f,.48f);var white=Mat(.87f,.85f,.73f);

@@ -1,0 +1,190 @@
+{
+  "saveSlot": "st_side2d",
+  "background": "Art/Bg/st_side_coast",
+  "length": 88,
+  "characters": [
+    {
+      "id": "st_shinpei",
+      "nameKey": "st.character.shinpei",
+      "sheet": "Art/Side2D/st_shinpei",
+      "hp": 24,
+      "speed": 5.2,
+      "damage": 3,
+      "reach": 2.4
+    },
+    {
+      "id": "st_ushio",
+      "nameKey": "st.character.ushio",
+      "sheet": "Art/Side2D/st_ushio",
+      "hp": 22,
+      "speed": 5.7,
+      "damage": 2.5,
+      "reach": 2
+    },
+    {
+      "id": "st_hizuru",
+      "nameKey": "st.character.hizuru",
+      "sheet": "Art/Side2D/st_hizuru",
+      "hp": 28,
+      "speed": 4.8,
+      "damage": 4,
+      "reach": 3.1
+    }
+  ],
+  "solids": [
+    {
+      "id": "floor",
+      "x": 44,
+      "y": -0.5,
+      "width": 90,
+      "height": 1
+    },
+    {
+      "id": "tunnel",
+      "x": 15.5,
+      "y": 2,
+      "width": 7,
+      "height": 2.2
+    },
+    {
+      "id": "gate",
+      "x": 23,
+      "y": 2.5,
+      "width": 0.6,
+      "height": 5,
+      "opensWith": "tunnel_open"
+    },
+    {
+      "id": "battle_gate",
+      "x": 55,
+      "y": 2.5,
+      "width": 0.5,
+      "height": 5,
+      "opensWith": "battle_clear"
+    },
+    {
+      "id": "platform",
+      "x": 61,
+      "y": 1.5,
+      "width": 4,
+      "height": 0.35
+    }
+  ],
+  "enemies": [
+    {
+      "id": "sentry",
+      "style": "sentry",
+      "nameKey": "s2.enemy.sentry",
+      "x": 36,
+      "hp": 12,
+      "damage": 2,
+      "reach": 2.2,
+      "windup": 1
+    },
+    {
+      "id": "sweep",
+      "style": "sweep",
+      "nameKey": "s2.enemy.sweep",
+      "x": 44,
+      "hp": 18,
+      "damage": 3,
+      "reach": 3.2,
+      "windup": 0.85
+    },
+    {
+      "id": "guard",
+      "style": "guard",
+      "nameKey": "s2.enemy.guard",
+      "x": 49,
+      "hp": 24,
+      "damage": 4,
+      "reach": 2.8,
+      "windup": 1.05
+    },
+    {
+      "id": "final",
+      "style": "sweep",
+      "nameKey": "s2.enemy.final",
+      "x": 78,
+      "hp": 16,
+      "damage": 3,
+      "reach": 2.5,
+      "windup": 0.9
+    }
+  ],
+  "objects": [
+    {
+      "id": "watch",
+      "type": "scan",
+      "x": 4,
+      "y": 0,
+      "nameKey": "st.object.watch",
+      "promptKey": "s2.prompt.scan",
+      "detailKey": "s2.scan.watch",
+      "sets": "watch_scanned"
+    },
+    {
+      "id": "pipe",
+      "type": "pipe",
+      "x": 6.5,
+      "y": 0,
+      "nameKey": "st.weapon.pipe",
+      "promptKey": "s2.prompt.pick",
+      "detailKey": "s2.pipe",
+      "sets": "pipe"
+    },
+    {
+      "id": "stone",
+      "type": "scan",
+      "x": 9,
+      "y": 0,
+      "nameKey": "st.object.stone",
+      "promptKey": "s2.prompt.scan",
+      "detailKey": "s2.scan.stone",
+      "sets": "stone_scanned"
+    },
+    {
+      "id": "shell",
+      "type": "clue",
+      "x": 17,
+      "y": 0,
+      "nameKey": "s2.object.shell",
+      "promptKey": "s2.prompt.investigate",
+      "detailKey": "s2.story.shell",
+      "sets": "shell"
+    },
+    {
+      "id": "lever",
+      "type": "lever",
+      "x": 21,
+      "y": 0,
+      "nameKey": "s2.object.lever",
+      "promptKey": "s2.prompt.interact",
+      "detailKey": "s2.gate.open",
+      "requires": "shell",
+      "sets": "tunnel_open"
+    },
+    {
+      "id": "core",
+      "type": "core",
+      "x": 73,
+      "y": 0,
+      "nameKey": "s2.object.core",
+      "promptKey": "s2.prompt.break",
+      "detailKey": "s2.core.hint",
+      "requires": "rescue_started",
+      "sets": "core_broken"
+    },
+    {
+      "id": "mio",
+      "type": "exit",
+      "x": 85,
+      "y": 0,
+      "nameKey": "st.character.mio",
+      "promptKey": "s2.prompt.rescue",
+      "detailKey": "s2.story.victory",
+      "requires": "battle_clear",
+      "sets": "mio_safe"
+    }
+  ]
+}

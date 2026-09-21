@@ -1,5 +1,14 @@
 # 夏日回忆 · 归墟来潮（Summer Memories）
 
+> **阶段归档（2026-09-21，开发继续暂停）**：当前原型与动作仍明显低于商业品质。本次保存2.5D/横版代码、教程调研、可编辑Blender动画及Seedance视频试验。完成范围、失败点、旧包与源码差异见 [最新进度](docs/progress-checkpoint-2026-09-21.md)。
+
+- [动画研究与实验索引](docs/motion/README.md)
+- [最新单手扛锤工程与对照](docs/motion/shoulder-polish-2026-09-21/README.md)
+- [Seedance真实输入/输出与偏差](docs/motion/seedance-v2v-2026-09-21/README.md)
+- [横版2D方向](docs/decisions/0005-side-scrolling-slice.md) · [2026-09-20暂停记录](docs/progress-pause-2026-09-20.md)
+
+以下小队3D说明保留为历史基线。当前编辑器默认横版2D；最新源码尚未重新构建验收。
+
 > **当前方向（2026-09-20）**：基于本仓库转向《夏日重现》人物背景的 PC 小队策略冒险动作 Demo。
 > 保留影子、头发、原作人物、贝壳、回溯；首版加入切换人物、潮的头发能力、扫描与已扫描物品变形。
 > 新小队已接入运行时，试玩包为 `Builds/SummerTimeSquad.app`；三具身体 / 四位核心人物、扫描变形与手表携带、全队回溯、时间/事件/地图俯瞰。v02 已补上跳跃、独立闪避、轻重击与武器，并导入 AI 头像/主视觉和 Blender 模型。v03 继续加入三类敌人对策、破势/精准闪避、束缚换人追击和肘膝躯干动作。当前仍是机制原型，用户对人物与游戏性尚未认可。
@@ -13,7 +22,7 @@
 - [当前方向决策 ADR-0003](docs/decisions/0003-pc-action-adventure.md)
 - 原创程序配乐样本：`Assets/Resources/Audio/Prototype/st_ambient_v01.wav`；另有影子、回溯、头发、贝壳、跳跃、闪避、击中七个音效。
 
-编辑器 Play 默认进入新小队版；`--legacy` 可进入旧 ADV/战棋，`--action3d` 可进入旧海堤白盒。运行 `bash tools/build_squad_mac.sh` 重建小队 Mac 包。
+当前工作区编辑器 Play 默认进入横版 2D；已有包为 `Builds/SummerTimeSide2D.app`，最新源码修正尚未重新出包。`--legacy` 可进入旧 ADV/战棋，`--action3d` 可进入旧海堤白盒。历史小队包构建入口为 `bash tools/build_squad_mac.sh`；暂停期间不自动运行构建。
 
 以下介绍保留为旧版神话 ADV＋战棋 Demo 基线。
 

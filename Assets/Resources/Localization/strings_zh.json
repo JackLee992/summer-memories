@@ -644,6 +644,378 @@
     {
       "key": "st.combat.counter",
       "value": "反击强化就绪"
+    },
+    {
+      "key": "st.25d.brand",
+      "value": "夏日重现  /  2.5D 小队冒险试作"
+    },
+    {
+      "key": "st.25d.subtitle",
+      "value": "在海风与影子之间，重新安排每一次相遇。\n固定俯视 · 即时行动 · 暂停部署"
+    },
+    {
+      "key": "st.25d.note",
+      "value": "Enter 开始游玩  ·  Space 暂停部署\n独立试玩存档；人物目前为单姿态插画。"
+    },
+    {
+      "key": "st.25d.controls",
+      "value": "WASD 移动 / Shift 奔跑  ·  Alt 跳跃 / Ctrl 闪避  ·  J 普攻 / K 重击 / E 能力  ·  F 互动与扫描\nSpace 暂停部署 / 右键下令  ·  1–3 切人  ·  4 跟随 / 5 留守 / 6 集火  ·  B 复制 / V 意识切换（实时） / M 俯瞰 / R 回溯"
+    },
+    {
+      "key": "st.plan.toggle",
+      "value": "Space  暂停部署"
+    },
+    {
+      "key": "st.plan.execute",
+      "value": "Space  执行部署"
+    },
+    {
+      "key": "st.plan.paused",
+      "value": "时间已暂停"
+    },
+    {
+      "key": "st.plan.instructions",
+      "value": "1–3 选队员 → 右键地面移动 / 右键敌人攻击 → Space 执行"
+    },
+    {
+      "key": "st.plan.attack",
+      "value": "J  普通攻击"
+    },
+    {
+      "key": "st.plan.heavy",
+      "value": "K  重击"
+    },
+    {
+      "key": "st.plan.skill",
+      "value": "E  角色能力"
+    },
+    {
+      "key": "st.plan.move",
+      "value": "前往指定位置"
+    },
+    {
+      "key": "st.plan.hold",
+      "value": "部署完成 · 原地待命"
+    },
+    {
+      "key": "st.plan.none",
+      "value": "未部署"
+    },
+    {
+      "key": "st.plan.blocked",
+      "value": "此处无法通行，请重新选择落点。"
+    },
+    {
+      "key": "st.plan.unavailable",
+      "value": "该队员当前无法执行这条部署。"
+    },
+    {
+      "key": "st.plan.queued",
+      "value": "部署已记录；Space 恢复时间后执行。"
+    },
+    {
+      "key": "st.25d.sweep",
+      "value": "横扫 · Alt 跳过 / Ctrl 撤出范围"
+    },
+    {
+      "key": "s2.title",
+      "value": "夏日重现"
+    },
+    {
+      "key": "s2.subtitle",
+      "value": "潮痕之间 · 横版小队冒险"
+    },
+    {
+      "key": "s2.start",
+      "value": "开始新轮回"
+    },
+    {
+      "key": "s2.continue",
+      "value": "继续调查"
+    },
+    {
+      "key": "s2.exit",
+      "value": "退出"
+    },
+    {
+      "key": "s2.pause",
+      "value": "暂停"
+    },
+    {
+      "key": "s2.resume",
+      "value": "继续"
+    },
+    {
+      "key": "s2.back",
+      "value": "返回标题"
+    },
+    {
+      "key": "s2.rewind",
+      "value": "R  回溯"
+    },
+    {
+      "key": "s2.overlook",
+      "value": "M  俯瞰"
+    },
+    {
+      "key": "s2.controls",
+      "value": "A / D 移动   Space 跳跃   Shift 闪避   J 连击   K 重击   E 能力   F 互动\n1 / 2 / 3 切人   C 石块复制 / 还原   B 手表携带   V 龙之介   M 俯瞰   R 回溯"
+    },
+    {
+      "key": "s2.intro",
+      "value": "一次失败，多一个答案。\n在海港街区寻找线索，穿过仓库，救出澪。"
+    },
+    {
+      "key": "s2.goal.start",
+      "value": "调查路边的钢管和石块；切潮进行扫描。"
+    },
+    {
+      "key": "s2.goal.tunnel",
+      "value": "潮复制石块穿过低矮仓库，调查贝壳并开启闸门。"
+    },
+    {
+      "key": "s2.goal.fight",
+      "value": "潮束缚 → 切人追击；日鹤重击破开守势。"
+    },
+    {
+      "key": "s2.goal.rescue",
+      "value": "前往码头，找到困住澪的影子核心。"
+    },
+    {
+      "key": "s2.goal.core",
+      "value": "倒计时结束前，切日鹤用重击破坏核心！"
+    },
+    {
+      "key": "s2.goal.exit",
+      "value": "影子核心已破坏，与澪会合。"
+    },
+    {
+      "key": "s2.story.arrival",
+      "value": "慎平：这条街……我好像来过。\n潮：先看清楚，再行动。我的复制能穿过人过不去的地方。\n日鹤：把路边的钢管拿上。别空着手接近那些影子。"
+    },
+    {
+      "key": "s2.story.shell",
+      "value": "潮：贝壳被压在仓库里面，像是有人留下的记号。\n慎平：能听到码头那边的敲击声。我们得从里面把闸门打开。\n已记录线索。出口处有人形空间，可以还原并切换队员。"
+    },
+    {
+      "key": "s2.story.warehouse",
+      "value": "日鹤：前面三个。先别一起惊动。\n潮：我可以变成手表跟着慎平，避开门口的巡查；等靠近，再用头发束住它。\n慎平：束缚后换人追击，守势的那个交给长柄锤。"
+    },
+    {
+      "key": "s2.story.battle_clear",
+      "value": "日鹤：路通了。\n慎平：把这一次记牢。码头就在前面。\n新的回溯锚点已建立，调查记录和扫描目录会保留。"
+    },
+    {
+      "key": "s2.story.rescue",
+      "value": "澪：别过来！木板下面还有东西！\n慎平：支撑码头的影子正在收紧……\n35 秒内破坏右侧的影子核心，再救澪。"
+    },
+    {
+      "key": "s2.story.rescue_known",
+      "value": "慎平：上一次，码头在三十五秒后塌了。\n日鹤：这次我来砸开核心。其他人挡住影子。"
+    },
+    {
+      "key": "s2.story.rewind",
+      "value": "海风重新吹过街口。\n身体回到了锚点，经历仍然留在俯瞰中。\n这一次，换一个行动顺序。"
+    },
+    {
+      "key": "s2.story.victory",
+      "value": "澪安全了。\n潮：这次，我们都在。\n慎平：失败没有消失。正因为记得，才走到了这里。"
+    },
+    {
+      "key": "s2.fail.shinpei",
+      "value": "慎平倒下了。查看俯瞰，带着这次的情报重来。"
+    },
+    {
+      "key": "s2.fail.collapse",
+      "value": "码头坍塌，救援失败。核心的位置与三十五秒期限已被记住。"
+    },
+    {
+      "key": "s2.ally.down",
+      "value": "同伴倒下；切回慎平。回溯可以恢复全队。"
+    },
+    {
+      "key": "s2.anchor.arrival",
+      "value": "街口 · 初始锚点"
+    },
+    {
+      "key": "s2.anchor.warehouse",
+      "value": "仓库外 · 救援锚点"
+    },
+    {
+      "key": "s2.alarm",
+      "value": "巡查发现了你；仓库内的影子进入警戒。"
+    },
+    {
+      "key": "s2.copy.ushio",
+      "value": "切换到潮才能扫描和复制。"
+    },
+    {
+      "key": "s2.copy.scan_first",
+      "value": "先靠近石块，按 F 扫描。"
+    },
+    {
+      "key": "s2.copy.stone",
+      "value": "已复制石块：可通过低矮空间；C 还原。"
+    },
+    {
+      "key": "s2.copy.watch",
+      "value": "潮已变成慎平的手表；E 可发动头发支援，切潮解除携带。"
+    },
+    {
+      "key": "s2.copy.ceiling",
+      "value": "头顶空间不足，先离开狭窄通道再还原。"
+    },
+    {
+      "key": "s2.scan.watch",
+      "value": "手表已扫描。切潮后按 B，附着到慎平身上。"
+    },
+    {
+      "key": "s2.scan.stone",
+      "value": "石块已扫描。按 C 复制，穿过前方矮通道。"
+    },
+    {
+      "key": "s2.pipe",
+      "value": "慎平已装备钢管，普攻距离和伤害提升。"
+    },
+    {
+      "key": "s2.gate.open",
+      "value": "仓库闸门已打开。"
+    },
+    {
+      "key": "s2.core.hint",
+      "value": "核心外壳坚硬：日鹤靠近后按 K，用长柄锤重击。"
+    },
+    {
+      "key": "s2.core.broken",
+      "value": "核心破碎，坍塌停止！现在去救澪。"
+    },
+    {
+      "key": "s2.prompt.scan",
+      "value": "F 扫描"
+    },
+    {
+      "key": "s2.prompt.pick",
+      "value": "F 拾取"
+    },
+    {
+      "key": "s2.prompt.investigate",
+      "value": "F 调查"
+    },
+    {
+      "key": "s2.prompt.interact",
+      "value": "F 开启"
+    },
+    {
+      "key": "s2.prompt.break",
+      "value": "3 切日鹤 · K 重击"
+    },
+    {
+      "key": "s2.prompt.rescue",
+      "value": "F 救援"
+    },
+    {
+      "key": "s2.object.shell",
+      "value": "仓库中的贝壳"
+    },
+    {
+      "key": "s2.object.lever",
+      "value": "内侧闸门开关"
+    },
+    {
+      "key": "s2.object.core",
+      "value": "影子核心"
+    },
+    {
+      "key": "s2.enemy.sentry",
+      "value": "巡查影子"
+    },
+    {
+      "key": "s2.enemy.sweep",
+      "value": "横扫影子"
+    },
+    {
+      "key": "s2.enemy.guard",
+      "value": "守势影子"
+    },
+    {
+      "key": "s2.enemy.final",
+      "value": "码头影子"
+    },
+    {
+      "key": "s2.cooldown",
+      "value": "能力正在恢复。"
+    },
+    {
+      "key": "s2.tired",
+      "value": "体力不足，稍等片刻再重击。"
+    },
+    {
+      "key": "s2.shinpei.skill",
+      "value": "慎平依靠武器和情报；潮变成手表后，可用 E 呼叫头发支援。"
+    },
+    {
+      "key": "s2.ryunosuke",
+      "value": "龙之介接管：E 预判压制，打断影子。"
+    },
+    {
+      "key": "s2.hizuru",
+      "value": "日鹤接管：长柄重锤。"
+    },
+    {
+      "key": "s2.team.followup",
+      "value": "换人追击！伤害翻倍。"
+    },
+    {
+      "key": "s2.hud.ready",
+      "value": "能力就绪"
+    },
+    {
+      "key": "s2.hud.down",
+      "value": "倒下"
+    },
+    {
+      "key": "s2.hud.stone",
+      "value": "石块形态"
+    },
+    {
+      "key": "s2.hud.watch",
+      "value": "潮 · 手表支援"
+    },
+    {
+      "key": "s2.hud.timer",
+      "value": "码头坍塌：{0:0} 秒"
+    },
+    {
+      "key": "s2.hud.loops",
+      "value": "第 {0} 次回溯"
+    },
+    {
+      "key": "s2.timeline.title",
+      "value": "俯瞰 · 亲历的时间线"
+    },
+    {
+      "key": "s2.timeline.none",
+      "value": "这条时间线尚未记录事件。"
+    },
+    {
+      "key": "s2.timeline.route",
+      "value": "已探索的街区"
+    },
+    {
+      "key": "s2.timeline.select",
+      "value": "选择经历"
+    },
+    {
+      "key": "s2.next",
+      "value": "Enter 继续"
+    },
+    {
+      "key": "s2.save.error",
+      "value": "存档读取失败；原存档已保留。"
+    },
+    {
+      "key": "s2.version",
+      "value": "横版玩法试作 · 动作与美术仍在验证"
     }
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "reopened_scene": true,
+  "editable_left_grip_move_m": 0.014999629485413429,
+  "wrist_error_after_edit_m": 3.356997145330945e-05,
+  "loop_joint_position_error_m": 0.0,
+  "max_wrist_error_m": 7.863777473071053e-05,
+  "max_ankle_error_m": 5.50393748567416e-05,
+  "head_contact_gap_m": 0.0,
+  "head_minimum_floor_clearance_m": 0.3599591851234436,
+  "engine": "BLENDER_EEVEE",
+  "mesh_count": 88,
+  "switch_checks": [
+    {
+      "frame": 13,
+      "position_error_m": 0.0,
+      "angle_error_radians": 0.0
+    },
+    {
+      "frame": 61,
+      "position_error_m": 0.0,
+      "angle_error_radians": 0.0
+    }
+  ],
+  "max_bound_socket_error_m": 0.0,
+  "near_fingers_closed": true
+}

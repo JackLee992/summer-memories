@@ -46,7 +46,7 @@ namespace SummerMemories.Action3D.Squad
             Controller=gameObject.AddComponent<CharacterController>();
             Controller.radius=.28f; Controller.height=1.8f; Controller.center=Vector3.up*.9f;
             Controller.skinWidth=.025f; Controller.stepOffset=.22f; Controller.minMoveDistance=0;
-            _body=new SquadBody(transform,IsUshio,false,IsHizuru);
+            _body=new SquadBody(transform,IsUshio,false,IsHizuru,session.Config.presentation);
             Teleport(SquadConfig.Position(config.spawn),Quaternion.identity);
         }
         public void Tick(float dt)

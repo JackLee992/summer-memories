@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-21",
+  "provider": "Dreamina CLI",
+  "mode": "multimodal2video / video reference",
+  "model": "seedance2.0_vip",
+  "duration_seconds": 4,
+  "ratio": "1:1",
+  "resolution": "1080p",
+  "input": {
+    "file": "input_reference_4s.mp4",
+    "sha256": "e81d37fd746fec1b8fa3cb074420cf28a54d82accb89ac6a44557f72f06134f8",
+    "source": "../shoulder-polish-2026-09-21/revised.mp4",
+    "transform": "Keep original 3.6 seconds, append 0.4 seconds final-frame hold; no action retiming"
+  },
+  "prompt": "将@视频1中的现有三维角色动作预演，精制成高品质日式电影级风格化3D角色动画。视频1是唯一的动作、镜头、构图与道具轨迹参考。保持原片中一个成年女性、同一把长柄重锤、同一个木质训练靶箱以及同一场完整挥击。保持固定三分之四全身镜头，身体、鞋底、长发和整把锤子始终完整入画，人物面向画面左侧，画面空间关系与原片一致。\n\n角色为《夏日重现》南方日鹤的同人三维演绎：成熟冷静的成年日本女性，修长匀称的成人比例，精致而克制的日式三维面部造型，清晰锐利的眼神，贴合面部的细黑框眼镜，柔和皮肤散射和自然细腻肤质。黑色长直发具有共同发量、层叠发束与细发高光，发根稳定，发尾随动作延迟收束。合体的炭黑色西装外套、白衬衫、深色长裤与黑色皮鞋；衣料具有细致织物纹理、精确裁片、领口和袖口，肩肘与腰部的衣褶随真实身体受力连续变化。适中大小的矩形锻钢锤头具有倒角、轻微磨损与金属反射，长木柄具有细木纹和清楚握点，锤头和锤柄尺寸全程恒定。\n\n动作严格参照视频1：开场单手将重锤扛在肩侧，空着的手自然垂下；接着空手抬起、手指展开、贴合锤柄并抓稳，持锤手沿柄调整握距；屈膝与髋部先蓄力，胸肩随后带动重锤举起；双脚支撑稳定，髋胸先启动，锤头滞后而后沿完整弧线加速向下，清楚击中木箱上表面一次；接触时手腕握点保持贴合、锤头短暂停住，身体继续压低吸收余势，头发和衣摆稍后停止；接着费力回收锤子、再次落在肩侧，辅助的手松开并垂下，回到稳定单手肩扛姿态。按参考视频的时间顺序与运动幅度完成整段动作，结尾保持稳定。\n\n地面为简洁深灰蓝色训练棚地面，木箱具有真实木材纹理与金属加固条。柔和大面积主光、克制轮廓光、自然接触阴影、环境遮蔽与精致全局光照，画面主体清晰，景深以全身动作及锤头接触点同时可读为准。镜头全程固定单镜头，成片为立体建模渲染质感，重点展现角色制作、材料、真实重量和连续表演。声音为轻微衣物摩擦、挥动空气和一次清晰的金属锤击木箱声。\n",
+  "status": "success",
+  "notes": [
+    "Video-reference generation; not a guaranteed frame-preserving video style transfer.",
+    "Input is our authored Blender animation; no official media uploaded.",
+    "Rendered video output does not modify the editable 3D model or animation rig."
+  ],
+  "submit_elapsed_seconds": 3.15,
+  "submit_process_exit_code": 0,
+  "submission": {
+    "submit_id": "e936aa33-adc4-4f96-a377-e0f3f466c613",
+    "gen_status": "querying",
+    "credit_count": 264
+  },
+  "queries": [
+    {
+      "submit_id": "e936aa33-adc4-4f96-a377-e0f3f466c613",
+      "gen_status": "querying",
+      "credit_count": 264,
+      "queue_info": {
+        "queue_idx": 14,
+        "priority": 1,
+        "queue_status": "Queueing"
+      }
+    },
+    {
+      "submit_id": "e936aa33-adc4-4f96-a377-e0f3f466c613",
+      "gen_status": "querying",
+      "credit_count": 264,
+      "queue_info": {
+        "queue_idx": 0,
+        "priority": 1,
+        "queue_status": "Generating"
+      },
+      "queried_at_utc": "2026-09-21T06:34:41.962781+00:00"
+    },
+    {
+      "submit_id": "e936aa33-adc4-4f96-a377-e0f3f466c613",
+      "gen_status": "success",
+      "credit_count": 264,
+      "queried_at_utc": "2026-09-21T06:37:48.152282+00:00"
+    }
+  ],
+  "local_output": {
+    "file": "seedance_original.mp4",
+    "bytes": 4707936,
+    "sha256": "0972d30167bd6f16113b8a5f9e1a27a89056fdcdb4c47d637b2b6c2d49a29554",
+    "metadata": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "duration": "4.063991",
+          "nb_frames": "178"
+        },
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1440,
+          "height": 1440,
+          "r_frame_rate": "60/1",
+          "avg_frame_rate": "5820/241",
+          "duration": "4.016667",
+          "nb_frames": "97"
+        }
+      ],
+      "format": {
+        "duration": "4.063991"
+      }
+    }
+  }
+}

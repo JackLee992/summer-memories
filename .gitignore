@@ -77,3 +77,11 @@ Thumbs.db
 
 # Keep import manifests (hashes only, no content)
 !/tools/manifests/*.json
+
+# ---- Reproducible motion-study intermediates (keep final previews + editable sources) ----
+__pycache__/
+*.py[cod]
+/docs/motion/*/frames/
+/docs/motion/*/*_frames/
+/docs/motion/*/*.blend[0-9]*
+/docs/motion/*/*.log

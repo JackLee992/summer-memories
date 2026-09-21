@@ -19,21 +19,27 @@ namespace SummerMemories.App
 #if SM_ACTION3D
             mode = "action3d";
 #endif
-#if SM_SQUAD || UNITY_EDITOR
+#if SM_SQUAD || SM_SQUAD25D
             mode = "squad";
+#endif
+#if SM_SIDE2D || UNITY_EDITOR
+            mode = "side2d";
 #endif
             foreach (var arg in args)
             {
-                if (arg == "--squad" || arg == "--squad-smoke") mode = "squad";
+                if (arg == "--squad" || arg == "--squad-smoke" || arg == "--squad25d" || arg == "--squad3d") mode = "squad";
                 if (arg == "--action3d") mode = "action3d";
                 if (arg == "--legacy") mode = "legacy";
+                if (arg == "--side2d" || arg == "--side-smoke") mode = "side2d";
             }
-            if (Object.FindFirstObjectByType<GameDirector>() != null ||
+            if (Object.FindFirstObjectByType<SideDirector>() != null ||
+                Object.FindFirstObjectByType<GameDirector>() != null ||
                 Object.FindFirstObjectByType<SquadDemoDirector>() != null ||
                 Object.FindFirstObjectByType<Action3D.Game3DDirector>() != null) return;
             var go = new GameObject(mode == "squad" ? "SquadDemo" : mode == "action3d" ? "Action3D" : "GameDirector");
             Object.DontDestroyOnLoad(go);
-            if (mode == "squad") go.AddComponent<SquadDemoDirector>();
+            if (mode == "side2d") go.AddComponent<SideDirector>();
+            else if (mode == "squad") go.AddComponent<SquadDemoDirector>();
             else if (mode == "action3d") go.AddComponent<Action3D.Game3DDirector>();
             else go.AddComponent<GameDirector>();
             Core.Log.Info("GameBootstrap mode: " + mode);

@@ -33,6 +33,18 @@ namespace SummerMemories.App
             var asset=Resources.Load<TextAsset>("Battles/st_squad_demo");
             if(asset==null)throw new InvalidOperationException("Squad configuration missing");
             var config=JsonUtility.FromJson<SquadConfig>(asset.text);
+            var iso=false;
+#if SM_SQUAD25D || UNITY_EDITOR
+            iso=true;
+#endif
+            var args=Environment.GetCommandLineArgs();
+            if(Array.IndexOf(args,"--squad25d")>=0)iso=true;
+            if(Array.IndexOf(args,"--squad3d")>=0)iso=false;
+            if(iso)
+            {
+                config.presentation=JsonUtility.FromJson<SquadPresentation>(Resources.Load<TextAsset>("Battles/st_squad_25d").text);
+                config.saveSlot=config.presentation.saveSlot;
+            }
             _slot=SmokeMode?"st_smoke_"+Guid.NewGuid().ToString("N"):config.saveSlot;
             Session=gameObject.AddComponent<SquadSession3D>();Session.Init(config);Session.Paused=true;
             _ambience=gameObject.AddComponent<AudioSource>();_ambience.clip=Resources.Load<AudioClip>(config.audio.ambience);_ambience.loop=true;_ambience.volume=.38f;
@@ -96,7 +108,7 @@ namespace SummerMemories.App
             Persist();
         }
         public void Advance(){if(Screen!="story")return;Story.Press();Persist();}
-        public void Resume(){Screen="play";Session.Paused=false;Story=null;Persist();}
+        public void Resume(){Session.Tactical?.Close();Screen="play";Session.Paused=false;Story=null;Persist();}
         public void Overlook(){if(Screen=="play"||Screen=="pause"){Screen="overlook";Session.Paused=true;Persist();}}
         public void Pause(){if(Screen=="play"){Screen="pause";Session.Paused=true;}}
         public void Rewind(){_completed=false;Screen="play";Story=null;Session.Rewind();}
@@ -115,8 +127,9 @@ namespace SummerMemories.App
         {
             if(input)
             {
+                if(Input.GetKeyDown(KeyCode.Space)&&Screen=="play")Session.Tactical?.Toggle();
                 if(Input.GetKeyDown(KeyCode.Return)){if(Screen=="story")Advance();else if(Screen=="title")NewGame(false);else if(Screen=="defeat")Rewind();}
-                if(Input.GetKeyDown(KeyCode.Escape)){if(Screen=="play")Pause();else if(Screen=="pause"||Screen=="overlook"||Screen=="journal"||Screen=="forms")Resume();}
+                if(Input.GetKeyDown(KeyCode.Escape)){if(Screen=="play"&&Session.Tactical!=null&&Session.Tactical.Planning)Session.Tactical.Close();else if(Screen=="play")Pause();else if(Screen=="pause"||Screen=="overlook"||Screen=="journal"||Screen=="forms")Resume();}
                 if(Input.GetKeyDown(KeyCode.B)){if(Screen=="forms")Resume();else OpenForms();}
                 if(Input.GetKeyDown(KeyCode.M)){if(Screen=="overlook")Resume();else Overlook();}
                 if(Screen=="defeat"&&Input.GetKeyDown(KeyCode.R))Rewind();

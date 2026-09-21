@@ -17,6 +17,10 @@
       "bytes": 3966257,
       "sha256": "def0ebb741255513ee00d5e2b621edb8038167d7cf3ce1f40f225e773179295b"
     },
+    "Assets/Resources/Art/Bg/st_side_coast.png": {
+      "bytes": 3824677,
+      "sha256": "7cc65c802096382a84f8511d4c53c0969dd369891511a781e9b69d07f7e67ff2"
+    },
     "Assets/Resources/Art/Bg/title_bg.png": {
       "bytes": 3275416,
       "sha256": "9e7b7d57f6197f28ee9e8e6ae78693251b338d05c66985cce8038ed7e9dbd63d"
@@ -44,6 +48,22 @@
     "Assets/Resources/Art/Models/st_ushio_v02.fbx": {
       "bytes": 393564,
       "sha256": "721a9ba359b8561ce3db0865bb01bf72ca8362179b789086dc08c6a7f07a9a1b"
+    },
+    "Assets/Resources/Art/Portraits/25D/st_hizuru.png": {
+      "bytes": 258360,
+      "sha256": "a11725b9dafd917fc1c8ca38f62c9d5f66bc289b1b3838c77304114a16cdb79d"
+    },
+    "Assets/Resources/Art/Portraits/25D/st_mio.png": {
+      "bytes": 222615,
+      "sha256": "e574e1223c9eef939f5e04c4144283ff308fd70227c013f6961d9022cbef2f70"
+    },
+    "Assets/Resources/Art/Portraits/25D/st_shinpei.png": {
+      "bytes": 281073,
+      "sha256": "4a279a28e77f8fafa791886d714fcb4ef4e592d46be8e3e101a5b606f34e5c2c"
+    },
+    "Assets/Resources/Art/Portraits/25D/st_ushio.png": {
+      "bytes": 250391,
+      "sha256": "e83a01aa412902f5adc7ba7d1e20b49d620b6bb37626bb44fc85a384b666c2f3"
     },
     "Assets/Resources/Art/Portraits/jingwei.png": {
       "bytes": 1774008,
@@ -76,6 +96,18 @@
     "Assets/Resources/Art/Portraits/wangliang.png": {
       "bytes": 1567511,
       "sha256": "ad5b00055e788f6df81210778acc2072b403e3af8ac7bddad3f6c59e72190bab"
+    },
+    "Assets/Resources/Art/Side2D/st_hizuru.png": {
+      "bytes": 834008,
+      "sha256": "c1ad6cb55151ad326fab9eba399abbe3be7f02f2824506af48af3ec7fbf08b01"
+    },
+    "Assets/Resources/Art/Side2D/st_shinpei.png": {
+      "bytes": 822576,
+      "sha256": "e9cd23a1301e4a8e936f4e23329ac88bc53e2f346fa95581f0a2627e3bc2924e"
+    },
+    "Assets/Resources/Art/Side2D/st_ushio.png": {
+      "bytes": 981544,
+      "sha256": "c5ff5cc1a042f6f33bbc393ed067a4ebd587a132e1f99e13fd88c2fc0b12b6e2"
     },
     "Assets/Resources/Audio/Prototype/st_ambient_v01.wav": {
       "bytes": 5644844,
@@ -113,13 +145,21 @@
       "bytes": 1220,
       "sha256": "90073628805677340e4ed8b9c873ffdfd62374a855ed5d59a12d6336028d9fca"
     },
+    "Assets/Resources/Battles/st_side2d.json": {
+      "bytes": 3710,
+      "sha256": "cd03a8d9f9e36e2b3f5abd599be023db1e936865f9bb78daf8dc70011fbf3593"
+    },
+    "Assets/Resources/Battles/st_squad_25d.json": {
+      "bytes": 181,
+      "sha256": "2e8080fb16b9811c5e27c0006c98590df8f472850d33ec3e011e7104b1eb66f1"
+    },
     "Assets/Resources/Battles/st_squad_demo.json": {
       "bytes": 9696,
       "sha256": "0070ab9bee1ea7da5fc68ec8464ef62a1afdf539bc515340c6fe36b9dbc4e720"
     },
     "Assets/Resources/Localization/strings_zh.json": {
-      "bytes": 15953,
-      "sha256": "8d5c9da7d886d295273958cd71b85ff48aad6d6c91eed7e823869a8b1840168f"
+      "bytes": 26125,
+      "sha256": "57b84f7316b9e78969435ff403f3cabbc7809873bb42ba0e3179eeada70b1426"
     },
     "Assets/Resources/Shaders/SMUnlit.shader": {
       "bytes": 1438,
@@ -128,6 +168,10 @@
     "Assets/Resources/Shaders/SquadSky.shader": {
       "bytes": 1463,
       "sha256": "cfd9930dc76bf2306f45add21e3cad6fc6d7fb8de46d1c26f6d95526ff182801"
+    },
+    "Assets/Resources/Shaders/SquadSprite.shader": {
+      "bytes": 795,
+      "sha256": "7ae01d3775c70ee2bb325aa72b51ad5c61b2b6b626bd0e4fabac99fcdc1d4353"
     },
     "Assets/Resources/Shaders/SquadSurface.shader": {
       "bytes": 1101,

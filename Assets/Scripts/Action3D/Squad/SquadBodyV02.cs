@@ -18,10 +18,17 @@ namespace SummerMemories.Action3D.Squad
         private readonly bool _ushio;
         private readonly bool _shadow,_hizuru;
         private readonly Transform _weaponRoot;
-        public SquadBody(Transform parent,bool ushio,bool shadow=false,bool hizuru=false)
+        private readonly SquadSpriteBody _sprite;
+        public SquadBody(Transform parent,bool ushio,bool shadow=false,bool hizuru=false,SquadPresentation presentation=null,string spriteId=null)
         {
             _shadow=shadow;_hizuru=hizuru;_ushio=ushio;
             Root=new GameObject("Body").transform;Root.SetParent(parent,false);
+            if(presentation!=null && presentation.isometric)
+            {
+                _sprite=Root.gameObject.AddComponent<SquadSpriteBody>();
+                _sprite.Init(parent,presentation,spriteId??("st_"+(ushio?"ushio":hizuru?"hizuru":"shinpei")),shadow);
+                Skin=Cloth=Hair=_sprite.Material;return;
+            }
             var key="Art/Models/st_"+(ushio?"ushio":hizuru?"hizuru":"shinpei")+"_v02";
             var prefab=Resources.Load<GameObject>(key);
             if(prefab==null)throw new InvalidOperationException("Missing model "+key);
@@ -59,12 +66,13 @@ namespace SummerMemories.Action3D.Squad
                 _weaponRoot.gameObject.SetActive(false);
             }
         }
-        public void Equip(bool equipped){if(_weaponRoot!=null)_weaponRoot.gameObject.SetActive(equipped);}
+        public void Equip(bool equipped){if(_sprite!=null){_sprite.Equip(equipped);return;}if(_weaponRoot!=null)_weaponRoot.gameObject.SetActive(equipped);}
         private void Rotate(Transform joint,float x=0,float y=0,float z=0)
         {joint.localRotation=_rest[joint]*Quaternion.Euler(x,y,z);}
         private static float Ease(float t)=>Mathf.SmoothStep(0,1,Mathf.Clamp01(t));
         public void Pose(float time,float movement,ActorAction action,float progress,int combo=0,bool heavy=false,bool airborne=false)
         {
+            if(_sprite!=null){_sprite.Pose(time,movement,action,progress,airborne);return;}
             var dt=Mathf.Clamp(time-_lastPoseTime,0,.05f);_lastPoseTime=time;
             _movement=Mathf.Lerp(_movement,movement,1-Mathf.Exp(-16*dt));_gait+=dt*(8.6f+_movement*2);
             var left=Mathf.Sin(_gait);var right=Mathf.Sin(_gait+Mathf.PI);var breathe=Mathf.Sin(time*2.1f);

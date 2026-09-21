@@ -1,0 +1,9 @@
+{
+  "isometric": true,
+  "saveSlot": "st_demo25d",
+  "cameraYaw": -25,
+  "cameraPitch": 42,
+  "orthographicSize": 7.2,
+  "spriteHeight": 2.8,
+  "spriteRoot": "Art/Portraits/25D/"
+}

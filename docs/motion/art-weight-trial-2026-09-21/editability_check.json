@@ -1,0 +1,12 @@
+{
+  "reopened_scene": true,
+  "editable_left_grip_move_m": 0.015000135932024325,
+  "wrist_error_after_edit_m": 3.3527122599940514e-05,
+  "loop_joint_position_error_m": 0.0,
+  "max_wrist_error_m": 7.866273172991802e-05,
+  "max_ankle_error_m": 4.850788486463761e-05,
+  "head_contact_gap_m": 0.0,
+  "head_minimum_floor_clearance_m": 0.3599591851234436,
+  "engine": "BLENDER_EEVEE",
+  "mesh_count": 79
+}

@@ -1,0 +1,60 @@
+{
+  "date": "2026-09-21",
+  "scope": "Local animation asset experiment; Unity gameplay remains paused",
+  "inputs": {
+    "docs/motion/tutorial-probe-2026-09-21/momask_raw.bvh": {
+      "sha256": "1bfcaa96d767b0f1b7d1e17ad83e33a603863c6576772c51b72a0d98316abe5b",
+      "use": "skeleton scaffold"
+    },
+    "Assets/Resources/Art/Portraits/25D/st_hizuru.png": {
+      "sha256": "a11725b9dafd917fc1c8ca38f62c9d5f66bc289b1b3838c77304114a16cdb79d",
+      "use": "visual design reference only"
+    }
+  },
+  "outputs": {
+    "st_hizuru_weight_study.blend": {
+      "sha256": "64ed495f038ea7b90c49e7dc4874a479c8ae48897447ba629ca6f4d78755d414",
+      "bytes": 235877
+    },
+    "build_study.py": {
+      "sha256": "c8bdd760078cddb33b4d0f8fcfaa4c92610d897810463feeee232d57607e8daa",
+      "bytes": 23874
+    },
+    "revised.mp4": {
+      "sha256": "c8e3c53029e8b6758f045ca395080234dbb99e451665c361cf0acfb89be29028",
+      "bytes": 141908
+    },
+    "side.mp4": {
+      "sha256": "4b76a78c0c5dfd9e81017e40687d8ee8b5bb23de5721f6de4fc11eb1bb95b312",
+      "bytes": 94948
+    },
+    "baseline.mp4": {
+      "sha256": "56315bf064cde436426d4404fd0784df7c43538ad06589addc7701a9b7374716",
+      "bytes": 137124
+    }
+  },
+  "media": {
+    "baseline.mp4": {
+      "width": 720,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "3.000000",
+      "nb_frames": "60"
+    },
+    "revised.mp4": {
+      "width": 720,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "3.000000",
+      "nb_frames": "60"
+    },
+    "side.mp4": {
+      "width": 720,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "3.000000",
+      "nb_frames": "60"
+    }
+  },
+  "ui_validation": "CUA rejected the local file URL under Browser URL policy. No alternate browser workaround used; UI controls not exercised."
+}

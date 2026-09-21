@@ -1,0 +1,15 @@
+{
+  "opened_saved_blend": true,
+  "frame": 21,
+  "control_edit_local_m": [
+    0.03,
+    0,
+    0
+  ],
+  "hand_displacement_m": 0.030000299514571626,
+  "target_error_after_edit_m": 9.869407903624104e-06,
+  "armature_count": 2,
+  "source_action_retained": "MoMask_first_result_unedited_60f",
+  "authored_action": "Authored_13_poses_body_and_ik",
+  "saved_mutation": false
+}

@@ -131,6 +131,7 @@ namespace SummerMemories.App
             Check(S.Phase==SquadPhase.Fight&&S.LoopCount==20&&S.Party[1].Scans.Count==3,"save_continue_restores_battle_anchor");
             Check(S.Archive.branches.Count==22&&S.Archive.branches[0].elapsed==oldTime,"overlook_survives_save_load_and_branches_at_anchor");
             CombatTests();
+            if(S.Config.presentation.isometric)TacticalTests();
             // Actual combat commands, no direct enemy HP mutation. AI Focus contributes damage.
             S.Switch(1);S.SetOrder(AllyOrder.Focus);
             var steps=0;
@@ -195,6 +196,30 @@ namespace SummerMemories.App
             guard.ReceiveStrike(player,1,true,false,out _);guard.ReceiveStrike(player,1,true,false,out _);guard.ReceiveStrike(player,1,true,false,out _);
             Check(guard.Bound&&guard.Posture==0,"heavy_attacks_break_guard_posture");
             S.Restore(checkpoint);
+        }
+        private void TacticalTests()
+        {
+            var checkpoint=S.Checkpoint;S.Restore(checkpoint);S.SetOrder(AllyOrder.Hold);S.Switch(0);
+            var t=S.Tactical;var p=S.Party[0];var u=S.Party[1];
+            Check(t!=null&&S.CameraRig.Isometric,"25d_orthographic_camera_configured");
+            Check(p.GetComponentsInChildren<SquadSpriteBody>(true).Length==1,"25d_illustrated_character_loaded");
+            Check(S.Config.saveSlot=="st_demo25d","25d_isolated_play_save");
+            Place(p,new Vector3(0,0,5));Place(u,new Vector3(-3,0,10));S.Switch(1);S.BeginScan("st_object_stone");
+            var scan=S.ScanProgress;var time=S.Archive.Current.elapsed;var hp=p.Hp;var enemy=S.Enemies[0].transform.position;var cooldown=u.HairCooldown;
+            t.Toggle();Tick(2);
+            Check(t.Planning&&S.Archive.Current.elapsed==time&&S.ScanProgress==scan&&p.Hp==hp&&u.HairCooldown==cooldown&&S.Enemies[0].transform.position==enemy,"25d_planning_freezes_battle_scan_cooldown_and_time");
+            Check(t.Issue(0,new Vector3(0,0,10.5f)),"25d_queue_route_around_jump_obstacle");
+            Check(t.Issue(1,new Vector3(-5,0,13)),"25d_independent_second_actor_order");
+            var before=p.transform.position;Tick(.5f);Check(p.transform.position==before,"25d_queued_orders_do_not_move_during_planning");
+            Check(!t.Issue(0,new Vector3(0,0,8)),"25d_reject_destination_inside_solid");
+            t.Close();Tick(5);
+            Check(Vector3.Distance(p.transform.position,new Vector3(0,0,10.5f))<.7f&&Vector3.Distance(u.transform.position,new Vector3(-5,0,13))<.7f,"25d_two_orders_execute_and_route_around_obstacle");
+            S.Restore(checkpoint);Check(!t.HasOrder(0)&&!t.HasOrder(1)&&!t.Planning,"25d_restore_clears_deployment");
+            S.SetOrder(AllyOrder.Hold);S.Switch(1);Place(u,new Vector3(-3,0,35));var target=S.Enemies[0];hp=target.Hp;
+            t.Toggle();t.Select(1);Check(t.Issue(1,target.transform.position,target,TacticalAction.Skill),"25d_queue_hair_against_enemy");
+            Tick(1);Check(target.Hp==hp,"25d_attack_waits_for_time_resume");
+            t.Close();Tick(.9f);Check(target.Hp<hp&&target.Bound,"25d_queued_hair_hits_and_binds_actual_enemy");
+            t.Toggle();S.Rewind();Check(!t.HasOrder(1)&&!t.Planning,"25d_rewind_clears_plans");Tick(.8f);Dialogue();S.Restore(checkpoint);
         }
         private void SaveTests()
         {

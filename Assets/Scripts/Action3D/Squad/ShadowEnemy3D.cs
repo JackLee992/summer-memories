@@ -31,7 +31,7 @@ namespace SummerMemories.Action3D.Squad
         {
             _session = session; Config = config; Hp = config.hp; Posture = config.posture; gameObject.layer = 8;
             _cc = gameObject.AddComponent<CharacterController>(); _cc.height = 1.8f; _cc.radius = .3f; _cc.center = Vector3.up * .9f; _cc.stepOffset = .2f;
-            _body = new SquadBody(transform, false, true);
+            _body = new SquadBody(transform, false, true, false, session.Config.presentation);
             if (config.attackStyle == "guard") _body.Root.localScale = new Vector3(1.2f, 1.12f, 1.2f);
             _cc.enabled = false; transform.position = SquadConfig.Position(config.spawn); _cc.enabled = true;
             _tellMaterial = new Material(Resources.Load<Shader>("Shaders/SquadTrail"));

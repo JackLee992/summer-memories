@@ -1,5 +1,7 @@
 # 路线图（Roadmap）
 
+> **2026-09-21归档说明**：当前方向已试作横版2D，主游戏开发继续暂停；本页旧小队/神话说明按其原有版本理解。最新实现、动画实验、Seedance结果及未验证事项见 [阶段进度](progress-checkpoint-2026-09-21.md) 与 [动画索引](motion/README.md)。离线动画未导入Unity，不属于正式可发布资产。
+
 ## 当前路线：PC 小队策略冒险动作（2026-09-20）
 
 依据 [ADR-0003](decisions/0003-pc-action-adventure.md) 与 [小队 Demo 方案](st-squad-demo.md)，当前优先级如下；旧 M0–M5 不再作为执行顺序。

@@ -23,6 +23,8 @@ namespace SummerMemories.Action3D
 
         public Transform LockTarget;
         public float LockTurnSpeed = 8f;
+        public bool Isometric;
+        public float OrthographicSize=8.4f;
 
         private Camera _cam;
         private float _shake;
@@ -58,6 +60,7 @@ namespace SummerMemories.Action3D
         public void Snap()
         {
             if (Target == null || _cam == null) return;
+            if(Isometric){IsometricFrame(1);return;}
             _cam.transform.position = Target.position + Vector3.up * Height - Quaternion.Euler(Pitch,Yaw,0) * Vector3.forward * Distance;
             _cam.transform.LookAt(Target.position + Vector3.up * 1.4f);
         }
@@ -66,6 +69,7 @@ namespace SummerMemories.Action3D
         {
             if (Target == null || _cam == null) return;
             var dt = Time.unscaledDeltaTime;
+            if(Isometric){IsometricFrame(1-Mathf.Exp(-FollowLerp*dt));return;}
 
             var look = InputEnabled ? Input3D.Look() : Vector2.zero;
             if (LockTarget == null)
@@ -111,6 +115,15 @@ namespace SummerMemories.Action3D
                 ? Vector3.Lerp(Target.position + Vector3.up * 1.4f, LockTarget.position + Vector3.up * 1.2f, 0.6f)
                 : Target.position + Vector3.up * 1.4f;
             _cam.transform.LookAt(lookAt + _shakeOffset * 0.5f);
+        }
+        private void IsometricFrame(float blend)
+        {
+            _cam.orthographic=true;_cam.orthographicSize=OrthographicSize;
+            var rotation=Quaternion.Euler(Pitch,Yaw,0);
+            var center=Target.position+Vector3.forward*2.5f;
+            center.x=Mathf.Clamp(center.x,-3,3);center.y=0;
+            var desired=center-rotation*Vector3.forward*35;
+            _cam.transform.SetPositionAndRotation(Vector3.Lerp(_cam.transform.position,desired,blend),rotation);
         }
     }
 }

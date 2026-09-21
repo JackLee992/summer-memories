@@ -1,0 +1,399 @@
+{
+  "fps": 20,
+  "frames": 60,
+  "authored_key_frames": [
+    1,
+    6,
+    12,
+    18,
+    21,
+    23,
+    25,
+    27,
+    29,
+    30,
+    32,
+    35,
+    39,
+    44,
+    50,
+    56,
+    60
+  ],
+  "max_wrist_error_m": 7.866273172991802e-05,
+  "max_ankle_error_m": 4.850788486463761e-05,
+  "contact_frame": 29,
+  "contact_surface_z": 0.3599591851234436,
+  "contact_gap_m": 0.0,
+  "minimum_head_floor_clearance_m": 0.3599591851234436,
+  "method": "Authored character meshes and keyposes over previous skeleton. Eevee cel bands; no AI image/video regeneration.",
+  "limitations": [
+    "Stylized proportion study, not final Hizuru character model.",
+    "Mesh seam cleanup and facial likeness need further art direction.",
+    "Grip pieces follow prop; no articulated fingers.",
+    "Target contact is staged, not a physics collision.",
+    "Hair tip motion is authored shape-key overlap, not simulation."
+  ],
+  "per_frame": [
+    {
+      "frame": 1,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    },
+    {
+      "frame": 2,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    },
+    {
+      "frame": 3,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    },
+    {
+      "frame": 4,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    },
+    {
+      "frame": 5,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    },
+    {
+      "frame": 6,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    },
+    {
+      "frame": 7,
+      "wrist_error": 1.8015503883361816e-05,
+      "ankle_error": 3.476976744965176e-05,
+      "hammer_bottom_z": 1.3649625778198242
+    },
+    {
+      "frame": 8,
+      "wrist_error": 3.272344532619493e-05,
+      "ankle_error": 2.851187283340694e-05,
+      "hammer_bottom_z": 1.4307363033294678
+    },
+    {
+      "frame": 9,
+      "wrist_error": 2.7594095064930812e-05,
+      "ankle_error": 3.588765171461933e-05,
+      "hammer_bottom_z": 1.5294089317321777
+    },
+    {
+      "frame": 10,
+      "wrist_error": 1.9942391653342644e-05,
+      "ankle_error": 2.1652978032082526e-05,
+      "hammer_bottom_z": 1.6505049467086792
+    },
+    {
+      "frame": 11,
+      "wrist_error": 5.182476691812881e-05,
+      "ankle_error": 4.1024791167679384e-05,
+      "hammer_bottom_z": 1.7822834253311157
+    },
+    {
+      "frame": 12,
+      "wrist_error": 1.670222802525823e-05,
+      "ankle_error": 2.6319480465739165e-05,
+      "hammer_bottom_z": 1.9132087230682373
+    },
+    {
+      "frame": 13,
+      "wrist_error": 3.964754131827449e-05,
+      "ankle_error": 2.784180685586736e-05,
+      "hammer_bottom_z": 2.0355045795440674
+    },
+    {
+      "frame": 14,
+      "wrist_error": 4.947254074688776e-05,
+      "ankle_error": 3.109865290406911e-05,
+      "hammer_bottom_z": 2.14095401763916
+    },
+    {
+      "frame": 15,
+      "wrist_error": 5.532546956829567e-05,
+      "ankle_error": 3.2249300853338975e-05,
+      "hammer_bottom_z": 2.2222414016723633
+    },
+    {
+      "frame": 16,
+      "wrist_error": 2.2533034495952735e-05,
+      "ankle_error": 3.22238291273887e-05,
+      "hammer_bottom_z": 2.2774689197540283
+    },
+    {
+      "frame": 17,
+      "wrist_error": 2.9599224382718568e-05,
+      "ankle_error": 3.114763048569485e-05,
+      "hammer_bottom_z": 2.308880567550659
+    },
+    {
+      "frame": 18,
+      "wrist_error": 2.427945655818413e-05,
+      "ankle_error": 3.058951168498323e-05,
+      "hammer_bottom_z": 2.3192813396453857
+    },
+    {
+      "frame": 19,
+      "wrist_error": 2.5887316760702183e-05,
+      "ankle_error": 3.0335357993623193e-05,
+      "hammer_bottom_z": 2.3192813396453857
+    },
+    {
+      "frame": 20,
+      "wrist_error": 5.1521158096208214e-05,
+      "ankle_error": 2.7594984223770223e-05,
+      "hammer_bottom_z": 2.3192813396453857
+    },
+    {
+      "frame": 21,
+      "wrist_error": 4.116872766948734e-05,
+      "ankle_error": 1.9375149964802376e-05,
+      "hammer_bottom_z": 2.3192813396453857
+    },
+    {
+      "frame": 22,
+      "wrist_error": 5.464039419670674e-05,
+      "ankle_error": 2.8135729422482682e-05,
+      "hammer_bottom_z": 2.3318381309509277
+    },
+    {
+      "frame": 23,
+      "wrist_error": 3.21287022514933e-05,
+      "ankle_error": 3.670269437876876e-05,
+      "hammer_bottom_z": 2.3231563568115234
+    },
+    {
+      "frame": 24,
+      "wrist_error": 5.680623828635297e-05,
+      "ankle_error": 3.695844865685739e-05,
+      "hammer_bottom_z": 2.2212469577789307
+    },
+    {
+      "frame": 25,
+      "wrist_error": 7.743859930806105e-05,
+      "ankle_error": 3.238422775654224e-05,
+      "hammer_bottom_z": 2.0632381439208984
+    },
+    {
+      "frame": 26,
+      "wrist_error": 5.92018614733008e-05,
+      "ankle_error": 9.930651344173251e-06,
+      "hammer_bottom_z": 1.6974414587020874
+    },
+    {
+      "frame": 27,
+      "wrist_error": 1.5059730120158438e-05,
+      "ankle_error": 2.834338840307026e-05,
+      "hammer_bottom_z": 1.2764053344726562
+    },
+    {
+      "frame": 28,
+      "wrist_error": 7.588495305663591e-05,
+      "ankle_error": 1.5234987212056364e-05,
+      "hammer_bottom_z": 0.7967236042022705
+    },
+    {
+      "frame": 29,
+      "wrist_error": 3.927675870665567e-05,
+      "ankle_error": 1.9145790172479552e-05,
+      "hammer_bottom_z": 0.3599591851234436
+    },
+    {
+      "frame": 30,
+      "wrist_error": 2.6567696467007582e-05,
+      "ankle_error": 1.2089041711049659e-05,
+      "hammer_bottom_z": 0.3599591851234436
+    },
+    {
+      "frame": 31,
+      "wrist_error": 7.866273172991802e-05,
+      "ankle_error": 3.225114949086334e-05,
+      "hammer_bottom_z": 0.43210816383361816
+    },
+    {
+      "frame": 32,
+      "wrist_error": 2.482875102669208e-05,
+      "ankle_error": 3.983428232928699e-05,
+      "hammer_bottom_z": 0.5068416595458984
+    },
+    {
+      "frame": 33,
+      "wrist_error": 1.9922155927650444e-05,
+      "ankle_error": 3.8148413268655396e-05,
+      "hammer_bottom_z": 0.4677853286266327
+    },
+    {
+      "frame": 34,
+      "wrist_error": 4.788390248917335e-05,
+      "ankle_error": 3.25057927763986e-05,
+      "hammer_bottom_z": 0.3970303535461426
+    },
+    {
+      "frame": 35,
+      "wrist_error": 5.660351568416375e-05,
+      "ankle_error": 2.3334582076600844e-05,
+      "hammer_bottom_z": 0.3599591851234436
+    },
+    {
+      "frame": 36,
+      "wrist_error": 2.9830636045447895e-05,
+      "ankle_error": 4.850788486463761e-05,
+      "hammer_bottom_z": 0.3634854257106781
+    },
+    {
+      "frame": 37,
+      "wrist_error": 4.4034774393957066e-05,
+      "ankle_error": 2.635086666639434e-05,
+      "hammer_bottom_z": 0.38040879368782043
+    },
+    {
+      "frame": 38,
+      "wrist_error": 3.683298189496215e-05,
+      "ankle_error": 1.4690650055222567e-05,
+      "hammer_bottom_z": 0.42084792256355286
+    },
+    {
+      "frame": 39,
+      "wrist_error": 3.860214186337761e-05,
+      "ankle_error": 2.604367153058285e-05,
+      "hammer_bottom_z": 0.4968416392803192
+    },
+    {
+      "frame": 40,
+      "wrist_error": 1.522268670740685e-05,
+      "ankle_error": 2.075883247479292e-05,
+      "hammer_bottom_z": 0.6248796582221985
+    },
+    {
+      "frame": 41,
+      "wrist_error": 3.8821903487934823e-05,
+      "ankle_error": 1.4897653420161943e-05,
+      "hammer_bottom_z": 0.8085365295410156
+    },
+    {
+      "frame": 42,
+      "wrist_error": 5.9984190823589976e-05,
+      "ankle_error": 3.7053591292579873e-05,
+      "hammer_bottom_z": 1.038204312324524
+    },
+    {
+      "frame": 43,
+      "wrist_error": 3.0132609251745884e-05,
+      "ankle_error": 1.7417699863964463e-05,
+      "hammer_bottom_z": 1.2767682075500488
+    },
+    {
+      "frame": 44,
+      "wrist_error": 4.3507797928981104e-05,
+      "ankle_error": 3.9757459757931276e-05,
+      "hammer_bottom_z": 1.5028752088546753
+    },
+    {
+      "frame": 45,
+      "wrist_error": 4.359619363372716e-05,
+      "ankle_error": 1.2928389060128444e-05,
+      "hammer_bottom_z": 1.718155860900879
+    },
+    {
+      "frame": 46,
+      "wrist_error": 3.267041446594686e-05,
+      "ankle_error": 3.559071151149195e-05,
+      "hammer_bottom_z": 1.9136555194854736
+    },
+    {
+      "frame": 47,
+      "wrist_error": 1.7018196010525213e-05,
+      "ankle_error": 1.2707049848638928e-05,
+      "hammer_bottom_z": 2.080291986465454
+    },
+    {
+      "frame": 48,
+      "wrist_error": 5.966887329014198e-05,
+      "ankle_error": 2.260154101721253e-05,
+      "hammer_bottom_z": 2.2066195011138916
+    },
+    {
+      "frame": 49,
+      "wrist_error": 6.145653666734212e-05,
+      "ankle_error": 3.086439590497783e-05,
+      "hammer_bottom_z": 2.279874324798584
+    },
+    {
+      "frame": 50,
+      "wrist_error": 3.165798601152936e-05,
+      "ankle_error": 1.3829419615183015e-05,
+      "hammer_bottom_z": 2.2533159255981445
+    },
+    {
+      "frame": 51,
+      "wrist_error": 7.195419417540007e-05,
+      "ankle_error": 1.2147437664103925e-05,
+      "hammer_bottom_z": 2.145897388458252
+    },
+    {
+      "frame": 52,
+      "wrist_error": 4.448660317481864e-05,
+      "ankle_error": 2.0967629572270694e-05,
+      "hammer_bottom_z": 1.972084641456604
+    },
+    {
+      "frame": 53,
+      "wrist_error": 2.1169013829221605e-05,
+      "ankle_error": 3.86206851583124e-05,
+      "hammer_bottom_z": 1.758884072303772
+    },
+    {
+      "frame": 54,
+      "wrist_error": 3.0146466992371255e-05,
+      "ankle_error": 2.6898111826706978e-05,
+      "hammer_bottom_z": 1.551767110824585
+    },
+    {
+      "frame": 55,
+      "wrist_error": 8.87865717303246e-06,
+      "ankle_error": 1.887853187869784e-05,
+      "hammer_bottom_z": 1.3993678092956543
+    },
+    {
+      "frame": 56,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    },
+    {
+      "frame": 57,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    },
+    {
+      "frame": 58,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    },
+    {
+      "frame": 59,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    },
+    {
+      "frame": 60,
+      "wrist_error": 1.038524613921966e-05,
+      "ankle_error": 2.615614475016749e-05,
+      "hammer_bottom_z": 1.3411489725112915
+    }
+  ]
+}

@@ -15,6 +15,7 @@ namespace SummerMemories.Action3D.Squad
         public WorldConfig world;
         public SquadAudioConfig audio;
         public string[] storyIds;
+        public SquadPresentation presentation = new SquadPresentation();
         public PartyConfig Member(string id) => Array.Find(party, a => a.id == id);
         public AbilityConfig Ability(string id) => Array.Find(abilities, a => a.id == id);
         public FormConfig Form(string id) => Array.Find(scanTemplates, a => a.id == id);
@@ -39,6 +40,12 @@ namespace SummerMemories.Action3D.Squad
             foreach (var e in enemies)
                 if (e.hp <= 0 || e.spawn.Length != 3) throw new InvalidOperationException("Invalid enemy: " + e.id);
         }
+    }
+    [Serializable] public class SquadPresentation
+    {
+        public bool isometric;
+        public string saveSlot, spriteRoot="Art/Portraits/25D/";
+        public float cameraYaw=-25, cameraPitch=48, orthographicSize=8.4f, spriteHeight=2.35f;
     }
     [Serializable] public class PartyConfig
     {

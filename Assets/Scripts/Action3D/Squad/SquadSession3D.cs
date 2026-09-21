@@ -22,6 +22,7 @@ namespace SummerMemories.Action3D.Squad
         public SquadActor3D Active => Party[ActiveIndex];
         public ShadowEnemy3D Locked {get;private set;}
         public CameraRig3D CameraRig {get;private set;}
+        public SquadTactics Tactical {get;private set;}
         public bool Paused {get;set;}
         public bool CanPlay => !Paused && (Phase==SquadPhase.Explore || Phase==SquadPhase.Fight);
         public float ScanProgress => _scanning==null ? 0 : _scanTime/Config.Ability("st_scan").durationSeconds;
@@ -52,11 +53,17 @@ namespace SummerMemories.Action3D.Squad
             ActiveIndex=Party.FindIndex(a=>a.Config.id==config.initialControlledId);
             CameraRig=new GameObject("SquadCamera").AddComponent<CameraRig3D>();CameraRig.transform.SetParent(transform,false);CameraRig.Init(Active.transform);
             CameraRig.Distance=5.6f;CameraRig.Height=1.9f;CameraRig.Pitch=10;CameraRig.Camera.backgroundColor=new Color(.53f,.72f,.75f);CameraRig.Camera.clearFlags=CameraClearFlags.Skybox;CameraRig.InputEnabled=false;CameraRig.Snap();
+            if(config.presentation.isometric)
+            {
+                CameraRig.Isometric=true;CameraRig.Yaw=config.presentation.cameraYaw;CameraRig.Pitch=config.presentation.cameraPitch;CameraRig.OrthographicSize=config.presentation.orthographicSize;CameraRig.Snap();
+                Tactical=gameObject.AddComponent<SquadTactics>();Tactical.Init(this);
+            }
             _hair=new GameObject("HairArc").AddComponent<LineRenderer>();_hair.transform.SetParent(transform,false);
             _hairMaterial=SquadVisual.Material(new Color(1,.79f,.25f));_hair.sharedMaterial=_hairMaterial;_hair.startWidth=.10f;_hair.endWidth=.045f;_hair.positionCount=12;_hair.enabled=false;
         }
         public void Begin()
         {
+            Tactical?.Clear();
             Phase=SquadPhase.Explore;LoopCount=0;Memories.Clear();Collected.Clear();Order=AllyOrder.Follow;
             for(var i=0;i<Party.Count;i++) Party[i].Restore(new ActorSnapshot {id=Party[i].Config.id,position=SquadConfig.Position(Party[i].Config.spawn),rotation=Quaternion.identity,hp=Party[i].Config.hp,stamina=100});
             ActiveIndex=0;ClearEnemies();SpawnIntro();World.RestoreMarkers(Collected);CancelScan();SetTarget();
@@ -65,6 +72,11 @@ namespace SummerMemories.Action3D.Squad
         public void Step(float dt,bool input=true)
         {
             CameraRig.InputEnabled=CanPlay && input;
+            if(Tactical!=null && CanPlay)
+            {
+                if(input)Tactical.ReadInput();
+                if(Tactical.Planning)return;
+            }
             if(Phase==SquadPhase.Rewinding)
             {
                 _rewindTime-=dt;
@@ -80,10 +92,11 @@ namespace SummerMemories.Action3D.Squad
             if(input) ReadInput(dt);
             if(!CanPlay)return;
             foreach(var actor in Party) actor.Tick(dt);
+            if(Tactical!=null)for(var i=0;i<Party.Count;i++)Tactical.TickActor(i,dt);
             TickScan(dt);
             foreach(var actor in Party)
             {
-                if(actor==Active || !actor.Alive || actor.Carried)continue;
+                if(actor==Active || !actor.Alive || actor.Carried || (Tactical!=null && Tactical.HasOrder(Party.IndexOf(actor))))continue;
                 if(Order==AllyOrder.Hold)continue;
                 if(!actor.Free)continue;
                 var danger=Enemies.Find(e=>e.Alive&&e.Winding&&e.WindupRemaining<.25f&&e.Threatens(actor));
@@ -128,6 +141,7 @@ namespace SummerMemories.Action3D.Squad
         private void ReadInput(float dt)
         {
             var dir=Quaternion.Euler(0,CameraRig.Yaw,0)*new Vector3(Input.GetAxisRaw("Horizontal"),0,Input.GetAxisRaw("Vertical"));
+            if(dir.sqrMagnitude>.01f)Tactical?.Cancel(ActiveIndex);
             Active.Move(dir,Input.GetKey(KeyCode.LeftShift),dt);
             if(Input.GetKeyDown(KeyCode.Tab))Switch((ActiveIndex+1)%Party.Count);
             for(var i=0;i<Party.Count;i++)if(Input.GetKeyDown((KeyCode)((int)KeyCode.Alpha1+i)))Switch(i);
@@ -136,12 +150,12 @@ namespace SummerMemories.Action3D.Squad
             if(Input.GetKeyDown(KeyCode.Alpha6))SetOrder(AllyOrder.Focus);
             if(Input.GetKeyDown(KeyCode.Q)){Locked=Locked!=null?null:NearestEnemy(Active.transform.position,18);}
             var pointerUI=EventSystem.current!=null && EventSystem.current.IsPointerOverGameObject();
-            if(Input.GetKeyDown(KeyCode.J) || (Input.GetMouseButtonDown(0)&&!pointerUI))Attack(false);
+            if(Input.GetKeyDown(KeyCode.J) || (Tactical==null&&Input.GetMouseButtonDown(0)&&!pointerUI))Attack(false);
             if(Input.GetKeyDown(KeyCode.E))Attack(true);
             if(Input.GetKeyDown(KeyCode.K))Attack(false,true);
             if(Input.GetKeyDown(KeyCode.T))Active.ToggleWeapon();
-            if(Input.GetKeyDown(KeyCode.Space)){CancelScan();Active.Jump();}
-            if(Input.GetKeyDown(KeyCode.LeftControl)){CancelScan();Active.Dodge(dir);}
+            if(Input.GetKeyDown(Tactical!=null?KeyCode.LeftAlt:KeyCode.Space)){CancelScan();Tactical?.Cancel(ActiveIndex);Active.Jump();}
+            if(Input.GetKeyDown(KeyCode.LeftControl)){CancelScan();Tactical?.Cancel(ActiveIndex);Active.Dodge(dir);}
             if(Input.GetKeyDown(KeyCode.F))Interact();
             if(Input.GetKeyDown(KeyCode.Z))Morph("st_object_crate");
             if(Input.GetKeyDown(KeyCode.X))Morph("st_object_stone");
@@ -159,12 +173,12 @@ namespace SummerMemories.Action3D.Squad
             CancelScan();ActiveIndex=index;CameraRig.Target=Active.transform;Record("switch",Active.Config.nameKey);return true;
         }
         private void SetTarget(){Locked=null;CameraRig.LockTarget=null;CameraRig.Target=Active.transform;CameraRig.Snap();}
-        public void SetOrder(AllyOrder order){if(!CanPlay)return;Order=order;Notify("st.order."+order.ToString().ToLowerInvariant());Record("order","st.order."+order.ToString().ToLowerInvariant());}
+        public void SetOrder(AllyOrder order){if(!CanPlay)return;Tactical?.Clear();Order=order;Notify("st.order."+order.ToString().ToLowerInvariant());Record("order","st.order."+order.ToString().ToLowerInvariant());}
         public void ToggleConsciousness(){if(CanPlay && Active.ToggleConsciousness()){Notify(Active.Ryunosuke?"st.feedback.ryunosuke":"st.feedback.hizuru");Record("consciousness",Active.Ryunosuke?"st.character.ryunosuke":"st.character.hizuru");}}
         public bool Attack(bool special,bool heavy=false)
         {
             if(!CanPlay)return false;
-            CancelScan();var target=Locked!=null?Locked:NearestEnemy(Active.transform.position,special?7:3);
+            Tactical?.Cancel(ActiveIndex);CancelScan();var target=Locked!=null?Locked:NearestEnemy(Active.transform.position,special?7:3);
             if(target!=null){var d=target.transform.position-Active.transform.position;d.y=0;if(d.sqrMagnitude>.01f)Active.transform.rotation=Quaternion.LookRotation(d);}
             var result=Active.Attack(special,heavy);
             if(!result && special)Notify("st.feedback.abilityUnavailable");
@@ -207,6 +221,7 @@ namespace SummerMemories.Action3D.Squad
         public void Interact()
         {
             if(!CanPlay || !Active.Free)return;
+            Tactical?.Cancel(ActiveIndex);
             foreach(var a in Party)if(!a.Alive&&Vector3.Distance(Active.transform.position,a.transform.position)<2.5f)
             {var s=a.Snapshot();s.hp=a.Config.hp*.45f;a.Restore(s);Notify("st.feedback.revived");Record("revive",a.Config.nameKey);return;}
             foreach(var c in Config.interactions)
@@ -248,7 +263,7 @@ namespace SummerMemories.Action3D.Squad
         private void CancelScan(){_scanning=null;_scanTime=0;}
         public bool Morph(string id)
         {
-            if(!CanPlay)return false;CancelScan();var form=Config.Form(id);
+            if(!CanPlay)return false;Tactical?.Cancel(ActiveIndex);CancelScan();var form=Config.Form(id);
             if(form!=null && Active.Morph(form))
             {
                 Notify("st.feedback.morph");Record("morph",form.nameKey);
@@ -267,6 +282,7 @@ namespace SummerMemories.Action3D.Squad
                 var s=a.Snapshot();s.position=SquadConfig.Position(Config.world.encounterGate)+new Vector3((Party.IndexOf(a)-1)*1.6f,0,-1);
                 s.hp=a.Config.hp;s.stamina=100;s.hairCooldown=0;s.morphCooldown=0;a.Restore(s);
             }
+            Tactical?.Clear();
             Phase=SquadPhase.Fight;Order=AllyOrder.Follow;CancelScan();SpawnEnemies();Record("encounter","st.timeline.battleAnchor");CaptureCheckpoint();Sound?.Invoke("shadowReveal");Notify("st.feedback.encounter");SetTarget();return true;
         }
         public void CaptureCheckpoint()
@@ -276,7 +292,7 @@ namespace SummerMemories.Action3D.Squad
         }
         public void Restore(SquadCheckpoint snapshot)
         {
-            ValidateCheckpoint(snapshot);CancelScan();_hairTime=0;_hitStop=0;_hair.enabled=false;Order=AllyOrder.Follow;
+            Tactical?.Clear();ValidateCheckpoint(snapshot);CancelScan();_hairTime=0;_hitStop=0;_hair.enabled=false;Order=AllyOrder.Follow;
             for(var i=0;i<Party.Count;i++)Party[i].Restore(snapshot.actors[i]);
             ActiveIndex=snapshot.activeIndex;Collected.Clear();foreach(var c in snapshot.collected)Collected.Add(c);
             World.RestoreMarkers(Collected);Phase=snapshot.phase;Checkpoint=snapshot;
@@ -294,7 +310,7 @@ namespace SummerMemories.Action3D.Squad
         public void Rewind()
         {
             if(Checkpoint==null||Phase==SquadPhase.Rewinding||Phase==SquadPhase.Title)return;
-            Paused=false;CancelScan();
+            Tactical?.Clear();Paused=false;CancelScan();
             var previous=Archive.Current;var forkTime=previous!=null?previous.elapsed:0;
             if(previous!=null){if(previous.outcome=="st.timeline.active")previous.outcome="st.timeline.rewound";Record("rewind",Checkpoint.phase==SquadPhase.Fight?"st.timeline.battleAnchor":"st.timeline.exploreAnchor");}
             Archive.Begin(Checkpoint.phase==SquadPhase.Fight?"st.timeline.battleAnchor":"st.timeline.exploreAnchor",previous!=null?previous.id:-1,forkTime);

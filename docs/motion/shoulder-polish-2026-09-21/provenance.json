@@ -1,0 +1,67 @@
+{
+  "date": "2026-09-21",
+  "scope": "Independent character and motion study; game development remains paused",
+  "media": {
+    "baseline.mp4": {
+      "width": 720,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "3.000000",
+      "nb_frames": "60"
+    },
+    "revised.mp4": {
+      "width": 720,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "3.600000",
+      "nb_frames": "72"
+    },
+    "side.mp4": {
+      "width": 720,
+      "height": 720,
+      "r_frame_rate": "20/1",
+      "duration": "3.600000",
+      "nb_frames": "72"
+    }
+  },
+  "outputs": {
+    "build_study.py": {
+      "bytes": 30885,
+      "sha256": "dc3032942af276272e298b50885cea95d13940d0830672a1695d2a4d469e4121"
+    },
+    "st_hizuru_shoulder_polish.blend": {
+      "bytes": 264749,
+      "sha256": "45666595f8b3fb942f4faadcae0d2635cc79cfe565e6ff3785389d6828cbf74b"
+    },
+    "baseline.mp4": {
+      "bytes": 141908,
+      "sha256": "c8e3c53029e8b6758f045ca395080234dbb99e451665c361cf0acfb89be29028"
+    },
+    "revised.mp4": {
+      "bytes": 165638,
+      "sha256": "275e5512eced22f2588866734c34a9a923c3adf0fabf754a597a883862bcfcf4"
+    },
+    "side.mp4": {
+      "bytes": 103841,
+      "sha256": "e1b7b7a4b74c2c8c0978e0808fb148668de41881096ef25d6d245d01d6c8985c"
+    },
+    "hammer_shoulder_polish.gif": {
+      "bytes": 1213900,
+      "sha256": "50c90f9eefc683429e1a2ed883dfe2c4b6a941f39c926772fb0b6c90720feff5"
+    },
+    "face_comparison.jpg": {
+      "bytes": 129551,
+      "sha256": "fd31c5edc4ccb5485404bc3e66a738513ca753e8b40b59ea1fcd61cff365109c"
+    },
+    "comparison.html": {
+      "bytes": 1102388,
+      "sha256": "dfbbff81d80a68f31b4d888d221a4e3127e51a67ad5615aefab038b2cfadf335"
+    }
+  },
+  "sources": [
+    "../face-polish-research-2026-09-21.md",
+    "../grip-deformation-research-2026-09-21.md"
+  ],
+  "chrome_research": "Google search performed in user Chrome via CUA; source articles checked separately. Further UI unavailable due to locked Mac. Local preview UI not exercised.",
+  "input_skeleton_sha256": "1bfcaa96d767b0f1b7d1e17ad83e33a603863c6576772c51b72a0d98316abe5b"
+}

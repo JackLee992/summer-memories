@@ -1,5 +1,7 @@
 # 小队原型试玩与验收
 
+> **2026-09-21归档说明**：当前方向已试作横版2D，主游戏开发继续暂停；本页旧小队/神话说明按其原有版本理解。最新实现、动画实验、Seedance结果及未验证事项见 [阶段进度](progress-checkpoint-2026-09-21.md) 与 [动画索引](motion/README.md)。离线动画未导入Unity，不属于正式可发布资产。
+
 运行包：`Builds/SummerTimeSquad.app`（Mac Apple Silicon，键鼠）。Unity 6000.0.83f1，菜单 `夏日回忆/Build/Mac 小队动作原型 (.app)` 或 `bash tools/build_squad_mac.sh` 重建。Windows 构建未验证。
 
 ## 主路径

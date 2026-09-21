@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-21",
+  "checked_at": "2026-09-21T07:25:01.925184+00:00",
+  "scope": "Archive-only working-tree checks before commit; not runtime validation or commercial-quality acceptance.",
+  "branch": "codex/2-5d-squad",
+  "base_commit": "fda23e5f90f52f93a9b7648dbd21f1e97568c064",
+  "checks": {
+    "json": {
+      "files": 39,
+      "method": "json.loads on all Git candidate JSON; includes this report"
+    },
+    "python_syntax": {
+      "files": 25,
+      "method": "ast.parse only; no scripts executed"
+    },
+    "shell_syntax": {
+      "files": 11,
+      "method": "bash -n; no builds executed"
+    },
+    "unity_meta": {
+      "files": 119,
+      "directories": 39,
+      "method": "Every candidate Assets file and parent directory has a candidate .meta"
+    },
+    "content_manifest": {
+      "exit_code": 0,
+      "output": "OK: 52 files match manifest."
+    },
+    "working_diff_whitespace": {
+      "exit_code": 0
+    },
+    "sensitive_field_scan": {
+      "files": 360,
+      "categories": [
+        "private_key",
+        "github_token",
+        "api_token",
+        "aws_access_key",
+        "bearer_token",
+        "signed_url",
+        "literal_secret"
+      ],
+      "findings": [],
+      "limitation": "Heuristic scan; values are never printed in the report."
+    },
+    "entrypoint_links": {
+      "documents": 10,
+      "local_links": 116
+    },
+    "seedance_output_sha256": {
+      "expected": "0972d30167bd6f16113b8a5f9e1a27a89056fdcdb4c47d637b2b6c2d49a29554",
+      "actual": "0972d30167bd6f16113b8a5f9e1a27a89056fdcdb4c47d637b2b6c2d49a29554",
+      "matches": true
+    },
+    "staged_diff_whitespace": {
+      "status": "passed_except_preserved_raw_inputs",
+      "raw_input_exceptions": [
+        {
+          "file": "docs/motion/tutorial-probe-2026-09-21/momask_raw.bvh",
+          "trailing_whitespace_lines": 61
+        },
+        {
+          "file": "docs/motion/tutorial-probe-2026-09-21/momask_second.bvh",
+          "trailing_whitespace_lines": 81
+        }
+      ],
+      "reason": "Preserve provider BVH input bytes and provenance hashes exactly. Empty-field whitespace in 7 new Unity .meta files was normalized without changing GUIDs.",
+      "exit_code_excluding_two_raw_bvh": 0
+    }
+  },
+  "errors": [],
+  "unity_compile_and_build": {
+    "status": "not_run",
+    "reason": "Owner requested archive and push while development remains paused. Latest C# changes postdate the historical Side2D build."
+  },
+  "historical_smoke_reports": {
+    "2.5d": {
+      "file": "25d-smoke-before-pause.json",
+      "passed": 94
+    },
+    "side2d": {
+      "file": "side-smoke-before-pause.json",
+      "passed": 39,
+      "limitations": [
+        "Uses direct positioning and raises current character HP to 100 for some combat checks.",
+        "Does not prove normal-HP full playthrough or compile current source."
+      ]
+    }
+  },
+  "quality_status": "Prototype and offline experiments; below commercial game/animation quality.",
+  "status": "passed"
+}

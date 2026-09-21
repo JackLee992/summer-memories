@@ -1,0 +1,54 @@
+{
+  "source": "Procedural Pillow 2D IK study, no AI model or Computer Use drawing",
+  "generated_samples": 65,
+  "sample_fps": 25,
+  "max_arm_length_error_px": 3.552713678800501e-14,
+  "max_leg_length_error_px": 5.684341886080802e-14,
+  "max_hammer_length_error_px": 8.526512829121202e-14,
+  "max_grip_spacing_error_px": 5.684341886080802e-14,
+  "fixed_foot_targets": true,
+  "first_last_pixels_equal": true,
+  "timing_only_durations_ms": [
+    100,
+    100,
+    120,
+    160,
+    40,
+    30,
+    30,
+    100,
+    70,
+    100,
+    130
+  ],
+  "limitations": [
+    "Rigid hair, no cloth simulation",
+    "No collision or anatomical joint-angle solver",
+    "Stylized structural study, not final character art",
+    "Numerical constraints do not prove convincing weight or gameplay quality"
+  ],
+  "timing_only.gif": {
+    "encoded_frames": 11,
+    "duration_ms": 980,
+    "size": [
+      512,
+      512
+    ]
+  },
+  "uniform_same_duration.gif": {
+    "encoded_frames": 11,
+    "duration_ms": 980,
+    "size": [
+      512,
+      512
+    ]
+  },
+  "constrained_rig.gif": {
+    "encoded_frames": 45,
+    "duration_ms": 2600,
+    "size": [
+      512,
+      512
+    ]
+  }
+}
